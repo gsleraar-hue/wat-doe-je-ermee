@@ -222,6 +222,13 @@
   /* twee kolommen: gelijk beginnen */
   body.magazine .hz-twee { align-items: start !important; align-content: center; }
   body.magazine .hz-twee .hz-tx { justify-content: flex-start !important; height: auto !important; }
+  /* fotostrook van Bett */
+  .reis-strook { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; max-width: 1100px; margin: 0 auto; }
+  .reis-strook figure { margin: 0; position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: #000; }
+  .reis-strook img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .reis-strook small { position: absolute; right: 6px; bottom: 5px; font: 10px/1.2 Roboto, sans-serif; color: #fff; opacity: .8; text-shadow: 0 1px 3px #000; }
+  .reis-strook small a { color: inherit; }
+  @media (max-width: 760px) { .reis-strook { grid-template-columns: 1fr; } }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
   .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }

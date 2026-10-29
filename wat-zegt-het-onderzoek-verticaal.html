@@ -222,6 +222,13 @@
   /* twee kolommen: gelijk beginnen */
   body.magazine .hz-twee { align-items: start !important; align-content: center; }
   body.magazine .hz-twee .hz-tx { justify-content: flex-start !important; height: auto !important; }
+  /* fotostrook van Bett */
+  .reis-strook { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; max-width: 1100px; margin: 0 auto; }
+  .reis-strook figure { margin: 0; position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: #000; }
+  .reis-strook img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .reis-strook small { position: absolute; right: 6px; bottom: 5px; font: 10px/1.2 Roboto, sans-serif; color: #fff; opacity: .8; text-shadow: 0 1px 3px #000; }
+  .reis-strook small a { color: inherit; }
+  @media (max-width: 760px) { .reis-strook { grid-template-columns: 1fr; } }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
   .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
@@ -321,8 +328,9 @@
 <p>Geef leerlingen een persbericht van een leverancier met een mooi cijfer erin en laat ze de vijf vragen hierboven beantwoorden. Wie heeft het betaald? Is er een vergelijkingsgroep? Wat is er gemeten? Het is mediawijsheid en onderzoeksvaardigheid in één opdracht, en je hebt meteen oefenmateriaal voor je eigen aankoopgesprek.</p>
 <p>Wil je het zelf proberen? Zet met een collega twee klassen naast elkaar. Zelfde les, één met de tool en één zonder. Het is geen wetenschap, maar je leert veel van wat leerlingen in beide klassen daarna zelf kunnen.</p>
 <h2>Op de BETT: vraag naar het onderzoek</h2>
+<figure class="mg-img half"><div class="im"><img src="img/bett-ai.jpg" alt="Een sessie over AI in het klaslokaal op Bett 2026: deelnemers stemmen met kaarten." loading="lazy"><small>Foto: <a href="https://uk.bettshow.com/highlights" target="_blank" rel="noopener">Bett UK</a> · beeld van de Bett-website</small></div><figcaption>Een sessie over AI in het klaslokaal op Bett 2026: deelnemers stemmen met kaarten.</figcaption></figure>
 <p>Neem de vijf vragen mee op een kaartje en stel ze bij elk cijfer dat je hoort. Vraag letterlijk: is hier onafhankelijk onderzoek van, en mag ik het lezen? Een stand die dat heeft, laat het graag zien. Een stand die dat niet heeft, zegt ook iets.</p>
-</article><p class="mg-credits">Foto: <a href="https://commons.wikimedia.org/wiki/File:Schoolmeester_met_leerlingen_in_een_klaslokaal,_RP-P-OB-41.885.jpg" target="_blank" rel="noopener">Rijksmuseum</a> · CC0</p><div class="mg-next"><a href="./tool-ontleding-rekenmachine.html"><div class="tx"><p class="mg-k">Lees verder · Tool-ontleding</p><h3>De rekenmachine</h3></div><div class="im"><img src="img/hp35.jpg" alt="" loading="lazy" style="object-position:50% 50%"></div></a></div><a class="mg-back" href="./index.html">← Wat is technologie eigenlijk?: alle verhalen</a></main><footer class="sitefoot"><div class="wrap"><p>Wat doe je ermee? · magazine bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){
+</article><p class="mg-credits">Foto: <a href="https://commons.wikimedia.org/wiki/File:Schoolmeester_met_leerlingen_in_een_klaslokaal,_RP-P-OB-41.885.jpg" target="_blank" rel="noopener">Rijksmuseum</a> · CC0<br>Foto: <a href="https://uk.bettshow.com/highlights" target="_blank" rel="noopener">Bett UK</a> · beeld van de Bett-website</p><div class="mg-next"><a href="./tool-ontleding-rekenmachine.html"><div class="tx"><p class="mg-k">Lees verder · Tool-ontleding</p><h3>De rekenmachine</h3></div><div class="im"><img src="img/hp35.jpg" alt="" loading="lazy" style="object-position:50% 50%"></div></a></div><a class="mg-back" href="./index.html">← Wat is technologie eigenlijk?: alle verhalen</a></main><footer class="sitefoot"><div class="wrap"><p>Wat doe je ermee? · magazine bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=[].slice.call(document.querySelectorAll('.mg-body > figure, .mg-body > blockquote, .mg-frag, .mg-tile, .mg-next a'));
 if('IntersectionObserver' in window&&!rust){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(el){el.classList.add('rv');io.observe(el);});}
