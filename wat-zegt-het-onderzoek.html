@@ -233,6 +233,8 @@
   body.magazine .mg-vw { grid-template-columns: 200px minmax(0, 1fr); }
   body.magazine .mg-vw .ft { width: 200px; height: 200px; }
   @media (max-width: 640px) { body.magazine .mg-vw { grid-template-columns: 1fr; } body.magazine .mg-vw .ft { width: 140px; height: 140px; } }
+  /* reispagina: het blauwe blok sluit direct aan op de menubalk, geen witte strook */
+  body.magazine .mg-in + .mg-reis { margin-top: 0; }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
   .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
