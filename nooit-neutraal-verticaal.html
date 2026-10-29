@@ -215,6 +215,32 @@
   body.magazine .mg-hero h1, body.magazine .hz-open h1 { font-size: clamp(32px, 4.4vw, 66px) !important; line-height: 1 !important; overflow-wrap: anywhere; hyphens: auto; }
   body.magazine .tl-open h1 { font-size: clamp(44px, 5.5vw, 84px) !important; line-height: 1 !important; }
   body.magazine .mg-cover-hero .sub { max-width: 36ch; }
+  /* reis naar Bett: huisstijl van bett.dieter.nl (marineblauw en roze) */
+  .sitenav .cta { margin-left: auto; background: #FF007E; color: #fff; text-decoration: none; font: 700 13px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 11px 16px; }
+  .sitenav .cta:hover { background: #d6006a; }
+  .mg-in a.reis { margin-left: auto; color: #FF7EBB; }
+  .mg-reis { background: #011745; color: #fff; padding: clamp(28px, 5vw, 64px) 20px; margin: 40px 0; }
+  .mg-reis .w { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .mg-reis .mg-k { color: #FF7EBB; }
+  .mg-reis h2 { font: 900 clamp(30px, 4vw, 52px)/1.02 Roboto, sans-serif; margin: 6px 0 14px; letter-spacing: -.015em; color: #fff; }
+  .mg-reis p { font: 400 18px/1.55 Roboto, sans-serif; margin: 0 0 14px; max-width: 52ch; }
+  .reis-btn { display: inline-block; background: #FF007E; color: #fff !important; text-decoration: none; font: 700 14px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 15px 22px; margin: 6px 10px 6px 0; }
+  .reis-btn.licht { background: transparent; border: 2px solid #fff; padding: 13px 20px; }
+  .reis-qr { background: #fff; color: #011745; padding: 18px; text-align: center; }
+  .reis-qr img { width: 100%; max-width: 240px; display: block; margin: 0 auto 8px; }
+  .reis-qr b { font: 700 13px/1.3 Roboto, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+  .reis-qr small { display: block; font: 400 12px/1.4 Roboto, sans-serif; margin-top: 4px; word-break: break-all; }
+  .reis-pag { max-width: 1100px; margin: 0 auto; padding: 48px 20px; }
+  .reis-pag h2 { font: 900 clamp(26px, 3vw, 38px)/1.1 Roboto, sans-serif; margin: 40px 0 14px; letter-spacing: -.015em; }
+  .reis-pag h2::before { content: ""; display: block; width: 48px; height: 6px; background: #FF007E; margin-bottom: 14px; }
+  .reis-pag p, .reis-pag li { font: 400 19px/1.65 Roboto, sans-serif; max-width: 62ch; }
+  .reis-pag ul { padding-left: 22px; }
+  .reis-twee { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
+  .reis-twee figure { margin: 0; } .reis-twee img { width: 100%; display: block; border: 1px solid #ddd; }
+  .reis-twee figcaption, .reis-pag .cr { font: 400 13px/1.4 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
+  .reis-qrs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
+  .reis-qrs .reis-qr { border: 3px solid #011745; }
+  @media (max-width: 760px) { .mg-reis .w, .reis-twee, .reis-qrs { grid-template-columns: 1fr; } .sitenav .cta { padding: 9px 11px; font-size: 11px; } }
   .mg-bron { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; font: 400 15px/1.5 var(--serif); }
   .mg-bron li { break-inside: avoid; margin: 0 0 10px; }
   .mg-bron a { color: inherit; }
@@ -258,7 +284,7 @@
   .mg-extra .les iframe { position: absolute; inset: 0; height: 100%; border-radius: 0; }
   .mg-extra .later { font: 700 12px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6B675E; border: 2px dashed #CFCAC0; padding: 28px 16px; text-align: center; }
   @media (max-width: 760px) { .mg-extra { grid-template-columns: 1fr; } }
-</style></head><body class="magazine" style="--mg:#DA4749"><header class="sitenav"><a class="brand" href="./index.html"><span>Wat doe je ermee?</span></a><nav aria-label="Hoofdmenu"><a href="./index.html" aria-current="page">Dit nummer</a></nav></header><nav class="mg-in" aria-label="In dit nummer"><div class="w"><a class="nr" href="./index.html">#1 Wat is technologie eigenlijk?</a><a href="./nooit-neutraal.html" aria-current="page"><i>1</i>Nooit neutraal</a><a href="./elke-golf-een-belofte.html"><i>2</i>Elke golf had een belofte</a><a href="./wat-zegt-het-onderzoek.html"><i>3</i>Wat zegt het onderzoek?</a><a href="./tool-ontleding-rekenmachine.html"><i>4</i>De rekenmachine</a><a href="./tijdlijn.html"><i>5</i>Tijdlijn</a></div></nav><header class="mg-hero"><div class="tx"><p class="mg-k">Nummer 1 · Wat is technologie eigenlijk? · verhaal 1 van 4</p><h1>Nooit neutraal</h1><p class="lead">Een koning die schrift een slecht idee vindt, een historicus met een wet over technologie, en de vraag waarom dezelfde tool in de ene klas werkt en in de andere niet.</p></div><div class="ft"><img src="img/phaedrus.jpg" alt="" style="object-position:50% 40%"><small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Papyrus_of_Plato_Phaedrus.jpg" target="_blank" rel="noopener">Anonymous ancient scribe</a> · Public domain</small></div></header><main><article class="mg-body"><h2>Een koning die niet blij is</h2>
+</style></head><body class="magazine" style="--mg:#DA4749"><header class="sitenav"><a class="brand" href="./index.html"><span>Wat doe je ermee?</span></a><nav aria-label="Hoofdmenu"><a href="./index.html">Dit nummer</a><a href="./reis.html">De reis</a></nav><a class="cta" href="https://bett.dieter.nl/bett-opgave/" target="_blank" rel="noopener">Meld je aan</a></header><nav class="mg-in" aria-label="In dit nummer"><div class="w"><a class="nr" href="./index.html">#1 Wat is technologie eigenlijk?</a><a href="./nooit-neutraal.html" aria-current="page"><i>1</i>Nooit neutraal</a><a href="./elke-golf-een-belofte.html"><i>2</i>Elke golf had een belofte</a><a href="./wat-zegt-het-onderzoek.html"><i>3</i>Wat zegt het onderzoek?</a><a href="./tool-ontleding-rekenmachine.html"><i>4</i>De rekenmachine</a><a href="./tijdlijn.html"><i>5</i>Tijdlijn</a><a class="reis" href="./reis.html">Naar BETT</a></div></nav><header class="mg-hero"><div class="tx"><p class="mg-k">Nummer 1 · Wat is technologie eigenlijk? · verhaal 1 van 4</p><h1>Nooit neutraal</h1><p class="lead">Een koning die schrift een slecht idee vindt, een historicus met een wet over technologie, en de vraag waarom dezelfde tool in de ene klas werkt en in de andere niet.</p></div><div class="ft"><img src="img/phaedrus.jpg" alt="" style="object-position:50% 40%"><small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Papyrus_of_Plato_Phaedrus.jpg" target="_blank" rel="noopener">Anonymous ancient scribe</a> · Public domain</small></div></header><main><article class="mg-body"><h2>Een koning die niet blij is</h2>
 <p>In een van de dialogen van Plato, de Phaedrus uit ongeveer 370 voor Christus, vertelt Socrates een verhaal over de Egyptische god Theuth. Theuth heeft het getal uitgevonden, de rekenkunst, de sterrenkunde en het schrift. Hij laat zijn uitvindingen zien aan koning Thamus en hoopt dat die ze onder het volk zal verspreiden. Over het schrift is hij het meest enthousiast: dit middel, zegt de god, maakt de Egyptenaren wijzer en geeft ze een beter geheugen.</p>
 <p>De koning is niet overtuigd. Wie schrift gebruikt, zegt hij, houdt op met oefenen van zijn geheugen. Hij vertrouwt op tekens van buiten in plaats van op wat hij zelf weet. Leerlingen krijgen veel informatie zonder echt onderwezen te zijn, en ze lijken alwetend terwijl ze meestal niets weten. Ze worden, zegt Thamus, schijnwijs in plaats van wijs.</p>
 <p>Het is een aardige ironie dat we dit verhaal alleen kennen omdat Plato het heeft opgeschreven. Zowel de god als de koning hadden iets gezien. Het schrift heeft geheugens niet vernietigd, maar het heeft wel veranderd wat het betekent om iets te weten. Wat is een goede leerling: iemand die alles onthoudt, of iemand die weet waar hij het kan terugvinden?</p>
@@ -276,6 +302,13 @@
 
 <h2>Wat dit betekent voor BETT</h2>
 <p>Op een beursvloer is elke tool in zijn beste licht gezet, in de handen van iemand die hem goed kent. Dat is wat een demo is. Het zegt niets over een klas van dertig leerlingen op een dinsdagmiddag in februari. De beste vraag voor de reis is dus ook de eenvoudigste: wat doet een leerling hiermee, en wat doet de docent?</p>
+
+<h2>In de klas: één tool, twee klassen</h2>
+<p>Kies een tool die je zelf gebruikt. Schrijf op wat hij in jouw klas oplevert. Schrijf dan op wat hij zou opleveren in de klas van een collega met andere leerlingen, een ander lokaal en een ander tempo. Waar zit het verschil? Vaak niet in de tool, maar in wat de docent eromheen doet: de opdracht, de instructie, de nabespreking. Zo wordt de eerste wet van Kranzberg een vraag over je eigen les.</p>
+<p>Met leerlingen kun je de vraag van koning Thamus ook zelf stellen. Mag je bij een toets hulpmiddelen gebruiken, en welke? Wat moet je zelf weten, en wat mag je opzoeken? Laat ze in tweetallen een standpunt kiezen en verdedigen. Je hoort snel wat ze eigenlijk van leren vinden.</p>
+<h2>Op de BETT: wie bepaalt hier de les?</h2>
+<p>Stel bij elke demo twee vragen. In welke klas is dit gebruikt, en met welke docent? En: wie bepaalt in deze les wat de leerling doet, de tool of de docent? Een demo laat de tool zien in zijn beste licht. De antwoorden laten zien of hij ook een gewone dinsdag in een gewone klas overleeft.</p>
+<p>Noteer per stand één zin. Dan heb je op vrijdagavond een lijstje om met je team door te nemen.</p>
 </article><p class="mg-credits">Foto: <a href="https://commons.wikimedia.org/wiki/File:Papyrus_of_Plato_Phaedrus.jpg" target="_blank" rel="noopener">Anonymous ancient scribe</a> · Public domain<br>Foto: <a href="https://commons.wikimedia.org/wiki/File:Melvin_Kranzberg.jpg" target="_blank" rel="noopener">K (Wikimedia Commons)</a> · CC BY-SA 4.0</p><div class="mg-next"><a href="./elke-golf-een-belofte.html"><div class="tx"><p class="mg-k">Lees verder · verhaal 2</p><h3>Elke golf had een belofte</h3></div><div class="im"><img src="img/edison.jpg" alt="" loading="lazy" style="object-position:50% 20%"></div></a></div><a class="mg-back" href="./index.html">← Wat is technologie eigenlijk?: alle verhalen</a></main><footer class="sitefoot"><div class="wrap"><p>Wat doe je ermee? · magazine bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=[].slice.call(document.querySelectorAll('.mg-body > figure, .mg-body > blockquote, .mg-frag, .mg-tile, .mg-next a'));
