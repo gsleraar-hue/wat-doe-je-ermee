@@ -210,6 +210,11 @@
   .sitenav { border-bottom-color: #DA4749; }
   .sitenav .brand span { font: 900 20px/1 Roboto, sans-serif; letter-spacing: -.01em; }
   .mg-k, .mg-in a { letter-spacing: .08em; }
+  /* Roboto Black is veel breder dan Oswald: koppen kleiner en breekbaar, zodat ze niet uit beeld lopen */
+  body.magazine .mg-cover-hero h1 { font-size: clamp(40px, 8vw, 120px) !important; line-height: .96 !important; overflow-wrap: anywhere; hyphens: auto; }
+  body.magazine .mg-hero h1, body.magazine .hz-open h1 { font-size: clamp(32px, 4.4vw, 66px) !important; line-height: 1 !important; overflow-wrap: anywhere; hyphens: auto; }
+  body.magazine .tl-open h1 { font-size: clamp(44px, 5.5vw, 84px) !important; line-height: 1 !important; }
+  body.magazine .mg-cover-hero .sub { max-width: 36ch; }
   .mg-bron { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; font: 400 15px/1.5 var(--serif); }
   .mg-bron li { break-inside: avoid; margin: 0 0 10px; }
   .mg-bron a { color: inherit; }
