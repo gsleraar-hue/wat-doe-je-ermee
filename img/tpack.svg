@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 960 590" role="img" aria-label="TPACK-model: drie soorten kennis die samen de goede inzet van technologie vormen" font-family="Roboto, Helvetica, Arial, sans-serif">
-  <rect x="0" y="60" width="960" height="590" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 60 960 690" role="img" aria-label="TPACK-model: drie soorten kennis die samen de goede inzet van technologie vormen" font-family="Roboto, Helvetica, Arial, sans-serif">
+  <rect x="0" y="60" width="960" height="690" fill="#ffffff"/>
   <defs><style>.c{mix-blend-mode:multiply}</style></defs>
   <!-- drie cirkels -->
   <circle class="c" cx="480" cy="215" r="170" fill="#DA4749" fill-opacity=".55"/>
   <circle class="c" cx="375" cy="395" r="170" fill="#011745" fill-opacity=".45"/>
   <circle class="c" cx="585" cy="395" r="170" fill="#F2B73D" fill-opacity=".7"/>
-  <!-- de drie soorten kennis -->
+  <!-- de drie soorten kennis, binnen hun eigen cirkel -->
   <g font-weight="900" fill="#0B0B0B" text-anchor="middle">
     <text x="480" y="130" font-size="26">Technologie</text>
     <text x="480" y="152" font-size="14" font-weight="500">TK: wat kan de tool?</text>
@@ -23,11 +23,20 @@
     <text x="480" y="470" font-size="15">PCK</text>
     <text x="480" y="352" font-size="22" font-weight="900">TPACK</text>
   </g>
-  <!-- uitleg per overlap -->
-  <g font-size="14" fill="#55524C">
-    <text x="30" y="200" font-weight="700" fill="#0B0B0B">TPK</text><text x="30" y="220">Wat doet de tool met de manier</text><text x="30" y="238">waarop je lesgeeft?</text>
-    <text x="740" y="200" font-weight="700" fill="#0B0B0B">TCK</text><text x="740" y="220">Wat doet de tool met</text><text x="740" y="238">het vak zelf?</text>
-    <text x="30" y="560" font-weight="700" fill="#0B0B0B">PCK</text><text x="30" y="580">Hoe leer je dit vak goed?</text><text x="30" y="598">Dat weet een docent al.</text>
+  <text x="480" y="608" text-anchor="middle" font-size="18" font-weight="900" fill="#0B0B0B">TPACK: de goede tool, in de goede didactiek, voor dit vak</text>
+  <!-- legenda: drie kaartjes -->
+  <g>
+    <rect x="30" y="634" width="290" height="96" fill="#F6F4F3"/><rect x="30" y="634" width="6" height="96" fill="#DA4749"/>
+    <text x="52" y="662" font-size="15" font-weight="900" fill="#0B0B0B">TPK</text>
+    <text x="52" y="685" font-size="14" fill="#55524C">Wat doet de tool met de manier</text>
+    <text x="52" y="705" font-size="14" fill="#55524C">waarop je lesgeeft?</text>
+    <rect x="335" y="634" width="290" height="96" fill="#F6F4F3"/><rect x="335" y="634" width="6" height="96" fill="#DA4749"/>
+    <text x="357" y="662" font-size="15" font-weight="900" fill="#0B0B0B">TCK</text>
+    <text x="357" y="685" font-size="14" fill="#55524C">Wat doet de tool met</text>
+    <text x="357" y="705" font-size="14" fill="#55524C">het vak zelf?</text>
+    <rect x="640" y="634" width="290" height="96" fill="#F6F4F3"/><rect x="640" y="634" width="6" height="96" fill="#DA4749"/>
+    <text x="662" y="662" font-size="15" font-weight="900" fill="#0B0B0B">PCK</text>
+    <text x="662" y="685" font-size="14" fill="#55524C">Hoe leer je dit vak goed?</text>
+    <text x="662" y="705" font-size="14" fill="#55524C">Dat weet een docent al.</text>
   </g>
-  <text x="480" y="632" text-anchor="middle" font-size="16" font-weight="700" fill="#0B0B0B">TPACK: de goede tool, in de goede didactiek, voor dit vak</text>
 </svg>

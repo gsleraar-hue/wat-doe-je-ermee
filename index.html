@@ -219,6 +219,9 @@
   body.magazine p.vraag { clear: both; display: grid !important; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: start; background: #fff; border-left: 6px solid var(--mg); padding: 14px 18px; margin: 0 0 12px !important; font-size: clamp(16px, 1.25vw, 19px) !important; line-height: 1.5 !important; }
   body.magazine p.vraag::first-letter { all: unset !important; }
   body.magazine p.vraag > strong { font: 900 34px/1 Roboto, sans-serif; color: var(--mg); letter-spacing: -.02em; }
+  /* twee kolommen: gelijk beginnen */
+  body.magazine .hz-twee { align-items: start !important; align-content: center; }
+  body.magazine .hz-twee .hz-tx { justify-content: flex-start !important; height: auto !important; }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
   .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
