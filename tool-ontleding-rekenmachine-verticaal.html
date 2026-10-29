@@ -215,6 +215,16 @@
   body.magazine .mg-hero h1, body.magazine .hz-open h1 { font-size: clamp(32px, 4.4vw, 66px) !important; line-height: 1 !important; overflow-wrap: anywhere; hyphens: auto; }
   body.magazine .tl-open h1 { font-size: clamp(44px, 5.5vw, 84px) !important; line-height: 1 !important; }
   body.magazine .mg-cover-hero .sub { max-width: 36ch; }
+  /* genummerde vragen als kaartjes */
+  body.magazine p.vraag { clear: both; display: grid !important; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: start; background: #fff; border-left: 6px solid var(--mg); padding: 14px 18px; margin: 0 0 12px !important; font-size: clamp(16px, 1.25vw, 19px) !important; line-height: 1.5 !important; }
+  body.magazine p.vraag::first-letter { all: unset !important; }
+  body.magazine p.vraag > strong { font: 900 34px/1 Roboto, sans-serif; color: var(--mg); letter-spacing: -.02em; }
+  /* opsommingen als kaartjes */
+  .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
+  .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .kaarten > div b { display: block; font: 900 13px/1 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #FF007E; margin-bottom: 8px; }
+  /* schema's (svg) nooit bijsnijden */
+  body.magazine img[src$=".svg"] { object-fit: contain !important; background: #fff; max-height: none !important; }
   /* reis naar Bett: huisstijl van bett.dieter.nl (marineblauw en roze) */
   .sitenav .cta { margin-left: auto; background: #FF007E; color: #fff; text-decoration: none; font: 700 13px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 11px 16px; }
   .sitenav .cta:hover { background: #d6006a; }
@@ -296,22 +306,25 @@
 
 <h2>De ontleding</h2>
 <p>Zo ziet de rekenmachine eruit als je hem naast de vragen legt waar het eerste verhaal mee eindigde: wat doet een leerling hiermee, en wat doet de docent.</p>
-<p><strong>1.</strong> <strong>Wat neemt de tool over?</strong> Het uitrekenen van een som. Het kiezen van de som, het inschatten of het antwoord klopt en het uitleggen van de stap blijven bij de leerling.</p>
-<p><strong>2.</strong> <strong>Wat vraagt hij van de leerling?</strong> Dat die weet welke bewerking nodig is, de getallen goed invoert en kan beoordelen of 4,7 een redelijk antwoord is. Wie dat niet kan, krijgt met een rekenmachine sneller een fout antwoord dan zonder.</p>
-<p><strong>3.</strong> <strong>Wat vraagt hij van de docent?</strong> Opgaven bedenken waarbij het rekenen niet het doel is, en bepalen wanneer de machine uit moet. Dat is geen technische vraag maar een didactische.</p>
-<p><strong>4.</strong> <strong>Wat verdwijnt?</strong> Oefening in handmatig rekenen, en daarmee mogelijk een stuk getalgevoel. Dat is wat de vierde klas in het onderzoek liet zien.</p>
-<p><strong>5.</strong> <strong>Wat komt er bij?</strong> Ruimte voor ingewikkeldere problemen, voor schatten en controleren, en voor leerlingen die op rekenen vastliepen maar de redenering wel snappen.</p>
+<p class="vraag"><strong>1</strong><span><strong>Wat neemt de tool over?</strong> Het uitrekenen van een som. Het kiezen van de som, het inschatten of het antwoord klopt en het uitleggen van de stap blijven bij de leerling.</span></p>
+<p class="vraag"><strong>2</strong><span><strong>Wat vraagt hij van de leerling?</strong> Dat die weet welke bewerking nodig is, de getallen goed invoert en kan beoordelen of 4,7 een redelijk antwoord is. Wie dat niet kan, krijgt met een rekenmachine sneller een fout antwoord dan zonder.</span></p>
+<p class="vraag"><strong>3</strong><span><strong>Wat vraagt hij van de docent?</strong> Opgaven bedenken waarbij het rekenen niet het doel is, en bepalen wanneer de machine uit moet. Dat is geen technische vraag maar een didactische.</span></p>
+<p class="vraag"><strong>4</strong><span><strong>Wat verdwijnt?</strong> Oefening in handmatig rekenen, en daarmee mogelijk een stuk getalgevoel. Dat is wat de vierde klas in het onderzoek liet zien.</span></p>
+<p class="vraag"><strong>5</strong><span><strong>Wat komt er bij?</strong> Ruimte voor ingewikkeldere problemen, voor schatten en controleren, en voor leerlingen die op rekenen vastliepen maar de redenering wel snappen.</span></p>
 
 <h2>Wat dit leert over elke tool</h2>
 <p>Twee modellen proberen dit soort ontledingen te ordenen. SAMR van Ruben Puentedura beschrijft vier niveaus: vervangen, verbeteren, aanpassen en herdefiniëren. Het model is populair, maar het wordt ook bekritiseerd. Hamilton en collega's schreven in 2016 in TechTrends dat het hiërarchisch is, weinig oog heeft voor de context, en meer aandacht geeft aan het product dan aan het leerproces. Het is een gesprekshulp, geen meetinstrument.</p>
+<figure class="mg-img breed"><div class="im"><img src="img/samr.svg" alt="Het SAMR-model: vier niveaus van technologiegebruik. De voorbeelden bij de rekenmachine zijn van de redactie." loading="lazy"><small>Tekening: redactie, naar het model van Ruben Puentedura</small></div><figcaption>Het SAMR-model: vier niveaus van technologiegebruik. De voorbeelden bij de rekenmachine zijn van de redactie.</figcaption></figure>
 <p>TPACK, van Mishra en Koehler uit 2006, vraagt iets anders: dat een docent technologische, didactische en vakinhoudelijke kennis tegelijk gebruikt. Het is minder een schaal dan een herinnering dat de tool het kleinste deel van de vraag is.</p>
+<figure class="mg-img breed"><div class="im"><img src="img/tpack.svg" alt="Het TPACK-model: de tool is pas goed ingezet als technologie, didactiek en vakinhoud samenkomen." loading="lazy"><small>Tekening: redactie, naar het model van Mishra en Koehler (2006)</small></div><figcaption>Het TPACK-model: de tool is pas goed ingezet als technologie, didactiek en vakinhoud samenkomen.</figcaption></figure>
 
 <h2>Vijf vragen voor elke stand</h2>
-<p><strong>1.</strong> Welk leerdoel dient dit, en past het in mijn les?</p>
-<p><strong>2.</strong> Wat doet de leerling hier zelf mee: nadenken of klikken?</p>
-<p><strong>3.</strong> Wat oefent de leerling niet meer, en is dat erg?</p>
-<p><strong>4.</strong> Welk bewijs is er, van wie, en voor welke leerlingen?</p>
-<p><strong>5.</strong> Wat kost het, ook aan tijd, aan data en aan afhankelijkheid van één leverancier?</p>
+<p>Neem deze vijf vragen mee naar elke stand, ook als de demo nog zo mooi is.</p>
+<p class="vraag"><strong>1</strong><span>Welk leerdoel dient dit, en past het in mijn les?</span></p>
+<p class="vraag"><strong>2</strong><span>Wat doet de leerling hier zelf mee: nadenken of klikken?</span></p>
+<p class="vraag"><strong>3</strong><span>Wat oefent de leerling niet meer, en is dat erg?</span></p>
+<p class="vraag"><strong>4</strong><span>Welk bewijs is er, van wie, en voor welke leerlingen?</span></p>
+<p class="vraag"><strong>5</strong><span>Wat kost het, ook aan tijd, aan data en aan afhankelijkheid van één leverancier?</span></p>
 <p>Het is een korte lijst, maar ze werkt voor een rekenmachine uit 1972 en voor een AI-assistent van volgend jaar. Zie haar als het begin van een eenvoudig afwegingskader dat je met je team kunt gebruiken: wat versterkt ons onderwijs, en wat laten we bewust liggen? De volgende nummers breiden haar steeds verder uit.</p>
 
 <h2>In de klas: eerst schatten, dan rekenen</h2>
@@ -319,7 +332,7 @@
 <p>Maak ook opgaven waarbij het kiezen van de bewerking het doel is en de machine alleen de uitkomst levert. En plan bewust momenten zonder rekenmachine. Dan bepaalt de docent wanneer de tool aan en uit gaat, en niet het apparaat.</p>
 <h2>Op de BETT: ontleed drie tools</h2>
 <p>Pak drie stands en leg bij elk de ontleding hierboven langs. Wat neemt de tool over? Wat vraagt hij van de leerling en van de docent? Wat verdwijnt er, en wat komt erbij? Maak van elk een kaartje met vijf regels. Dan kom je terug met drie kaartjes, en met de eerste bouwstenen van een afwegingskader voor je eigen team.</p>
-</article><p class="mg-credits">Foto: <a href="https://commons.wikimedia.org/wiki/File:HP_35_Calculator.jpg" target="_blank" rel="noopener">Seth Morabito</a> · CC BY 2.0</p><div class="mg-next"><a href="./tijdlijn.html"><div class="tx"><p class="mg-k">Lees verder · Tijdlijn</p><h3>Tijdlijn 1913–2026</h3></div><div class="im"><img src="img/skinner.jpg" alt="" loading="lazy" style="object-position:50% 50%"></div></a></div><a class="mg-back" href="./index.html">← Wat is technologie eigenlijk?: alle verhalen</a></main><footer class="sitefoot"><div class="wrap"><p>Wat doe je ermee? · magazine bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){
+</article><p class="mg-credits">Foto: <a href="https://commons.wikimedia.org/wiki/File:HP_35_Calculator.jpg" target="_blank" rel="noopener">Seth Morabito</a> · CC BY 2.0<br>Tekening: redactie, naar het model van Ruben Puentedura<br>Tekening: redactie, naar het model van Mishra en Koehler (2006)</p><div class="mg-next"><a href="./tijdlijn.html"><div class="tx"><p class="mg-k">Lees verder · Tijdlijn</p><h3>Tijdlijn 1913–2026</h3></div><div class="im"><img src="img/skinner.jpg" alt="" loading="lazy" style="object-position:50% 50%"></div></a></div><a class="mg-back" href="./index.html">← Wat is technologie eigenlijk?: alle verhalen</a></main><footer class="sitefoot"><div class="wrap"><p>Wat doe je ermee? · magazine bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=[].slice.call(document.querySelectorAll('.mg-body > figure, .mg-body > blockquote, .mg-frag, .mg-tile, .mg-next a'));
 if('IntersectionObserver' in window&&!rust){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(el){el.classList.add('rv');io.observe(el);});}

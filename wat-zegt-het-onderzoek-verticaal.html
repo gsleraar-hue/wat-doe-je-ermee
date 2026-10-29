@@ -215,6 +215,16 @@
   body.magazine .mg-hero h1, body.magazine .hz-open h1 { font-size: clamp(32px, 4.4vw, 66px) !important; line-height: 1 !important; overflow-wrap: anywhere; hyphens: auto; }
   body.magazine .tl-open h1 { font-size: clamp(44px, 5.5vw, 84px) !important; line-height: 1 !important; }
   body.magazine .mg-cover-hero .sub { max-width: 36ch; }
+  /* genummerde vragen als kaartjes */
+  body.magazine p.vraag { clear: both; display: grid !important; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: start; background: #fff; border-left: 6px solid var(--mg); padding: 14px 18px; margin: 0 0 12px !important; font-size: clamp(16px, 1.25vw, 19px) !important; line-height: 1.5 !important; }
+  body.magazine p.vraag::first-letter { all: unset !important; }
+  body.magazine p.vraag > strong { font: 900 34px/1 Roboto, sans-serif; color: var(--mg); letter-spacing: -.02em; }
+  /* opsommingen als kaartjes */
+  .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
+  .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .kaarten > div b { display: block; font: 900 13px/1 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #FF007E; margin-bottom: 8px; }
+  /* schema's (svg) nooit bijsnijden */
+  body.magazine img[src$=".svg"] { object-fit: contain !important; background: #fff; max-height: none !important; }
   /* reis naar Bett: huisstijl van bett.dieter.nl (marineblauw en roze) */
   .sitenav .cta { margin-left: auto; background: #FF007E; color: #fff; text-decoration: none; font: 700 13px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 11px 16px; }
   .sitenav .cta:hover { background: #d6006a; }
@@ -297,11 +307,11 @@
 
 <h2>Hoe lees je een onderzoek op een beurs?</h2>
 <p>Op BETT hoor je ook cijfers. Bijna elke stand heeft er een. Een paar vragen helpen om ze te wegen.</p>
-<p><strong>1.</strong> Wie heeft het onderzoek betaald, en wie heeft het uitgevoerd? Een leverancier die zijn eigen product laat testen is niet automatisch onbetrouwbaar, maar je leest het anders.</p>
-<p><strong>2.</strong> Is er een vergelijkingsgroep? Zonder die kun je niet zien wat er door de tool kwam en wat er sowieso zou zijn gebeurd.</p>
-<p><strong>3.</strong> Wat is er precies gemeten: tevredenheid van docenten, gebruik van de tool, of wat leerlingen daarna zelf kunnen?</p>
-<p><strong>4.</strong> Gaat het om een samenhang of om een effect? Dat verschil zat ook in het OECD-rapport.</p>
-<p><strong>5.</strong> Voor wie gold het? Een uitkomst bij leerlingen van een bepaald niveau en leeftijd geldt niet vanzelf voor jouw klas.</p>
+<p class="vraag"><strong>1</strong><span>Wie heeft het onderzoek betaald, en wie heeft het uitgevoerd? Een leverancier die zijn eigen product laat testen is niet automatisch onbetrouwbaar, maar je leest het anders.</span></p>
+<p class="vraag"><strong>2</strong><span>Is er een vergelijkingsgroep? Zonder die kun je niet zien wat er door de tool kwam en wat er sowieso zou zijn gebeurd.</span></p>
+<p class="vraag"><strong>3</strong><span>Wat is er precies gemeten: tevredenheid van docenten, gebruik van de tool, of wat leerlingen daarna zelf kunnen?</span></p>
+<p class="vraag"><strong>4</strong><span>Gaat het om een samenhang of om een effect? Dat verschil zat ook in het OECD-rapport.</span></p>
+<p class="vraag"><strong>5</strong><span>Voor wie gold het? Een uitkomst bij leerlingen van een bepaald niveau en leeftijd geldt niet vanzelf voor jouw klas.</span></p>
 <p>Rond BETT 2026 kwam bijvoorbeeld een cijfer langs dat zes op de tien docenten zeggen geen AI-training te hebben gehad. Dat onderzoek werd aangehaald door een leverancier. Het kan best kloppen en het past bij een bredere zorg over scholing. Maar een leverancier heeft er ook belang bij dat docenten zich onvoorbereid voelen. Vraag dus door: wie is er gevraagd, en hoe is dat gemeten?</p>
 
 <h2>In de klas: laat leerlingen onderzoeken</h2>
