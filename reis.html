@@ -257,6 +257,16 @@
   body.magazine p.klasstap { display: block !important; background: rgba(255,255,255,.6); border-left: 4px solid #0B0B0B; padding: 9px 14px 10px; margin: 0 0 8px !important; font: 400 15px/1.45 Roboto, sans-serif !important; color: #0B0B0B; }
   body.magazine p.klasstap::first-letter { all: unset !important; }
   body.magazine p.klasstap b { display: block; font: 900 12px/1.2 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #8A5A00; margin-bottom: 3px; }
+  /* de ontleding: vijf kaarten naast elkaar op één scherm */
+  body.magazine section.hz-p[data-kop="De ontleding"] { background: var(--paper); }
+  body.magazine section.hz-p[data-kop="De ontleding"] .hz-tx { display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; columns: auto !important; max-width: 1400px !important; width: 100%; margin: 0 auto; align-content: center; height: 100% !important; }
+  body.magazine section.hz-p[data-kop="De ontleding"] .hz-tx > h2, body.magazine section.hz-p[data-kop="De ontleding"] .hz-tx > p:not(.ontleding) { grid-column: 1 / -1; max-width: 70ch; }
+  body.magazine p.ontleding { display: flex !important; flex-direction: column; gap: 8px; background: #fff; border-top: 6px solid var(--mg); padding: 16px 16px 18px; margin: 0 !important; font: 400 15px/1.5 Roboto, sans-serif !important; }
+  body.magazine p.ontleding::first-letter { all: unset !important; }
+  body.magazine p.ontleding i { font: 900 34px/1 Roboto, sans-serif; color: var(--mg); font-style: normal; letter-spacing: -.02em; }
+  body.magazine p.ontleding b { font: 900 16px/1.2 Roboto, sans-serif; }
+  @media (max-width: 1100px) { body.magazine section.hz-p[data-kop="De ontleding"] .hz-tx { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { body.magazine section.hz-p[data-kop="De ontleding"] .hz-tx { grid-template-columns: 1fr; height: auto !important; } }
   /* Bett-kaartje (printbaar) */
   .kaartje { max-width: 1100px; margin: 0 auto; padding: 36px 20px 60px; }
   .kaartje-kop h1 { font: 900 clamp(34px, 4.4vw, 60px)/1 Roboto, sans-serif; margin: 6px 0 14px; letter-spacing: -.02em; }
