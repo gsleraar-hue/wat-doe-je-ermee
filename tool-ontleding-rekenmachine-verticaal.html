@@ -235,6 +235,19 @@
   @media (max-width: 640px) { body.magazine .mg-vw { grid-template-columns: 1fr; } body.magazine .mg-vw .ft { width: 140px; height: 140px; } }
   /* reispagina: het blauwe blok sluit direct aan op de menubalk, geen witte strook */
   body.magazine .mg-in + .mg-reis { margin-top: 0; }
+  /* blokken: Op de BETT (marineblauw, roze) en In de klas (warm geel) */
+  .blok-k { display: inline-block; align-self: flex-start; width: fit-content; font: 900 12px/1 Roboto, sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 8px 12px 7px; margin: 0 0 16px; }
+  .hz-tx.hz-bett, .hz-tx.hz-klas { padding-top: clamp(24px, 3vw, 44px); padding-bottom: clamp(24px, 3vw, 44px); }
+  .hz-bett { background: #011745; color: #fff; }
+  .hz-bett .blok-k { background: #FF007E; color: #fff; }
+  .hz-bett h2, .hz-bett p { color: #fff; }
+  .hz-bett h2::before, .hz-klas h2::before { display: none !important; content: none !important; }
+  .hz-bett p::first-letter, .hz-klas p::first-letter { all: unset !important; }
+  .hz-klas { background: #FFE9A8; color: #0B0B0B; }
+  .hz-klas .blok-k { background: #0B0B0B; color: #fff; }
+  .hz-twee .hz-tx.hz-bett, .hz-twee .hz-tx.hz-klas { padding-left: 32px !important; padding-right: 32px !important; }
+  .hz-twee:has(.hz-bett), .hz-twee:has(.hz-klas) { align-items: stretch !important; }
+  .hz-twee:has(.hz-bett) .hz-tx, .hz-twee:has(.hz-klas) .hz-tx { height: auto !important; }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
   .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
