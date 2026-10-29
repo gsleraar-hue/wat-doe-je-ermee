@@ -276,6 +276,7 @@
   .kaartje-velden > div { background: #fff; border-left: 6px solid #FF007E; padding: 12px 16px 6px; }
   .kaartje-velden b { font: 700 14px/1.3 Roboto, sans-serif; }
   .kaartje-velden i { display: block; height: 30px; border-bottom: 1px solid #bbb; }
+  .kaartje-velden .ingevuld { font: 400 16px/1.7 Roboto, sans-serif; margin: 4px 0 10px; }
   .kaartje-tabel { width: 100%; border-collapse: collapse; background: #fff; font: 400 13px/1.3 Roboto, sans-serif; }
   .kaartje-tabel th { background: #011745; color: #fff; text-align: left; padding: 8px 8px; font-weight: 700; vertical-align: bottom; }
   .kaartje-tabel td { border: 1px solid #ccc; height: 46px; }
@@ -412,6 +413,7 @@ u.hidden=false;
 if(n<5){u.innerHTML='<p>Beantwoord eerst alle vijf de vragen.</p>';return;}
 var o=p.map(function(v,i){return [v,i];}).sort(function(a,b){return b[0]-a[0]||a[1]-b[1];});
 var h=o[0][1],t=o[1][0]>0?o[1][1]:-1,g=o[o.length-1][1];
+try{localStorage.setItem('meesterproef',JSON.stringify({h:M[h].t+' ('+M[h].n+')',t:t>=0?M[t].t+' ('+M[t].n+')':'',g:M[g].t+' ('+M[g].n+')'}));}catch(x){}
 u.innerHTML=(M[h].i?'<img src="'+M[h].i+'" alt="" style="float:right;width:120px;aspect-ratio:4/5;object-fit:cover;margin:0 0 12px 18px">':'')+'<p class="mg-k" style="color:#fff">Jouw meester</p><h3>'+M[h].t+' · '+M[h].n+'</h3><p>'+M[h].m+'</p>'+(t>=0?'<p><b>Daarnaast:</b> '+k(t)+'</p>':'')+'<p><b>Je tegenpool:</b> '+k(g)+'. Bezoek op Bett ook één stand die bij die meester past. Daar leer je het meest.</p><p>Lees hieronder het volledige profiel van je meester, en zet beide op je <a href="./kaartje.html">Bett-kaartje</a>.</p>';
 u.scrollIntoView({behavior:'smooth',block:'nearest'});});})();</script><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
