@@ -314,6 +314,48 @@
   .reis-qrs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
   .reis-qrs .reis-qr { border: 3px solid #011745; }
   @media (max-width: 760px) { .mg-reis .w, .reis-twee, .reis-qrs { grid-template-columns: 1fr; } .sitenav .cta { padding: 9px 11px; font-size: 11px; } }
+  /* oproep bovenaan nummer 1: in de stijl van het magazine (zwart, koraal, duotoon), zonder kunstgeschiedenis */
+  .mg-cover-hero .naar { display: inline-block; margin-top: 22px; background: #fff; color: var(--mg) !important; text-decoration: none; font: 700 14px/1 Roboto, sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 15px 22px; }
+  .mg-oproep { background: #0B0B0B; color: #fff; padding: clamp(32px, 6vw, 80px) 20px; }
+  .mg-oproep .w { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .mg-oproep .ft { position: relative; aspect-ratio: 4 / 5; background: var(--mg); overflow: hidden; margin: 0; }
+  .mg-oproep .ft img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 40%; display: block; filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+  .mg-oproep .ft figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 14px 16px; font: 700 13px/1.35 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; background: linear-gradient(transparent, rgba(0,0,0,.55)); }
+  .mg-oproep .ft small { position: absolute; right: 8px; top: 6px; font: 400 10px/1.2 Roboto, sans-serif; opacity: .8; }
+  .mg-oproep .ft small a { color: inherit; }
+  .mg-oproep .mg-k { color: var(--mg); }
+  .mg-oproep h2 { font: 900 clamp(34px, 4.6vw, 64px)/1 Roboto, sans-serif !important; letter-spacing: -.02em; margin: 8px 0 18px; color: #fff; }
+  .mg-oproep h2 em { font-style: normal; color: var(--mg); }
+  .mg-oproep p { font: 400 clamp(17px, 1.3vw, 20px)/1.55 Roboto, sans-serif; margin: 0 0 16px; max-width: 54ch; }
+  .mg-oproep .drie { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 22px 0 24px; }
+  .mg-oproep .drie > div { border-top: 6px solid var(--mg); background: #1b1b1b; padding: 14px 16px; font: 400 15px/1.45 Roboto, sans-serif; color: #e6e3e0; }
+  .mg-oproep .drie b { display: block; font: 900 17px/1.2 Roboto, sans-serif; color: #fff; margin-bottom: 6px; }
+  .mg-oproep .reis-btn { background: var(--mg); }
+  .mg-oproep .reis-btn:hover { background: #b9383a; }
+  .mg-oproep .reis-btn.licht { background: transparent; }
+  .mg-oproep .reis-btn.licht:hover { background: #fff; color: #0B0B0B !important; }
+  .mg-oproep .klein { font-size: 14px; color: #bdb8b3; margin: 14px 0 0; }
+  .mg-oproep .klein a { color: #fff; }
+  .mg-oproep .drie a { color: #fff; }
+  .mg-oproep .prog { margin: 0 0 22px; }
+  .mg-oproep .prog ol { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; }
+  .mg-oproep .prog li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; font: 400 15px/1.4 Roboto, sans-serif; color: #e6e3e0; padding: 7px 0; border-bottom: 1px solid #2a2a2a; }
+  .mg-oproep .prog li b { color: var(--mg); font: 900 14px/1.4 Roboto, sans-serif; }
+  @media (max-width: 860px) { .mg-oproep .w, .mg-oproep .drie, .mg-oproep .prog ol { grid-template-columns: 1fr; } .mg-oproep .ft { aspect-ratio: 16 / 10; } }
+  /* het boek: preview met bladerbare pagina's */
+  .mg-boek { max-width: 1160px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) 20px; display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .mg-boek .omslag { margin: 0; cursor: zoom-in; } .mg-boek .omslag img { width: 100%; display: block; box-shadow: 0 18px 40px rgba(0,0,0,.28); }
+  .mg-boek h2 { font: 900 clamp(30px, 3.6vw, 48px)/1.04 Roboto, sans-serif !important; margin: 8px 0 16px; }
+  .mg-boek p { font: 400 clamp(17px, 1.25vw, 19px)/1.6 Roboto, sans-serif; margin: 0 0 14px; max-width: 58ch; }
+  .mg-boek .bladen { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin: 20px 0 8px; }
+  .mg-boek .bladen button { all: unset; cursor: zoom-in; display: block; } .mg-boek .bladen img { width: 100%; display: block; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,.1); transition: transform .2s; }
+  .mg-boek .bladen button:hover img, .mg-boek .bladen button:focus-visible img { transform: translateY(-4px); outline: 3px solid var(--mg); }
+  .mg-boek .bladen span { display: block; font: 400 12px/1.3 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
+  .boek-lb { position: fixed; inset: 0; background: rgba(11,11,11,.92); display: none; align-items: center; justify-content: center; z-index: 200; }
+  .boek-lb.open { display: flex; } .boek-lb img { max-height: 92vh; max-width: 92vw; background: #fff; box-shadow: 0 10px 40px #000; }
+  .boek-lb button { position: absolute; background: none; border: 0; color: #fff; font: 900 42px/1 Roboto, sans-serif; cursor: pointer; padding: 16px; }
+  .boek-lb .x { top: 8px; right: 12px; } .boek-lb .v { left: 8px; top: 50%; transform: translateY(-50%); } .boek-lb .n { right: 8px; top: 50%; transform: translateY(-50%); }
+  @media (max-width: 860px) { .mg-boek { grid-template-columns: 1fr; } .mg-boek .omslag { max-width: 260px; } .mg-boek .bladen { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .mg-bron { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px; font: 400 15px/1.5 var(--serif); }
   .mg-bron li { break-inside: avoid; margin: 0 0 10px; }
   .mg-bron a { color: inherit; }
