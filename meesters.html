@@ -520,9 +520,12 @@ for(var q=0;q<5;q++){var c=f.querySelector('input[name=q'+q+']:checked');if(c){p
 u.hidden=false;
 if(n<5){u.innerHTML='<p>Beantwoord eerst alle vijf de vragen.</p>';return;}
 var o=p.map(function(v,i){return [v,i];}).sort(function(a,b){return b[0]-a[0]||a[1]-b[1];});
-var h=o[0][1],t=o[1][0]>0?o[1][1]:-1,g=o[o.length-1][1];
-try{localStorage.setItem('meesterproef',JSON.stringify({h:M[h].t+' ('+M[h].n+')',t:t>=0?M[t].t+' ('+M[t].n+')':'',g:M[g].t+' ('+M[g].n+')'}));}catch(x){}
-u.innerHTML=(M[h].i?'<img src="'+M[h].i+'" alt="" style="float:right;width:120px;aspect-ratio:4/5;object-fit:cover;margin:0 0 12px 18px">':'')+'<p class="mg-k" style="color:#fff">Jouw meester</p><h3>'+M[h].t+' · '+M[h].n+'</h3><p>'+M[h].m+'</p>'+(t>=0?'<p><b>Daarnaast:</b> '+k(t)+'</p>':'')+'<p><b>Je tegenpool:</b> '+k(g)+'. Bezoek op Bett ook één stand die bij die meester past. Daar leer je het meest.</p><p>Lees hieronder het volledige profiel van je meester, en zet beide op je <a href="./kaartje.html">Bett-kaartje</a>.</p>';
+var h=o[0][1],t=o[1][0]>0?o[1][1]:-1;
+// tegenpool: de laagste score; staan er meer gelijk onderaan, dan telt eerst de tegenpool uit het boekhoofdstuk van je meester
+var T=[[6],[2],[1,5],[4],[3],[2],[0]],L=o[o.length-1][0],c=o.filter(function(x){return x[0]===L&&x[1]!==h&&x[1]!==t;}).map(function(x){return x[1];});
+var b=T[h].filter(function(i){return c.indexOf(i)>=0;}),G=b.length?[b[0]]:c;
+try{localStorage.setItem('meesterproef',JSON.stringify({h:M[h].t+' ('+M[h].n+')',t:t>=0?M[t].t+' ('+M[t].n+')':'',g:G.map(function(i){return M[i].t+' ('+M[i].n+')';}).join(' of ')}));}catch(x){}
+u.innerHTML=(M[h].i?'<img src="'+M[h].i+'" alt="" style="float:right;width:120px;aspect-ratio:4/5;object-fit:cover;margin:0 0 12px 18px">':'')+'<p class="mg-k" style="color:#fff">Jouw meester</p><h3>'+M[h].t+' · '+M[h].n+'</h3><p>'+M[h].m+'</p>'+(t>=0?'<p><b>Daarnaast:</b> '+k(t)+'</p>':'')+'<p><b>Je tegenpool:</b> '+G.map(k).join(G.length>2?', ':' of ').replace(/, ([^,]*)$/,' of $1')+(G.length>1?'. Die scoorden even laag: kies de meester die je het minst in jezelf herkent':'')+'. Bezoek op Bett ook één stand die bij die meester past. Daar leer je het meest.</p><p>Lees hieronder het volledige profiel van je meester, en zet beide op je <a href="./kaartje.html">Bett-kaartje</a>.</p>';
 u.scrollIntoView({behavior:'smooth',block:'nearest'});});})();</script><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=[].slice.call(document.querySelectorAll('.mg-body > figure, .mg-body > blockquote, .mg-frag, .mg-tile, .mg-next a'));
