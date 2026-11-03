@@ -323,6 +323,17 @@
   body.magazine .mg-cover-hero.kort h1 { font-size: clamp(40px, 6.4vw, 92px) !important; }
   body.magazine .mg-cover-hero.kort .sub { max-width: 56ch; font-style: normal; font-size: clamp(17px, 1.4vw, 21px); }
   .mg-cover-hero button.naar { border: 0; cursor: pointer; }
+  /* programma per dag */
+  .dagen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 10px 0 6px; }
+  .dagen > div { background: #fff; border-top: 6px solid var(--mg); padding: 14px 16px; }
+  .dagen b { display: block; font: 900 19px/1.1 Roboto, sans-serif; }
+  .dagen small { display: block; font: 700 12px/1.3 Roboto, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--mg); margin: 3px 0 8px; }
+  .dagen ul { margin: 0; padding-left: 18px; font: 400 15px/1.5 Roboto, sans-serif; }
+  .dagen-meer { font: italic 400 14px/1.4 Roboto, sans-serif !important; color: #6B675E; margin: 6px 0 16px !important; }
+  .mg-oproep .dagen > div { background: #1b1b1b; color: #e6e3e0; }
+  .mg-oproep .dagen b { color: #fff; }
+  .mg-oproep .dagen-meer { color: #bdb8b3; }
+  @media (max-width: 760px) { .dagen { grid-template-columns: 1fr; } }
   .alleen-print { display: none; } @media print { .alleen-print { display: block; font: 900 28px/1 Roboto, sans-serif; margin: 0 0 8px; } }
   .reis-breed img { aspect-ratio: 21 / 8 !important; }
   /* minder scrollen: bronnen inklapbaar, oproep strakker */
@@ -368,8 +379,8 @@
   .mg-oproep .drie a { color: #fff; }
   .mg-oproep .prog { margin: 0 0 22px; }
   .mg-oproep .prog ol { list-style: none; padding: 0; margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; }
-  .mg-oproep .prog li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; font: 400 15px/1.4 Roboto, sans-serif; color: #e6e3e0; padding: 7px 0; border-bottom: 1px solid #2a2a2a; }
-  .mg-oproep .prog li b { color: var(--mg); font: 900 14px/1.4 Roboto, sans-serif; }
+  .mg-oproep .prog ol li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; font: 400 15px/1.4 Roboto, sans-serif; color: #e6e3e0; padding: 7px 0; border-bottom: 1px solid #2a2a2a; }
+  .mg-oproep .prog ol li b { color: var(--mg); font: 900 14px/1.4 Roboto, sans-serif; }
   @media (max-width: 860px) { .mg-oproep .w, .mg-oproep .drie, .mg-oproep .prog ol { grid-template-columns: 1fr; } .mg-oproep .ft { aspect-ratio: 16 / 10; } }
   /* het boek: preview met bladerbare pagina's */
   .mg-boek { max-width: 1160px; margin: 0 auto; padding: clamp(36px, 6vw, 72px) 20px; display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
@@ -490,7 +501,7 @@
   body.magazine p.mk b { font: 900 14px/1.2 Roboto, sans-serif; color: var(--mg); letter-spacing: .02em; }
   @media (max-width: 1100px) { body.magazine section.hz-p[data-kop="Wat zou jouw meester vragen?"] .hz-tx { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 760px) { body.magazine section.hz-p[data-kop="Wat zou jouw meester vragen?"] .hz-tx { grid-template-columns: 1fr; height: auto !important; } }
-</style></head><body class="magazine" style="--mg:#DA4749"><header class="sitenav"><a class="brand" href="./index.html"><span>De Nieuwe Hollandse Meesters</span></a><nav aria-label="Hoofdmenu"><a href="./index.html">Magazine 1</a><a href="./nummer-2.html">Magazine 2</a><a href="./meesters.html">De meesters</a><a href="./reis.html">De reis</a></nav><a class="cta" href="https://bett.dieter.nl/bett-opgave/" target="_blank" rel="noopener">Meld je aan</a></header><nav class="mg-in" aria-label="In dit magazine"><div class="w"><a class="nr" href="./nummer-2.html">#2 Wat is technologie eigenlijk?</a><a href="./nooit-neutraal.html"><i>1</i>Nooit neutraal</a><a href="./elke-golf-een-belofte.html"><i>2</i>Elke golf had een belofte</a><a href="./wat-zegt-het-onderzoek.html" aria-current="page"><i>3</i>Wat zegt het onderzoek?</a><a href="./tool-ontleding-rekenmachine.html"><i>4</i>De rekenmachine</a><a href="./tijdlijn.html"><i>5</i>Tijdlijn</a><a class="reis" href="./reis.html">Naar BETT</a><a href="./kaartje.html">Bett-kaartje</a></div></nav><header class="mg-hero"><div class="tx"><p class="mg-k">Magazine 2 · Wat is technologie eigenlijk? · verhaal 3 van 4</p><h1>Wat zegt het onderzoek?</h1><p class="lead">Meer computers betekenen niet vanzelf beter onderwijs. Wat de OECD en UNESCO vonden, en hoe je een onderzoek leest dat door een leverancier is betaald.</p></div><div class="ft"><img src="img/schoolmeester.jpg" alt="" style="object-position:50% 40%"><small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Schoolmeester_met_leerlingen_in_een_klaslokaal,_RP-P-OB-41.885.jpg" target="_blank" rel="noopener">Rijksmuseum</a> · CC0</small></div></header><main><article class="mg-body"><h2>Matig is beter dan veel</h2>
+</style></head><body class="magazine" style="--mg:#DA4749"><header class="sitenav"><a class="brand" href="./index.html"><span>De Nieuwe Hollandse Meesters</span></a><nav aria-label="Hoofdmenu"><a href="./magazine-1.html">Magazine 1</a><a href="./nummer-2.html">Magazine 2</a><a href="./meesters.html">De meesters</a><a href="./reis.html">De reis</a></nav><a class="cta" href="https://bett.dieter.nl/bett-opgave/" target="_blank" rel="noopener">Meld je aan</a></header><nav class="mg-in" aria-label="In dit magazine"><div class="w"><a class="nr" href="./nummer-2.html">#2 Wat is technologie eigenlijk?</a><a href="./nooit-neutraal.html"><i>1</i>Nooit neutraal</a><a href="./elke-golf-een-belofte.html"><i>2</i>Elke golf had een belofte</a><a href="./wat-zegt-het-onderzoek.html" aria-current="page"><i>3</i>Wat zegt het onderzoek?</a><a href="./tool-ontleding-rekenmachine.html"><i>4</i>De rekenmachine</a><a href="./tijdlijn.html"><i>5</i>Tijdlijn</a><a class="reis" href="./reis.html">Naar BETT</a><a href="./kaartje.html">Bett-kaartje</a></div></nav><header class="mg-hero"><div class="tx"><p class="mg-k">Magazine 2 · Wat is technologie eigenlijk? · verhaal 3 van 4</p><h1>Wat zegt het onderzoek?</h1><p class="lead">Meer computers betekenen niet vanzelf beter onderwijs. Wat de OECD en UNESCO vonden, en hoe je een onderzoek leest dat door een leverancier is betaald.</p></div><div class="ft"><img src="img/schoolmeester.jpg" alt="" style="object-position:50% 40%"><small>Foto: <a href="https://commons.wikimedia.org/wiki/File:Schoolmeester_met_leerlingen_in_een_klaslokaal,_RP-P-OB-41.885.jpg" target="_blank" rel="noopener">Rijksmuseum</a> · CC0</small></div></header><main><article class="mg-body"><h2>Matig is beter dan veel</h2>
 <p>In 2015 publiceerde de OECD een rapport over computers en leren, gebaseerd op de PISA-metingen. Een van de bevindingen is intrigerend. Leerlingen die matig computers gebruikten, scoorden iets beter dan leerlingen die ze zelden gebruikten. Maar leerlingen die ze heel vaak op school gebruikten, scoorden duidelijk slechter, ook nadat de onderzoekers corrigeerden voor sociale achtergrond.</p>
 <p>Het rapport vond ook dat landen die veel in ict voor onderwijs hadden geïnvesteerd geen merkbare verbetering zagen in de resultaten voor lezen, wiskunde of natuurwetenschappen. De onderzoekers zeiden er zelf bij dat dit een samenhang is en geen bewezen oorzaak. Het betekent niet dat computers leerlingen dommer maken. Het betekent wel dat meer niet vanzelf beter is, en dat de manier van gebruik uitmaakt.</p>
 
