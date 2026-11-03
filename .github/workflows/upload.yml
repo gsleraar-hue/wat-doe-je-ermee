@@ -1,0 +1,53 @@
+# Zet de site bij elke push in de map /meesters/ op de server van bett.dieter.nl.
+# Nodig (Settings > Secrets and variables > Actions):
+#   FTP_SERVER    bv. ftp.dieter.nl
+#   FTP_USER      liefst een account dat alleen in de map /meesters/ mag
+#   FTP_PASSWORD
+#   FTP_PAD       map op de server, eindigt op /, bv. domains/bett.dieter.nl/public_html/meesters/
+# Optioneel (Variables): FTP_PROTOCOL = ftps (standaard) of ftp
+# Zolang FTP_SERVER ontbreekt, slaat de upload zichzelf over.
+name: Upload naar bett.dieter.nl
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Staan de gegevens er?
+        id: check
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        run: |
+          if [ -z "$FTP_SERVER" ]; then
+            echo "Geen FTP_SERVER ingesteld, upload overgeslagen."
+            echo "klaar=nee" >> "$GITHUB_OUTPUT"
+          else
+            echo "klaar=ja" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.klaar == 'ja'
+
+      - name: Uploaden
+        if: steps.check.outputs.klaar == 'ja'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_PAD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            README.md
+            robots.txt
