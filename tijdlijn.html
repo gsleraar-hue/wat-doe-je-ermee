@@ -238,8 +238,8 @@
   /* blokken: Op de BETT (marineblauw, roze) en In de klas (warm geel) */
   .blok-k { display: inline-block; align-self: flex-start; width: fit-content; font: 900 12px/1 Roboto, sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 8px 12px 7px; margin: 0 0 16px; }
   .hz-tx.hz-bett, .hz-tx.hz-klas { padding-top: clamp(24px, 3vw, 44px); padding-bottom: clamp(24px, 3vw, 44px); }
-  .hz-bett { background: #011745; color: #fff; }
-  .hz-bett .blok-k { background: #FF007E; color: #fff; }
+  .hz-bett { background: #0B0B0B; color: #fff; }
+  .hz-bett .blok-k { background: #DA4749; color: #fff; }
   .hz-bett h2, .hz-bett p { color: #fff; }
   .hz-bett h2::before, .hz-klas h2::before { display: none !important; content: none !important; }
   .hz-bett p::first-letter, .hz-klas p::first-letter { all: unset !important; }
@@ -249,9 +249,9 @@
   .hz-twee:has(.hz-bett), .hz-twee:has(.hz-klas) { align-items: stretch !important; }
   .hz-twee:has(.hz-bett) .hz-tx, .hz-twee:has(.hz-klas) .hz-tx { height: auto !important; }
   /* Op de BETT: vier zoekstappen */
-  body.magazine p.zoek { display: block !important; background: rgba(255,255,255,.09); border-left: 4px solid #FF007E; padding: 9px 14px 10px; margin: 0 0 8px !important; font: 400 15px/1.45 Roboto, sans-serif !important; color: #fff; }
+  body.magazine p.zoek { display: block !important; background: rgba(255,255,255,.09); border-left: 4px solid #DA4749; padding: 9px 14px 10px; margin: 0 0 8px !important; font: 400 15px/1.45 Roboto, sans-serif !important; color: #fff; }
   body.magazine p.zoek::first-letter { all: unset !important; }
-  body.magazine p.zoek b { display: block; font: 900 12px/1.2 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #FF7EBB; margin-bottom: 3px; }
+  body.magazine p.zoek b { display: block; font: 900 12px/1.2 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #F0898B; margin-bottom: 3px; }
   body.magazine p.zoek a { color: #fff; text-decoration: underline; }
   /* In de klas: vier onderdelen op geel */
   body.magazine p.klasstap { display: block !important; background: rgba(255,255,255,.6); border-left: 4px solid #0B0B0B; padding: 9px 14px 10px; margin: 0 0 8px !important; font: 400 15px/1.45 Roboto, sans-serif !important; color: #0B0B0B; }
@@ -273,49 +273,52 @@
   .kaartje-kop p { font: 400 18px/1.55 Roboto, sans-serif; max-width: 62ch; }
   .kaartje h2 { font: 900 clamp(20px, 2.2vw, 28px)/1.1 Roboto, sans-serif; margin: 34px 0 12px; letter-spacing: -.01em; }
   .kaartje-velden { display: grid; gap: 14px; }
-  .kaartje-velden > div { background: #fff; border-left: 6px solid #FF007E; padding: 12px 16px 6px; }
+  .kaartje-velden > div { background: #fff; border-left: 6px solid #DA4749; padding: 12px 16px 6px; }
   .kaartje-velden b { font: 700 14px/1.3 Roboto, sans-serif; }
   .kaartje-velden i { display: block; height: 30px; border-bottom: 1px solid #bbb; }
   .kaartje-velden .ingevuld { font: 400 16px/1.7 Roboto, sans-serif; margin: 4px 0 10px; }
   .kaartje-tabel { width: 100%; border-collapse: collapse; background: #fff; font: 400 13px/1.3 Roboto, sans-serif; }
-  .kaartje-tabel th { background: #011745; color: #fff; text-align: left; padding: 8px 8px; font-weight: 700; vertical-align: bottom; }
+  .kaartje-tabel th { background: #0B0B0B; color: #fff; text-align: left; padding: 8px 8px; font-weight: 700; vertical-align: bottom; }
   .kaartje-tabel td { border: 1px solid #ccc; height: 46px; }
   @media print { .sitenav, .mg-in, .sitefoot, .noprint, .reis-btn { display: none !important; } body.magazine { background: #fff; } .kaartje { padding: 0; } .kaartje h2 { margin: 18px 0 8px; break-after: avoid; } .kaartje-tabel td { height: 40px; } @page { size: A4; margin: 12mm; } }
   .reis-breed { margin: 28px 0; max-width: 1000px; } .reis-breed img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 55%; } .reis-breed figcaption { font: 400 13px/1.4 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
   /* opsommingen als kaartjes */
   .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 18px 0 26px; max-width: 1000px; }
-  .kaarten > div { background: #fff; border-left: 6px solid #FF007E; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
-  .kaarten > div b { display: block; font: 900 13px/1 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #FF007E; margin-bottom: 8px; }
+  .kaarten > div { background: #fff; border-left: 6px solid #DA4749; padding: 16px 18px; font: 500 17px/1.45 Roboto, sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .kaarten > div b { display: block; font: 900 13px/1 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #DA4749; margin-bottom: 8px; }
   /* schema's (svg) nooit bijsnijden */
   body.magazine img[src$=".svg"] { object-fit: contain !important; background: #fff; max-height: none !important; }
   /* reis naar Bett: huisstijl van bett.dieter.nl (marineblauw en roze) */
-  .sitenav .cta { margin-left: auto; background: #FF007E; color: #fff; text-decoration: none; font: 700 13px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 11px 16px; }
-  .sitenav .cta:hover { background: #d6006a; }
-  .mg-in a.reis { margin-left: auto; color: #FF7EBB; }
-  .mg-reis { background: #011745; color: #fff; padding: clamp(28px, 5vw, 64px) 20px; margin: 40px 0; }
+  .sitenav .cta { margin-left: auto; background: #DA4749; color: #fff; text-decoration: none; font: 700 13px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 11px 16px; }
+  .sitenav .cta:hover { background: #b9383a; }
+  .mg-in a.reis { margin-left: auto; color: #F0898B; }
+  .mg-reis { background: #0B0B0B; color: #fff; padding: clamp(28px, 5vw, 64px) 20px; margin: 40px 0; }
   .mg-reis .w { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
-  .mg-reis .mg-k { color: #FF7EBB; }
+  .mg-reis .mg-k { color: #F0898B; }
   .mg-reis h2 { font: 900 clamp(30px, 4vw, 52px)/1.02 Roboto, sans-serif; margin: 6px 0 14px; letter-spacing: -.015em; color: #fff; }
   .mg-reis p { font: 400 18px/1.55 Roboto, sans-serif; margin: 0 0 14px; max-width: 52ch; }
-  .reis-btn { display: inline-block; background: #FF007E; color: #fff !important; text-decoration: none; font: 700 14px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 15px 22px; margin: 6px 10px 6px 0; }
+  .reis-btn { display: inline-block; background: #DA4749; color: #fff !important; text-decoration: none; font: 700 14px/1 Roboto, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 15px 22px; margin: 6px 10px 6px 0; }
   .reis-btn.licht { background: transparent; border: 2px solid #fff; padding: 13px 20px; }
-  .reis-qr { background: #fff; color: #011745; padding: 18px; text-align: center; }
+  .reis-qr { background: #fff; color: #0B0B0B; padding: 18px; text-align: center; }
   .reis-qr img { width: 100%; max-width: 240px; display: block; margin: 0 auto 8px; }
   .reis-qr b { font: 700 13px/1.3 Roboto, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
   .reis-qr small { display: block; font: 400 12px/1.4 Roboto, sans-serif; margin-top: 4px; word-break: break-all; }
   .reis-pag { max-width: 1100px; margin: 0 auto; padding: 48px 20px; }
   .reis-pag h2 { font: 900 clamp(26px, 3vw, 38px)/1.1 Roboto, sans-serif; margin: 40px 0 14px; letter-spacing: -.015em; }
-  .reis-pag h2::before { content: ""; display: block; width: 48px; height: 6px; background: #FF007E; margin-bottom: 14px; }
+  .reis-pag h2::before { content: ""; display: block; width: 48px; height: 6px; background: #DA4749; margin-bottom: 14px; }
   .reis-pag p, .reis-pag li { font: 400 19px/1.65 Roboto, sans-serif; max-width: 62ch; }
   .reis-pag ul { padding-left: 22px; }
   .reis-twee { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
   .reis-twee figure { margin: 0; } .reis-twee img { width: 100%; display: block; border: 1px solid #ddd; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 30%; }
   .reis-twee figcaption, .reis-pag .cr { font: 400 13px/1.4 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
   .reis-qrs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
-  .reis-qrs .reis-qr { border: 3px solid #011745; }
+  .reis-qrs .reis-qr { border: 3px solid #0B0B0B; }
   @media (max-width: 760px) { .mg-reis .w, .reis-twee, .reis-qrs { grid-template-columns: 1fr; } .sitenav .cta { padding: 9px 11px; font-size: 11px; } }
   /* oproep bovenaan nummer 1: in de stijl van het magazine (zwart, koraal, duotoon), zonder kunstgeschiedenis */
   .mg-cover-hero .naar { display: inline-block; margin-top: 22px; background: #fff; color: var(--mg) !important; text-decoration: none; font: 700 14px/1 Roboto, sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 15px 22px; }
+  .mg-cover-hero .naar.licht { background: transparent; color: #fff !important; border: 2px solid #fff; padding: 13px 20px; margin-left: 8px; }
+  .mg-cover-hero.reis-hero { min-height: min(78vh, 760px); }
+  body.magazine .mg-cover-hero.reis-hero .sub { max-width: 52ch; font-style: normal; }
   .mg-oproep { background: #0B0B0B; color: #fff; padding: clamp(32px, 6vw, 80px) 20px; }
   .mg-oproep .w { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
   .mg-oproep .ft { position: relative; aspect-ratio: 4 / 5; background: var(--mg); overflow: hidden; margin: 0; }
@@ -400,7 +403,7 @@
   .mg-extra .later { font: 700 12px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6B675E; border: 2px dashed #CFCAC0; padding: 28px 16px; text-align: center; }
   @media (max-width: 760px) { .mg-extra { grid-template-columns: 1fr; } }
   /* de zeven meesters: moderne profielkaarten, schilderijen als gekleurd beeld */
-  .pat { aspect-ratio: 4 / 5; width: 100%; background: conic-gradient(from 45deg at 50% 50%, #011745 0 25%, #FF007E 0 50%, #011745 0 75%, #F6F4F3 0); background-size: 56px 56px; }
+  .pat { aspect-ratio: 4 / 5; width: 100%; background: conic-gradient(from 45deg at 50% 50%, #0B0B0B 0 25%, #DA4749 0 50%, #0B0B0B 0 75%, #F6F4F3 0); background-size: 56px 56px; }
   .mees-rij { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
   .mees-kaart { background: #fff; color: inherit; text-decoration: none; display: flex; flex-direction: column; border-bottom: 5px solid var(--mg); transition: transform .2s; }
   .mees-kaart:hover { transform: translateY(-3px); }
@@ -423,7 +426,7 @@
   .mees-test label { display: block; padding: 9px 12px; border: 1px solid #ddd; margin: 6px 0; cursor: pointer; font: 400 15px/1.4 Roboto, sans-serif; }
   .mees-test label:has(input:checked) { border-color: var(--mg); background: #fbeeee; }
   .mees-test input { margin-right: 8px; }
-  .mees-uitkomst { background: #011745; color: #fff; padding: 22px 24px; margin-top: 20px; }
+  .mees-uitkomst { background: #0B0B0B; color: #fff; padding: 22px 24px; margin-top: 20px; }
   .mees-uitkomst h3 { font: 900 clamp(28px, 3vw, 40px)/1.05 Roboto, sans-serif; margin: 4px 0 6px; }
   .mees-uitkomst a { color: #fff; }
   .mees-prof { display: grid; grid-template-columns: minmax(200px, 320px) 1fr; gap: 28px; padding: 34px 0; border-top: 1px solid #ccc; scroll-margin-top: 90px; }
