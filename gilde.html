@@ -697,7 +697,7 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     var titel = { in: 'Log in bij Het Gilde', nieuw: 'Maak je account aan', vergeten: 'Wachtwoord vergeten', herstel: 'Kies een nieuw wachtwoord' }[modus];
     var uitleg = {
       in: 'Het Gilde is de plek waar deelnemers aan de reis elkaar vóór, tijdens en na Bett spreken. Log in met het e-mailadres waarmee je je hebt aangemeld.',
-      nieuw: 'De eerste keer maak je zelf een wachtwoord aan. Dat kan alleen met het e-mailadres waarmee je je voor de reis hebt aangemeld.',
+      nieuw: 'Het Gilde is alleen voor deelnemers aan de reis. Gebruik het e-mailadres waarmee je je hebt aangemeld en kies zelf een wachtwoord. Je krijgt daarna een mail om je adres te bevestigen. Nog niet aangemeld? <a href="./reis.html">Lees alles over de reis</a>.',
       vergeten: 'Vul je e-mailadres in. Je krijgt een mail met een link om een nieuw wachtwoord te kiezen.',
       herstel: 'Kies een nieuw wachtwoord van minstens 8 tekens.'
     }[modus];
@@ -705,7 +705,7 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
       (modus !== 'herstel' ? '<label>E-mailadres<input type="email" name="email" autocomplete="email" required></label>' : '') +
       (modus === 'in' || modus === 'nieuw' || modus === 'herstel' ? '<label>' + (modus === 'in' ? 'Wachtwoord' : 'Nieuw wachtwoord') + '<input type="password" name="ww" minlength="' + (modus === 'in' ? 1 : 8) + '" autocomplete="' + (modus === 'in' ? 'current-password' : 'new-password') + '" required></label>' : '') +
       '<button>' + { in: 'Log in', nieuw: 'Maak account', vergeten: 'Stuur de link', herstel: 'Bewaar wachtwoord' }[modus] + '</button><p class="gl-melding" role="alert"></p></form><p class="gl-wissel">' +
-      (modus === 'in' ? '<button type="button" data-m="nieuw">Eerste keer hier? Maak je account aan</button><button type="button" data-m="vergeten">Wachtwoord vergeten?</button>' : '<button type="button" data-m="in">Terug naar inloggen</button>') + '</p></div>';
+      (modus === 'in' ? '<button type="button" data-m="nieuw">Aangemeld voor de reis? Maak hier je account</button><button type="button" data-m="vergeten">Wachtwoord vergeten?</button>' : '<button type="button" data-m="in">Terug naar inloggen</button>') + '</p></div>';
     var f = $('form'), m = $('.gl-melding');
     if (bericht) melding(m, bericht, true);
     $$('[data-m]').forEach(function (b) { b.onclick = function () { inlogScherm(b.getAttribute('data-m')); }; });
