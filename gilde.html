@@ -744,6 +744,36 @@
   .gl-inlog-form{padding:24px 20px}
   .gl-schrijf-uit{margin-left:0}
 }
+
+/* bijlagen: fotoraster, pdf-kaarten, gekozen bestanden, bewerken */
+.gl-fotos{display:grid;gap:2px;background:#000}
+.gl-fotos a{display:block;overflow:hidden}
+.gl-fotos img{width:100%;height:100%;object-fit:cover;display:block}
+.gl-fotos.n1 img{height:auto;max-height:560px;object-fit:contain}
+.gl-fotos.n2{grid-template-columns:1fr 1fr}.gl-fotos.n2 a{aspect-ratio:1/1}
+.gl-fotos.n3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;aspect-ratio:3/2}.gl-fotos.n3 a:first-child{grid-row:span 2}
+.gl-fotos.n4{grid-template-columns:1fr 1fr}.gl-fotos.n4 a{aspect-ratio:4/3}
+.gl-pdfs{display:grid;gap:8px;padding:10px 16px 0}
+.gl-pdf{display:flex;align-items:center;gap:12px;border:1px solid var(--gl-lijn);border-radius:8px;padding:10px 12px;text-decoration:none;color:var(--gl-inkt)!important;background:#faf9f7}
+.gl-pdf:hover{border-color:var(--gl-koraal)}
+.gl-pdf .gl-ic{width:30px;height:30px;color:var(--gl-koraal)}
+.gl-pdf b{display:block;font-size:14px;overflow-wrap:anywhere}.gl-pdf small{color:var(--gl-zacht);font-size:12px}
+.gl-gekozen{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.gl-gekozen:empty{display:none}
+.gl-gk{position:relative;width:84px;height:84px;border-radius:8px;overflow:hidden;background:#f2f0ed;border:1px solid var(--gl-lijn)}
+.gl-gk img{width:100%;height:100%;object-fit:cover}
+.gl-gk.pdf{width:auto;max-width:220px;display:flex;align-items:center;gap:6px;padding:0 30px 0 10px}
+.gl-gk.pdf .gl-ic{color:var(--gl-koraal)}
+.gl-gk em{font-style:normal;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gl-gk button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(11,11,11,.75);color:#fff;font-size:15px;line-height:1;cursor:pointer}
+.gl-hint{display:block;color:var(--gl-zacht);font-size:12px;margin-top:6px}
+.gl-bewerk{background:none;border:0;color:#aaa;cursor:pointer;padding:2px 4px}
+.gl-bewerk:hover{color:var(--gl-inkt)}
+.gl-bewerk .gl-ic{width:18px;height:18px}
+.gl-bewerkveld{padding:0 16px 10px;display:grid;gap:8px}
+#gilde .gl-bewerkveld textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--gl-inkt);border-radius:8px;min-height:90px;resize:vertical;width:100%}
+.gl-bewerkveld .gl-rij .gl-link{margin-left:auto}
+.gl-bewerkveld .gl-rij .gl-knop{margin-left:0}
 </style><main id="gilde" aria-live="polite"><p class="gl-laden">Even laden…</p></main><section class="sponsors" aria-label="Mede mogelijk gemaakt door"><p class="mg-k">Mede mogelijk gemaakt door</p><ul><li><img src="img/sponsor-omict.png" alt="OMICT" loading="lazy"></li><li><img src="img/sponsor-dieter.png" alt="Dieter.nl" loading="lazy"></li><li><img src="img/sponsor-digitalefitheid.png" alt="Digitale Fitheid" loading="lazy"></li><li><img src="img/sponsor-drife.png" alt="Drife" loading="lazy"></li><li><img src="img/sponsor-benq.svg" alt="BenQ" loading="lazy"></li><li><img src="img/sponsor-xtorm.svg" alt="Xtorm" loading="lazy"></li><li><img src="img/sponsor-pqr.svg" alt="PQR" loading="lazy"></li><li><img src="img/sponsor-simulise.svg" alt="Simulise" loading="lazy"></li><li><img src="img/sponsor-eduwinkel.svg" alt="Eduwinkel" loading="lazy"></li></ul></section><footer class="sitefoot"><div class="wrap"><p>De Nieuwe Hollandse Meesters · Naar BETT 2027: de leraar voorop · bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){var Z='zacht-naar';function glij(d){var s=scrollY,t=d.getBoundingClientRect().top+scrollY-70,b=performance.now(),n=Math.min(1100,400+Math.abs(t-s)/3);document.documentElement.style.scrollBehavior='auto';(function f(k){var p=Math.min(1,(k-b)/n),q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;scrollTo(0,s+(t-s)*q);if(p<1)requestAnimationFrame(f);else history.replaceState(null,'','#'+d.id);})(b);}function pad(u){return u.pathname.replace(/index\.html$/,'');}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||a.target==='_blank'||e.ctrlKey||e.metaKey||e.shiftKey)return;var u=new URL(a.href,location.href),id=decodeURIComponent(u.hash.slice(1));if(!id||id==='eind'||u.origin!==location.origin)return;if(pad(u)===pad(location)){var d=document.getElementById(id);if(!d)return;e.preventDefault();glij(d);return;}e.preventDefault();try{sessionStorage.setItem(Z,id);}catch(x){location.href=a.href;return;}location.href=u.pathname+u.search;});var id=null;try{id=sessionStorage.getItem(Z);sessionStorage.removeItem(Z);}catch(x){}if(id){var d=document.getElementById(id);if(d){scrollTo(0,0);addEventListener('load',function(){setTimeout(function(){glij(d);},250);});}}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.min.js"></script><script>window.GILDE={"url":"https://umrlulhwbkgjxxmvhbbg.supabase.co","anon":"sb_publishable_XwY4DpxrYGAQch-hs-bz6g_1T-7pwkh","meesters":[{"type":"De Kenner","naam":"Rembrandt"},{"type":"De Precieze","naam":"Vermeer"},{"type":"De Verteller","naam":"Jan Steen"},{"type":"De Eigenwijze","naam":"Judith Leyster"},{"type":"De Volhouder","naam":"Rachel Ruysch"},{"type":"De Onderzoeker","naam":"Maria Sibylla Merian"},{"type":"De Puzzelaar","naam":"M.C. Escher"}],"voorbereiden":"\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Voorbereiden op Bett\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca class=\"mg-tile\" href=\"./magazine-1.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/tulp.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 40%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 1\u003c/b>november 2026\u003c/p>\u003ch3>De leraar voorop\u003c/h3>\u003cp>Een uitnodiging voor de studiereis naar Bett in Londen, 20 tot 22 januari 2027\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./nummer-2.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/abacus.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 2\u003c/b>november 2026\u003c/p>\u003ch3>Wat is technologie eigenlijk?\u003c/h3>\u003cp>Van Plato's papyrus tot de AI-assistent: een kritische bril voor de reis naar BETT\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./meesters.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/rembrandt.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 25%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Meesterspiegel\u003c/b>Zeven profielen\u003c/p>\u003ch3>Welke meester ben jij?\u003c/h3>\u003cp>Doe de meesterspiegel: je hoofdmeester, je tweede meester en je tegenpool.\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./kaartje.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/bett-zaal.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Printbaar\u003c/b>Mijn Bett-kaartje\u003c/p>\u003ch3>Wat zoek je op Bett?\u003c/h3>\u003cp>Leg vóór vertrek vast welke vraag uit je eigen klas je meeneemt naar de beurs.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Bij het boek\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca target=\"_blank\" rel=\"noopener\" class=\"mg-tile\" href=\"./docs/De-meesterproef-voor-vijf-tools.pdf\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/meesterproef-p1.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 85%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Pdf\u003c/b>Bij hoofdstuk 14 · 24 pagina's\u003c/p>\u003ch3>De meesterproef voor vijf tools\u003c/h3>\u003cp>Zo keur je een tool: LessonUp, Kahoot!, Snappet, ChatGPT en Padlet langs het MEESTER-model, als voorbeeld voor je eigen meesterproef.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>","banner":"img/bett-zaal.jpg","dagen":[["Woensdag","20 januari",["Reisdag: met de trein van Rotterdam naar Londen St Pancras (17.28–19.57 uur)"]],["Donderdag","21 januari",["Ontbijt","Keynote","Londen in","Werksessie over authentiek onderwijs en technologie","Diner, daarna musical of pubquiz"]],["Vrijdag","22 januari",["Ontbijt op Bett","Bezoek aan Bett","Terugreis naar Rotterdam (18.04–22.32 uur)"]]],"snel":[["Magazine 1","./magazine-1.html"],["Magazine 2","./nummer-2.html"],["De meesterspiegel","./meesters.html"],["Mijn Bett-kaartje","./kaartje.html"],["De meesterproef voor vijf tools (pdf)","./docs/De-meesterproef-voor-vijf-tools.pdf"],["Alles over de reis","./reis.html"]]};</script><script>// Het Gilde: client voor gilde.html (door maak.ts inline gezet, met window.GILDE = {url, anon, meesters, voorbereiden, banner, dagen, snel}).
 // Opbouw als een sociale tijdlijn: links je profielkaart, midden de berichten, rechts aftelling, programma en nieuwe leden.
 (function () {
@@ -768,8 +798,12 @@
     ik: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
     tandwiel: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M4.9 19.1 7 17m10-10 2.1-2.1"/>',
     duim: '<path d="M7 11v9H4v-9h3Zm0 0 4-7a2 2 0 0 1 2 2v4h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/>',
-    reactie: '<path d="M4 5h16v10H9l-5 4V5Z"/>'
+    reactie: '<path d="M4 5h16v10H9l-5 4V5Z"/>',
+    pen: '<path d="M4 20h4L19 9l-4-4L4 16v4Zm9-13 4 4"/>',
+    pdf: '<path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>',
+    bijlage: '<path d="m20 11-8.5 8.5a5 5 0 0 1-7-7L13 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L14 7"/>'
   };
+  var MAXFOTO = 4, MAXPDF = 2, MAXPDFGROOTTE = 10485760, teksten = {};
   function ic(n) { return '<svg class="gl-ic" viewBox="0 0 24 24" aria-hidden="true">' + I[n] + '</svg>'; }
 
   // ---------- hulpjes ----------
@@ -816,6 +850,14 @@
       img.onerror = function () { nok(new Error('Deze foto kan ik niet lezen. Gebruik een jpg of png.')); };
       img.src = u;
     });
+  }
+  // bijlagen van een bericht: de nieuwe lijst, plus de oude losse foto (berichten van vóór de bijlagen)
+  function bijlagenVan(b) { var l = Array.isArray(b.bijlagen) ? b.bijlagen.slice() : []; if (b.foto && !l.some(function (x) { return x.pad === b.foto; })) l.unshift({ pad: b.foto, soort: 'foto' }); return l; }
+  async function uploadPdf(bestand) {
+    if (bestand.size > MAXPDFGROOTTE) throw new Error('"' + bestand.name + '" is groter dan 10 MB.');
+    var naam = bestand.name.replace(/\.pdf$/i, '').replace(/[^\w\-]+/g, '-').slice(0, 50) || 'bestand', pad = ik.id + '/' + Date.now() + '-' + naam + '.pdf';
+    var r = await sb.storage.from('gilde').upload(pad, bestand, { contentType: 'application/pdf', upsert: false });
+    if (r.error) throw r.error; return { pad: pad, soort: 'pdf', naam: bestand.name.slice(0, 80) };
   }
   async function upload(bestand, max) {
     var b = await verklein(bestand, max), pad = ik.id + '/' + Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.jpg';
@@ -955,10 +997,10 @@
       var rr = await sb.from('berichten').select('*').in('ouder', ids).order('gemaakt'); (rr.data || []).forEach(function (b) { (reacties[b.ouder] = reacties[b.ouder] || []).push(b); });
       var rw = await sb.from('waarderingen').select('bericht,lid').in('bericht', ids); (rw.data || []).forEach(function (w) { (duimen[w.bericht] = duimen[w.bericht] || []).push(w.lid); });
     }
-    await tekenUrls(hoofd.map(function (b) { return b.foto; }));
+    await tekenUrls(hoofd.reduce(function (a, b) { return a.concat(bijlagenVan(b).map(function (x) { return x.pad; })); }, []));
     var magPlaatsen = k !== 'mededelingen' || rol === 'beheer';
     d.innerHTML = (magPlaatsen ? '<form class="gl-blok gl-schrijf"><div class="gl-schrijf-rij">' + avatar(mijnProfiel) + '<textarea name="t" rows="1" maxlength="4000" placeholder="' + { mededelingen: 'Schrijf een mededeling…', prikbord: 'Begin een gesprek…', delen: 'Wat wil je delen?' }[k] + '" required></textarea></div>' +
-        '<div class="gl-schrijf-uit"><img class="gl-voorbeeld" alt="" hidden><div class="gl-rij"><label class="gl-actie">' + ic('foto') + '<span>Foto</span><input type="file" accept="image/*" name="f" hidden></label><span class="gl-melding" role="alert"></span><button class="gl-knop">Plaats</button></div></div></form>'
+        '<div class="gl-schrijf-uit"><div class="gl-gekozen"></div><div class="gl-rij"><label class="gl-actie">' + ic('foto') + '<span>Foto\'s</span><input type="file" accept="image/*" name="f" multiple hidden></label><label class="gl-actie">' + ic('pdf') + '<span>Pdf</span><input type="file" accept="application/pdf,.pdf" name="p" multiple hidden></label><span class="gl-melding" role="alert"></span><button class="gl-knop">Plaats</button></div><small class="gl-hint">Tot ' + MAXFOTO + ' foto\'s en ' + MAXPDF + ' pdf\'s (max. 10 MB) per bericht.</small></div></form>'
       : '<div class="gl-blok gl-uitleg-blok">' + UITLEG[k] + '</div>') +
       (hoofd.length ? hoofd.map(function (b) { return bericht(b, reacties[b.id] || [], duimen[b.id] || []); }).join('') : '<div class="gl-blok gl-leeg-k"><b>' + { mededelingen: 'Nog geen mededelingen', prikbord: 'Het prikbord is nog leeg', delen: 'Nog niets gedeeld' }[k] + '</b><span>' + (magPlaatsen ? UITLEG[k] + ' Begin jij?' : 'Zodra de reisleiding iets plaatst, zie je het hier.') + '</span></div>');
     markeer(k);
@@ -966,25 +1008,55 @@
     if (f) {
       f.t.onfocus = function () { f.classList.add('open'); };
       f.t.oninput = function () { f.t.style.height = 'auto'; f.t.style.height = Math.min(f.t.scrollHeight, 320) + 'px'; };
-      f.f.onchange = function () { var v = $('.gl-voorbeeld', f), b = f.f.files[0]; f.classList.add('open'); if (b) { v.src = URL.createObjectURL(b); v.hidden = false; } else v.hidden = true; };
+      // gekozen bestanden: foto's en pdf's, met voorbeeld en kruisje om er een weg te halen
+      var gekozen = [], mk = $('.gl-melding', f);
+      function lijst() {
+        $('.gl-gekozen', f).innerHTML = gekozen.map(function (b, i) {
+          return '<span class="gl-gk' + (b.type === 'application/pdf' ? ' pdf' : '') + '">' + (b.type === 'application/pdf' ? ic('pdf') + '<em>' + E(b.name) + '</em>' : '<img src="' + E(b.url) + '" alt="">') + '<button type="button" data-gk="' + i + '" aria-label="Haal weg">×</button></span>';
+        }).join('');
+        $$('[data-gk]', f).forEach(function (x) { x.onclick = function () { gekozen.splice(+x.getAttribute('data-gk'), 1); lijst(); }; });
+      }
+      function kies(lijstje) {
+        f.classList.add('open'); melding(mk, '');
+        [].slice.call(lijstje).forEach(function (b) {
+          var pdf = b.type === 'application/pdf' || /\.pdf$/i.test(b.name), n = gekozen.filter(function (x) { return (x.type === 'application/pdf') === pdf; }).length;
+          if (pdf && b.size > MAXPDFGROOTTE) { melding(mk, '"' + b.name + '" is groter dan 10 MB.'); return; }
+          if (n >= (pdf ? MAXPDF : MAXFOTO)) { melding(mk, 'Maximaal ' + (pdf ? MAXPDF + ' pdf\'s' : MAXFOTO + ' foto\'s') + ' per bericht.'); return; }
+          gekozen.push({ file: b, name: b.name, type: pdf ? 'application/pdf' : b.type, size: b.size, url: pdf ? '' : URL.createObjectURL(b) });
+        });
+        lijst();
+      }
+      f.f.onchange = function () { kies(f.f.files); f.f.value = ''; };
+      f.p.onchange = function () { kies(f.p.files); f.p.value = ''; };
       f.onsubmit = async function (ev) {
-        ev.preventDefault(); var m = $('.gl-melding', f), knop = $('.gl-knop', f); knop.disabled = true; melding(m, f.f.files[0] ? 'Foto uploaden…' : '', true);
+        ev.preventDefault(); var knop = $('.gl-knop', f); knop.disabled = true;
         try {
-          var foto = f.f.files[0] ? await upload(f.f.files[0], 1600) : null;
-          var r2 = await sb.from('berichten').insert({ kanaal: k, tekst: f.t.value.trim(), foto: foto }); if (r2.error) throw r2.error;
+          var bijlagen = [];
+          for (var i = 0; i < gekozen.length; i++) {
+            melding(mk, 'Uploaden ' + (i + 1) + ' van ' + gekozen.length + '…', true);
+            bijlagen.push(gekozen[i].type === 'application/pdf' ? await uploadPdf(gekozen[i].file) : { pad: await upload(gekozen[i].file, 1600), soort: 'foto' });
+          }
+          var r2 = await sb.from('berichten').insert({ kanaal: k, tekst: f.t.value.trim(), bijlagen: bijlagen }); if (r2.error) throw r2.error;
           toon();
-        } catch (e) { melding(m, foutTekst(e)); knop.disabled = false; }
+        } catch (e) { melding(mk, foutTekst(e)); knop.disabled = false; }
       };
     }
     koppelBerichten(d, k);
   }
+  function bijlagenHtml(b, p) {
+    var l = bijlagenVan(b), fotos = l.filter(function (x) { return x.soort === 'foto' && fotoUrl[x.pad]; }), pdfs = l.filter(function (x) { return x.soort === 'pdf' && fotoUrl[x.pad]; });
+    return (fotos.length ? '<div class="gl-fotos n' + fotos.length + '">' + fotos.map(function (x, i) { return '<a href="' + E(fotoUrl[x.pad]) + '" target="_blank" rel="noopener"><img src="' + E(fotoUrl[x.pad]) + '" alt="Foto ' + (i + 1) + ' van ' + E(p.naam || 'een deelnemer') + '" loading="lazy"></a>'; }).join('') + '</div>' : '') +
+      (pdfs.length ? '<div class="gl-pdfs">' + pdfs.map(function (x) { return '<a class="gl-pdf" href="' + E(fotoUrl[x.pad]) + '" target="_blank" rel="noopener">' + ic('pdf') + '<span><b>' + E(x.naam || 'Pdf') + '</b><small>Pdf · openen</small></span></a>'; }).join('') + '</div>' : '');
+  }
   function bericht(b, reacties, duimen) {
+    teksten[b.id] = b.tekst;
     var p = profielen[b.auteur] || {}, ms = meesterVan(p.meester), weg = b.auteur === ik.id || rol === 'beheer', mijn = duimen.indexOf(ik.id) >= 0;
     var tel = (duimen.length ? '<span>' + ic('duim') + duimen.length + '</span>' : '<span></span>') + (reacties.length ? '<span>' + reacties.length + ' reactie' + (reacties.length === 1 ? '' : 's') + '</span>' : '');
     return '<article class="gl-blok gl-bericht' + (b.kanaal === 'mededelingen' ? ' med' : '') + '" data-id="' + b.id + '">' +
       '<header>' + avatar(p) + '<div class="gl-wie-r"><b>' + E(p.naam || 'Deelnemer') + '</b><small>' + E(ms ? ms.type : sub(p)) + '</small><small class="gl-tijd">' + (b.kanaal === 'mededelingen' ? '<em>Mededeling</em> · ' : '') + wanneer(b.gemaakt) + (b.bewerkt ? ' · bewerkt' : '') + '</small></div>' +
+      (b.auteur === ik.id ? '<button type="button" class="gl-bewerk" data-bewerk="' + b.id + '" aria-label="Bewerk bericht" title="Bewerk">' + ic('pen') + '</button>' : '') +
       (weg ? '<button type="button" class="gl-weg" data-weg="' + b.id + '" aria-label="Verwijder bericht" title="Verwijder">×</button>' : '') + '</header>' +
-      '<div class="gl-tekst">' + tekst(b.tekst) + '</div>' + (b.foto && fotoUrl[b.foto] ? '<a class="gl-foto" href="' + E(fotoUrl[b.foto]) + '" target="_blank" rel="noopener"><img src="' + E(fotoUrl[b.foto]) + '" alt="Foto van ' + E(p.naam || 'een deelnemer') + '" loading="lazy"></a>' : '') +
+      '<div class="gl-tekst">' + tekst(b.tekst) + '</div>' + bijlagenHtml(b, p) +
       '<div class="gl-tellers">' + tel + '</div>' +
       '<div class="gl-acties"><button type="button" class="gl-actie' + (mijn ? ' aan' : '') + '" data-duim="' + b.id + '" aria-pressed="' + mijn + '">' + ic('duim') + '<span>' + (mijn ? 'Gewaardeerd' : 'Waardeer') + '</span></button><button type="button" class="gl-actie" data-reageer="' + b.id + '">' + ic('reactie') + '<span>Reageer</span></button></div>' +
       '<div class="gl-reacties">' + reacties.map(function (x) {
@@ -1002,6 +1074,21 @@
         toon();
       };
     });
+    $$('[data-bewerk]', d).forEach(function (b) {
+      b.onclick = function () {
+        var id = +b.getAttribute('data-bewerk'), art = b.closest('.gl-bericht'), t = art.querySelector(':scope > .gl-tekst');
+        if (art.querySelector('.gl-bewerkveld')) return;
+        t.outerHTML = '<form class="gl-bewerkveld"><textarea name="t" maxlength="4000" required>' + E(teksten[id] || '') + '</textarea><div class="gl-rij"><span class="gl-melding" role="alert"></span><button type="button" class="gl-link" data-annuleer>Annuleer</button><button class="gl-knop klein">Bewaar</button></div></form>';
+        var f = art.querySelector('.gl-bewerkveld'); f.t.style.height = Math.min(f.t.scrollHeight + 4, 320) + 'px'; f.t.focus();
+        f.querySelector('[data-annuleer]').onclick = function () { toon(); };
+        f.onsubmit = async function (ev) {
+          ev.preventDefault(); var knop = f.querySelector('.gl-knop'); knop.disabled = true;
+          var r = await sb.from('berichten').update({ tekst: f.t.value.trim() }).eq('id', id);
+          if (r.error) { melding(f.querySelector('.gl-melding'), foutTekst(r.error)); knop.disabled = false; return; }
+          toon();
+        };
+      };
+    });
     $$('[data-reageer]', d).forEach(function (b) { b.onclick = function () { b.closest('.gl-bericht').querySelector('.gl-reageer input').focus(); }; });
     $$('[data-duim]', d).forEach(function (b) {
       b.onclick = async function () {
@@ -1014,9 +1101,9 @@
     $$('[data-weg]', d).forEach(function (b) {
       b.onclick = async function () {
         if (!confirm('Weet je zeker dat je dit wilt verwijderen?')) return;
-        var r = await sb.from('berichten').delete().eq('id', +b.getAttribute('data-weg')).select('foto');
+        var r = await sb.from('berichten').delete().eq('id', +b.getAttribute('data-weg')).select('foto,bijlagen');
         if (r.error) { alert(foutTekst(r.error)); return; }
-        (r.data || []).forEach(function (x) { if (x.foto) sb.storage.from('gilde').remove([x.foto]); });
+        (r.data || []).forEach(function (x) { var paden = bijlagenVan(x).map(function (y) { return y.pad; }); if (paden.length) sb.storage.from('gilde').remove(paden); });
         toon();
       };
     });
