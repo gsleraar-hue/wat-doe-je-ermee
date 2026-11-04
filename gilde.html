@@ -546,6 +546,9 @@
   .opg .val { position: absolute; left: -9999px; }
   .opg-melding { background: #fff; border-left: 6px solid #DA4749; padding: 22px 24px; font: 400 18px/1.6 Roboto, sans-serif; } .opg-melding h2 { margin-top: 0; }
   .opg-melding.mis { border-left-color: #b9383a; }
+  .boek-prijzen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; } .boek-prijzen > div { background: #fff; border-top: 6px solid #DA4749; padding: 16px 18px; } .boek-prijzen b { display: block; font: 900 28px/1 Roboto, sans-serif; } .boek-prijzen span { display: block; font: 700 16px/1.3 Roboto, sans-serif; margin: 8px 0 4px; } .boek-prijzen small { font: 400 14px/1.45 Roboto, sans-serif; color: #55524C; }
+  .boek-totaal { font: 700 15px/1.5 Roboto, sans-serif; margin: 0; } .boek-los { background: #0B0B0B; color: #fff; padding: 26px 28px; margin: 34px 0 44px; } .boek-los h2 { margin: 0 0 8px; color: #fff; } .boek-los p { margin: 0 0 16px; max-width: 62ch; } .boek-los.op-school { background: #DA4749; } .boek-los.op-school .reis-btn { background: #0B0B0B; }
+  @media (max-width: 640px) { .boek-prijzen { grid-template-columns: 1fr; } }
   @media (max-width: 640px) { .opg-velden { grid-template-columns: 1fr; } .opg-stappen li { font-size: 11px; } }
 </style></head><body class="magazine" style="--mg:#DA4749"><script>try{if(localStorage.getItem("nhm-sleutel"))document.documentElement.classList.add("deeln")}catch(e){}</script><style>html:not(.deeln) .sitenav a.deeln{display:none}</style><header class="sitenav"><a class="brand" href="./index.html"><span>De Nieuwe Hollandse Meesters</span></a><nav aria-label="Hoofdmenu"><a href="./reis.html">De reis</a><a href="./boek.html">Het boek</a><a class="deeln" href="./meesters.html">De meesters</a><a href="./gilde.html">Het Gilde</a></nav><a class="cta" href="./inschrijven.html">Meld je aan</a></header><header class="mg-cover-hero kort "><img src="img/tulp.jpg" alt="" style="object-position:50% 40%"><div class="top"><span class="mast">De Nieuwe Hollandse Meesters</span><span class="mg-k">Alleen voor deelnemers</span></div><div><p class="mg-k" style="color:#fff;margin:0 0 10px">Naar BETT 2027: de leraar voorop</p><h1>Het Gilde</h1><p class="sub">De plek voor de deelnemers aan de reis: mededelingen, de magazines en de meesterspiegel, een prikbord, foto's delen en zien wie er meegaat. Vóór, tijdens en na Bett.</p></div></header><style>/* Het Gilde: sociale tijdlijn in de stijl van de site (inkt #0B0B0B, koraal #DA4749, Roboto) */
 #gilde{--gl-bg:#f3f1ee;--gl-kaart:#fff;--gl-lijn:#e4e0db;--gl-zacht:#6b6661;--gl-koraal:#DA4749;--gl-koraal-d:#b9383a;--gl-koraal-l:#fbe9e9;--gl-inkt:#0B0B0B;
@@ -1237,7 +1240,9 @@ html.gl-lezer-open{overflow:hidden}
       '<form class="gl-beheer-nieuw"><textarea name="t" rows="4" placeholder="Eén deelnemer per regel: e-mailadres, naam&#10;bijv. piet@school.nl, Piet de Vries" required></textarea><div class="gl-rij"><label><input type="checkbox" name="b"> als beheerder</label><button class="gl-knop">Voeg toe</button></div><p class="gl-melding" role="alert"></p></form>' +
       '<table class="gl-tabel"><thead><tr><th>Naam</th><th>E-mail</th><th>Rol</th><th></th></tr></thead><tbody>' + lijst.map(function (x) {
         return '<tr><td>' + E(x.naam) + '</td><td>' + E(x.email) + '</td><td>' + (x.rol === 'beheer' ? 'beheer' : 'deelnemer') + '</td><td>' + (x.email !== ik.email.toLowerCase() ? '<button type="button" class="gl-weg klein" data-mail="' + E(x.email) + '" title="Haal van de lijst">×</button>' : '') + '</td></tr>';
-      }).join('') + '</tbody></table><p class="gl-uitleg" style="margin-top:14px">Van de lijst halen sluit iemand meteen buiten: hun account blijft bestaan, maar ze zien niets meer.</p></div>';
+      }).join('') + '</tbody></table><p class="gl-uitleg" style="margin-top:14px">Van de lijst halen sluit iemand meteen buiten: hun account blijft bestaan, maar ze zien niets meer.</p></div>' +
+      '<div class="gl-blok" id="gl-boekaanvragen"><h2 class="gl-titel">Boekaanvragen</h2><p class="gl-uitleg">Laden…</p></div>';
+    toonAanvragen($('#gl-boekaanvragen', d));
     var f = $('.gl-beheer-nieuw', d), m = $('.gl-melding', f);
     f.onsubmit = async function (ev) {
       ev.preventDefault();
@@ -1255,6 +1260,18 @@ html.gl-lezer-open{overflow:hidden}
         toonBeheer(d);
       };
     });
+  }
+
+  async function toonAanvragen(b) {
+    var r = await sb.from('boekaanvragen').select('*').order('gemaakt', { ascending: false });
+    if (r.error) { b.innerHTML = '<h2 class="gl-titel">Boekaanvragen</h2><p class="gl-uitleg">' + E(foutTekst(r.error)) + '</p>'; return; }
+    var a = r.data || [], open = a.filter(function (x) { return !x.afgehandeld; }).length;
+    b.innerHTML = '<h2 class="gl-titel">Boekaanvragen</h2><p class="gl-uitleg">Aanvragen via de pagina Boek bestellen: ' + a.length + ' in totaal, ' + open + ' nog open. De aanvrager krijgt automatisch een bevestiging; jullie sturen de prijs en de factuur.</p>' +
+      (a.length ? '<table class="gl-tabel"><thead><tr><th>Datum</th><th>Aanvrager</th><th>Factuuradres</th><th>Boek</th><th>Kaarten</th><th>Opmerking</th><th>Klaar</th><th></th></tr></thead><tbody>' + a.map(function (x) {
+        return '<tr' + (x.afgehandeld ? ' style="opacity:.55"' : '') + '><td>' + new Date(x.gemaakt).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short' }) + '</td><td><b>' + E(x.naam) + '</b><br><a href="mailto:' + E(x.email) + '">' + E(x.email) + '</a>' + (x.school ? '<br>' + E(x.school) : '') + '</td><td>' + E(x.factuuradres || '').replace(/\n/g, '<br>') + '</td><td>' + x.boeken + '</td><td>' + x.kaartensets + '</td><td>' + E(x.opmerking || '') + '</td><td><input type="checkbox" data-af="' + x.id + '"' + (x.afgehandeld ? ' checked' : '') + ' aria-label="Afgehandeld"></td><td><button type="button" class="gl-weg klein" data-aw="' + x.id + '" title="Verwijder aanvraag">×</button></td></tr>';
+      }).join('') + '</tbody></table>' : '');
+    $$('[data-af]', b).forEach(function (c) { c.onchange = async function () { var q = await sb.from('boekaanvragen').update({ afgehandeld: c.checked }).eq('id', c.getAttribute('data-af')); if (q.error) alert(foutTekst(q.error)); toonAanvragen(b); }; });
+    $$('[data-aw]', b).forEach(function (c) { c.onclick = async function () { if (!confirm('Deze aanvraag verwijderen?')) return; var q = await sb.from('boekaanvragen').delete().eq('id', c.getAttribute('data-aw')); if (q.error) alert(foutTekst(q.error)); toonAanvragen(b); }; });
   }
 
   // ---------- starten ----------
