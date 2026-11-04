@@ -308,6 +308,18 @@
   .reis-pag h2::before { content: ""; display: block; width: 48px; height: 6px; background: #DA4749; margin-bottom: 14px; }
   .reis-pag p, .reis-pag li { font: 400 19px/1.65 Roboto, sans-serif; max-width: 62ch; }
   .reis-pag ul { padding-left: 22px; }
+  .mm h3 { font: 900 22px/1.2 Roboto, sans-serif; margin: 34px 0 8px; }
+  .mm-stalen { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; max-width: 760px; margin: 26px 0 30px; }
+  .mm-stalen svg { display: block; width: 100%; height: auto; }
+  .mm-letters { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; max-width: 1000px; }
+  .mm-letters > div { position: relative; background: #fff; padding: 18px 20px 16px 78px; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .mm-l { position: absolute; left: 18px; top: 16px; width: 44px; height: 52px; background: #DA4749; color: #fff; font: 900 30px/52px Roboto, sans-serif; text-align: center; clip-path: polygon(0 0,100% 0,100% 88%,87.5% 100%,75% 88%,62.5% 100%,50% 88%,37.5% 100%,25% 88%,12.5% 100%,0 88%); }
+  .mm-letters b { display: block; font: 900 13px/1 Roboto, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: #DA4749; margin-bottom: 8px; }
+  .reis-pag .mm-letters p { font: 400 16px/1.5 Roboto, sans-serif; margin: 0 0 6px; }
+  .reis-pag .mm-letters p.mm-v { font-weight: 700; font-size: 17px; }
+  .mm-letters > div:last-child { grid-column: 1 / -1; }
+  .mm-uit > div { border-left-color: #0B0B0B; } .mm-uit > div b { color: #0B0B0B; }
+  @media (max-width: 640px) { .mm-stalen { grid-template-columns: repeat(4, 1fr); gap: 8px; } .mm-letters { grid-template-columns: 1fr; } .mm-letters > div { padding-left: 70px; } .mm-l { left: 14px; } }
   .reis-twee { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 24px 0; }
   .reis-twee figure { margin: 0; } .reis-twee img { width: 100%; display: block; border: 1px solid #ddd; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 30%; }
   .reis-twee figcaption, .reis-pag .cr { font: 400 13px/1.4 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
