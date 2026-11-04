@@ -774,6 +774,25 @@
 #gilde .gl-bewerkveld textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--gl-inkt);border-radius:8px;min-height:90px;resize:vertical;width:100%}
 .gl-bewerkveld .gl-rij .gl-link{margin-left:auto}
 .gl-bewerkveld .gl-rij .gl-knop{margin-left:0}
+
+/* pdf-lezer (venster op de pagina, buiten #gilde in body gezet) */
+html.gl-lezer-open{overflow:hidden}
+.gl-lezer{position:fixed;inset:0;z-index:1000;background:rgba(11,11,11,.72);display:flex;align-items:center;justify-content:center;padding:24px;font-family:Roboto,sans-serif}
+.gl-lezer>*{box-sizing:border-box}
+.gl-lezer-kop{position:absolute;top:24px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 48px));display:flex;align-items:center;gap:10px;background:#0B0B0B;color:#fff;border-radius:10px 10px 0 0;padding:10px 12px 10px 16px}
+.gl-lezer-kop b{flex:1;min-width:0;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gl-lezer-kop .gl-ic{color:#F0898B}
+.gl-lezer-knop{color:#fff;text-decoration:none;font-size:13px;font-weight:500;border:1px solid rgba(255,255,255,.35);border-radius:16px;padding:5px 12px;white-space:nowrap}
+.gl-lezer-knop:hover{background:#DA4749;border-color:#DA4749}
+.gl-lezer-dicht{font:inherit;font-size:26px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;padding:0 4px 3px}
+.gl-lezer-dicht:hover{color:#F0898B}
+.gl-lezer-blad{width:min(1100px,100%);height:calc(100% - 48px);margin-top:48px;background:#525659;border-radius:0 0 10px 10px;overflow:hidden}
+.gl-lezer-blad iframe{width:100%;height:100%;border:0;display:block}
+.gl-lezer-blad.pdfjs{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:8px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.gl-lezer-blad canvas{display:block;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.4);max-width:100%}
+.gl-lezer-blad .gl-laden,.gl-lezer-blad .gl-melding{color:#fff;padding:20px;margin:0}
+.gl-lezer-blad .gl-melding a{color:#F0898B}
+@media (max-width:640px){.gl-lezer{padding:0}.gl-lezer-kop{top:0;width:100%;border-radius:0}.gl-lezer-blad{height:calc(100% - 52px);margin-top:52px;border-radius:0}.gl-lezer-kop a[download]{display:none}}
 </style><main id="gilde" aria-live="polite"><p class="gl-laden">Even laden…</p></main><section class="sponsors" aria-label="Mede mogelijk gemaakt door"><p class="mg-k">Mede mogelijk gemaakt door</p><ul><li><img src="img/sponsor-omict.png" alt="OMICT" loading="lazy"></li><li><img src="img/sponsor-dieter.png" alt="Dieter.nl" loading="lazy"></li><li><img src="img/sponsor-digitalefitheid.png" alt="Digitale Fitheid" loading="lazy"></li><li><img src="img/sponsor-drife.png" alt="Drife" loading="lazy"></li><li><img src="img/sponsor-benq.svg" alt="BenQ" loading="lazy"></li><li><img src="img/sponsor-xtorm.svg" alt="Xtorm" loading="lazy"></li><li><img src="img/sponsor-pqr.svg" alt="PQR" loading="lazy"></li><li><img src="img/sponsor-simulise.svg" alt="Simulise" loading="lazy"></li><li><img src="img/sponsor-eduwinkel.svg" alt="Eduwinkel" loading="lazy"></li></ul></section><footer class="sitefoot"><div class="wrap"><p>De Nieuwe Hollandse Meesters · Naar BETT 2027: de leraar voorop · bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){var Z='zacht-naar';function glij(d){var s=scrollY,t=d.getBoundingClientRect().top+scrollY-70,b=performance.now(),n=Math.min(1100,400+Math.abs(t-s)/3);document.documentElement.style.scrollBehavior='auto';(function f(k){var p=Math.min(1,(k-b)/n),q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;scrollTo(0,s+(t-s)*q);if(p<1)requestAnimationFrame(f);else history.replaceState(null,'','#'+d.id);})(b);}function pad(u){return u.pathname.replace(/index\.html$/,'');}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||a.target==='_blank'||e.ctrlKey||e.metaKey||e.shiftKey)return;var u=new URL(a.href,location.href),id=decodeURIComponent(u.hash.slice(1));if(!id||id==='eind'||u.origin!==location.origin)return;if(pad(u)===pad(location)){var d=document.getElementById(id);if(!d)return;e.preventDefault();glij(d);return;}e.preventDefault();try{sessionStorage.setItem(Z,id);}catch(x){location.href=a.href;return;}location.href=u.pathname+u.search;});var id=null;try{id=sessionStorage.getItem(Z);sessionStorage.removeItem(Z);}catch(x){}if(id){var d=document.getElementById(id);if(d){scrollTo(0,0);addEventListener('load',function(){setTimeout(function(){glij(d);},250);});}}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.min.js"></script><script>window.GILDE={"url":"https://umrlulhwbkgjxxmvhbbg.supabase.co","anon":"sb_publishable_XwY4DpxrYGAQch-hs-bz6g_1T-7pwkh","meesters":[{"type":"De Kenner","naam":"Rembrandt"},{"type":"De Precieze","naam":"Vermeer"},{"type":"De Verteller","naam":"Jan Steen"},{"type":"De Eigenwijze","naam":"Judith Leyster"},{"type":"De Volhouder","naam":"Rachel Ruysch"},{"type":"De Onderzoeker","naam":"Maria Sibylla Merian"},{"type":"De Puzzelaar","naam":"M.C. Escher"}],"voorbereiden":"\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Voorbereiden op Bett\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca class=\"mg-tile\" href=\"./magazine-1.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/tulp.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 40%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 1\u003c/b>november 2026\u003c/p>\u003ch3>De leraar voorop\u003c/h3>\u003cp>Een uitnodiging voor de studiereis naar Bett in Londen, 20 tot 22 januari 2027\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./nummer-2.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/abacus.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 2\u003c/b>november 2026\u003c/p>\u003ch3>Wat is technologie eigenlijk?\u003c/h3>\u003cp>Van Plato's papyrus tot de AI-assistent: een kritische bril voor de reis naar BETT\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./meesters.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/rembrandt.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 25%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Meesterspiegel\u003c/b>Zeven profielen\u003c/p>\u003ch3>Welke meester ben jij?\u003c/h3>\u003cp>Doe de meesterspiegel: je hoofdmeester, je tweede meester en je tegenpool.\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./kaartje.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/bett-zaal.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Printbaar\u003c/b>Mijn Bett-kaartje\u003c/p>\u003ch3>Wat zoek je op Bett?\u003c/h3>\u003cp>Leg vóór vertrek vast welke vraag uit je eigen klas je meeneemt naar de beurs.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Bij het boek\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca target=\"_blank\" rel=\"noopener\" class=\"mg-tile\" href=\"./docs/De-meesterproef-voor-vijf-tools.pdf\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/meesterproef-p1.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 85%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Pdf\u003c/b>Bij hoofdstuk 14 · 24 pagina's\u003c/p>\u003ch3>De meesterproef voor vijf tools\u003c/h3>\u003cp>Zo keur je een tool: LessonUp, Kahoot!, Snappet, ChatGPT en Padlet langs het MEESTER-model, als voorbeeld voor je eigen meesterproef.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>","banner":"img/bett-zaal.jpg","dagen":[["Woensdag","20 januari",["Reisdag: met de trein van Rotterdam naar Londen St Pancras (17.28–19.57 uur)"]],["Donderdag","21 januari",["Ontbijt","Keynote","Londen in","Werksessie over authentiek onderwijs en technologie","Diner, daarna musical of pubquiz"]],["Vrijdag","22 januari",["Ontbijt op Bett","Bezoek aan Bett","Terugreis naar Rotterdam (18.04–22.32 uur)"]]],"snel":[["Magazine 1","./magazine-1.html"],["Magazine 2","./nummer-2.html"],["De meesterspiegel","./meesters.html"],["Mijn Bett-kaartje","./kaartje.html"],["De meesterproef voor vijf tools (pdf)","./docs/De-meesterproef-voor-vijf-tools.pdf"],["Alles over de reis","./reis.html"]]};</script><script>// Het Gilde: client voor gilde.html (door maak.ts inline gezet, met window.GILDE = {url, anon, meesters, voorbereiden, banner, dagen, snel}).
 // Opbouw als een sociale tijdlijn: links je profielkaart, midden de berichten, rechts aftelling, programma en nieuwe leden.
 (function () {
@@ -811,6 +830,50 @@
   function tekst(s) { return E(s).replace(/(https?:\/\/[^\s<]+[^\s<.,;:!?)])/g, '<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g, '<br>'); }
   function $(sel, el) { return (el || app).querySelector(sel); }
   function $$(sel, el) { return [].slice.call((el || app).querySelectorAll(sel)); }
+
+  // ---------- pdf-lezer: elke pdf-link in het gilde (tegel, Snel naar, bijlagen) opent in een venster op de pagina ----------
+  // Desktop: iframe met de ingebouwde pdf-viewer van de browser. Telefoons tonen een pdf niet in een iframe, daar tekent pdf.js de pagina's.
+  var PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  var lezer = null, lezerTerug = null;
+  function iframeKanPdf() { return navigator.pdfViewerEnabled !== false && !/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && !(navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)); }
+  function laadPdfjs() {
+    if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+    return new Promise(function (ok, fout) { var s = document.createElement('script'); s.src = PDFJS + 'pdf.min.js'; s.onload = function () { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; ok(window.pdfjsLib); }; s.onerror = fout; document.head.appendChild(s); });
+  }
+  function sluitLezer() {
+    if (!lezer) return; lezer.remove(); lezer = null; document.documentElement.classList.remove('gl-lezer-open');
+    if (lezerTerug) lezerTerug.focus(); lezerTerug = null;
+  }
+  function openLezer(url, titel, bron) {
+    sluitLezer(); lezerTerug = bron || null;
+    lezer = document.createElement('div'); lezer.className = 'gl-lezer'; lezer.setAttribute('role', 'dialog'); lezer.setAttribute('aria-modal', 'true'); lezer.setAttribute('aria-label', titel);
+    lezer.innerHTML = '<div class="gl-lezer-kop">' + ic('pdf') + '<b>' + E(titel) + '</b><a class="gl-lezer-knop" href="' + E(url) + '" target="_blank" rel="noopener">Nieuw tabblad</a><a class="gl-lezer-knop" href="' + E(url) + '" download>Download</a><button type="button" class="gl-lezer-dicht" aria-label="Sluit de lezer">×</button></div><div class="gl-lezer-blad"></div>';
+    document.body.appendChild(lezer); document.documentElement.classList.add('gl-lezer-open');
+    lezer.querySelector('.gl-lezer-dicht').onclick = sluitLezer;
+    lezer.onclick = function (e) { if (e.target === lezer) sluitLezer(); };
+    lezer.querySelector('.gl-lezer-dicht').focus();
+    var blad = lezer.querySelector('.gl-lezer-blad');
+    if (iframeKanPdf()) { blad.innerHTML = '<iframe src="' + E(url) + '#navpanes=0&view=FitH" title="' + E(titel) + '"></iframe>'; return; }
+    blad.classList.add('pdfjs'); blad.innerHTML = '<p class="gl-laden">Pdf laden…</p>';
+    var mijn = lezer;
+    laadPdfjs().then(function (lib) { return lib.getDocument(url).promise; }).then(async function (doc) {
+      if (lezer !== mijn) return; blad.innerHTML = '';
+      for (var i = 1; i <= doc.numPages && lezer === mijn; i++) {
+        var p = await doc.getPage(i), b = Math.min(blad.clientWidth - 16, 900), v0 = p.getViewport({ scale: 1 }), dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var v = p.getViewport({ scale: b / v0.width * dpr }), c = document.createElement('canvas');
+        c.width = v.width; c.height = v.height; c.style.width = b + 'px'; c.setAttribute('aria-label', 'Pagina ' + i); blad.appendChild(c);
+        await p.render({ canvasContext: c.getContext('2d'), viewport: v }).promise;
+      }
+    }).catch(function () { if (lezer === mijn) blad.innerHTML = '<p class="gl-melding">De pdf laat zich hier niet tonen. <a href="' + E(url) + '" target="_blank" rel="noopener">Open hem in een nieuw tabblad</a>.</p>'; });
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lezer) sluitLezer(); });
+  app.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+    var href = a.getAttribute('href'), isPdf = a.classList.contains('gl-pdf') || /\.pdf($|[?#])/i.test(href);
+    if (!isPdf) return;
+    e.preventDefault();
+    var t = a.querySelector('h3') || a.querySelector('b'); openLezer(a.href, (t ? t.textContent : a.textContent).replace(/\s*\(pdf\)\s*$/i, '').trim() || 'Pdf', a);
+  });
   var MAAND = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   function wanneer(t) {
     var d = new Date(t), nu = new Date(), s = (nu - d) / 1000;
