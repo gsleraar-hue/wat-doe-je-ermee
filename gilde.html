@@ -547,93 +547,230 @@
   .opg-melding { background: #fff; border-left: 6px solid #DA4749; padding: 22px 24px; font: 400 18px/1.6 Roboto, sans-serif; } .opg-melding h2 { margin-top: 0; }
   .opg-melding.mis { border-left-color: #b9383a; }
   @media (max-width: 640px) { .opg-velden { grid-template-columns: 1fr; } .opg-stappen li { font-size: 11px; } }
-</style></head><body class="magazine" style="--mg:#DA4749"><script>try{if(localStorage.getItem("nhm-sleutel"))document.documentElement.classList.add("deeln")}catch(e){}</script><style>html:not(.deeln) .sitenav a.deeln{display:none}</style><header class="sitenav"><a class="brand" href="./index.html"><span>De Nieuwe Hollandse Meesters</span></a><nav aria-label="Hoofdmenu"><a href="./reis.html">De reis</a><a href="./boek.html">Het boek</a><a class="deeln" href="./meesters.html">De meesters</a><a href="./gilde.html">Het Gilde</a></nav><a class="cta" href="./inschrijven.html">Meld je aan</a></header><header class="mg-cover-hero kort "><img src="img/tulp.jpg" alt="" style="object-position:50% 40%"><div class="top"><span class="mast">De Nieuwe Hollandse Meesters</span><span class="mg-k">Alleen voor deelnemers</span></div><div><p class="mg-k" style="color:#fff;margin:0 0 10px">Naar BETT 2027: de leraar voorop</p><h1>Het Gilde</h1><p class="sub">De plek voor de deelnemers aan de reis: mededelingen, de magazines en de meesterspiegel, een prikbord, foto's delen en zien wie er meegaat. Vóór, tijdens en na Bett.</p></div></header><style>#gilde{max-width:980px;margin:0 auto;padding:34px 20px 70px;font-family:Roboto,sans-serif;color:#0B0B0B}
-#gilde h2{font-size:30px;line-height:1.1;margin:6px 0 12px}
-#gilde a{color:#b9383a}
-.gl-leeg,.gl-in{max-width:540px;margin:20px auto}
-.gl-in form,.gl-profiel{display:grid;gap:14px;margin:20px 0 8px}
-#gilde label{display:grid;gap:6px;font-weight:700;font-size:15px}
-#gilde label small{font-weight:400;color:#555}
-#gilde input:not([type=checkbox]),#gilde textarea,#gilde select{font:inherit;font-size:16px;font-weight:400;padding:11px 13px;border:2px solid #0B0B0B;border-radius:6px;background:#fff;color:#0B0B0B;width:100%;box-sizing:border-box}
-#gilde textarea{resize:vertical}
-#gilde input:focus,#gilde textarea:focus,#gilde select:focus{outline:3px solid #F0898B;outline-offset:1px}
-.gl-in form>button,.gl-knop{font:inherit;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:13px 20px;border:0;border-radius:6px;background:#DA4749;color:#fff;cursor:pointer;justify-self:start}
-.gl-in form>button:hover,.gl-knop:hover{background:#b9383a}
-.gl-knop:disabled,.gl-in form>button:disabled{opacity:.55;cursor:wait}
-.gl-knop.klein{padding:9px 14px;font-size:12px}
-.gl-melding{min-height:1.3em;margin:0;color:#b9383a;font-weight:700}
-.gl-melding.goed{color:#0B0B0B;font-weight:500}
-.gl-wissel{display:flex;flex-wrap:wrap;gap:6px 22px}
-.gl-wissel button{background:none;border:0;padding:0;font:inherit;color:#b9383a;text-decoration:underline;cursor:pointer}
-.gl-balk{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:3px solid #0B0B0B;margin-bottom:22px}
-.gl-tabs{display:flex;flex-wrap:wrap;gap:2px}
-.gl-tabs button{font:inherit;font-weight:700;font-size:15px;background:none;border:0;padding:12px 14px 10px;cursor:pointer;color:#555;border-bottom:4px solid transparent;margin-bottom:-3px}
-.gl-tabs button[aria-selected=true]{color:#0B0B0B;border-bottom-color:#DA4749}
-.gl-tabs button:hover{color:#0B0B0B}
-.gl-nieuw{font-style:normal;background:#DA4749;color:#fff;font-size:11px;border-radius:9px;padding:1px 6px;margin-left:5px;vertical-align:2px}
+</style></head><body class="magazine" style="--mg:#DA4749"><script>try{if(localStorage.getItem("nhm-sleutel"))document.documentElement.classList.add("deeln")}catch(e){}</script><style>html:not(.deeln) .sitenav a.deeln{display:none}</style><header class="sitenav"><a class="brand" href="./index.html"><span>De Nieuwe Hollandse Meesters</span></a><nav aria-label="Hoofdmenu"><a href="./reis.html">De reis</a><a href="./boek.html">Het boek</a><a class="deeln" href="./meesters.html">De meesters</a><a href="./gilde.html">Het Gilde</a></nav><a class="cta" href="./inschrijven.html">Meld je aan</a></header><header class="mg-cover-hero kort "><img src="img/tulp.jpg" alt="" style="object-position:50% 40%"><div class="top"><span class="mast">De Nieuwe Hollandse Meesters</span><span class="mg-k">Alleen voor deelnemers</span></div><div><p class="mg-k" style="color:#fff;margin:0 0 10px">Naar BETT 2027: de leraar voorop</p><h1>Het Gilde</h1><p class="sub">De plek voor de deelnemers aan de reis: mededelingen, de magazines en de meesterspiegel, een prikbord, foto's delen en zien wie er meegaat. Vóór, tijdens en na Bett.</p></div></header><style>/* Het Gilde: sociale tijdlijn in de stijl van de site (inkt #0B0B0B, koraal #DA4749, Roboto) */
+#gilde{--gl-bg:#f3f1ee;--gl-kaart:#fff;--gl-lijn:#e4e0db;--gl-zacht:#6b6661;--gl-koraal:#DA4749;--gl-koraal-d:#b9383a;--gl-koraal-l:#fbe9e9;--gl-inkt:#0B0B0B;
+  background:var(--gl-bg);font-family:Roboto,sans-serif;color:var(--gl-inkt);padding:0 0 70px;margin:0}
+#gilde *{box-sizing:border-box}
+#gilde a{color:var(--gl-koraal-d)}
+#gilde h2,#gilde h3{font-family:Roboto,sans-serif}
+.gl-k{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--gl-koraal);margin:0 0 8px}
+.gl-ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* blokken (kaarten) */
+.gl-blok{background:var(--gl-kaart);border:1px solid var(--gl-lijn);border-radius:10px;padding:16px 18px;margin:0 0 12px}
+.gl-titel{font-size:22px;margin:0 0 6px}
+.gl-uitleg{color:var(--gl-zacht);margin:0 0 16px;line-height:1.5}
+.gl-uitleg-blok{color:var(--gl-zacht);font-size:15px}
+.gl-laden{color:var(--gl-zacht)}
+.gl-leeg-k{text-align:center;padding:34px 20px}.gl-leeg-k b{display:block;font-size:18px;margin-bottom:6px}.gl-leeg-k span{color:var(--gl-zacht)}
+
+/* tabbladbalk */
+.gl-tabs{position:sticky;top:calc(var(--nav-h, 56px) + 3px);z-index:6;display:flex;justify-content:center;gap:2px;background:#fff;border-bottom:1px solid var(--gl-lijn);padding:0 10px;margin:0 0 18px;overflow-x:auto;scrollbar-width:none}
+.gl-tabs::-webkit-scrollbar{display:none}
+.gl-tabs button{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:92px;font:inherit;font-size:12px;font-weight:500;color:var(--gl-zacht);background:none;border:0;border-bottom:3px solid transparent;padding:10px 10px 8px;cursor:pointer;white-space:nowrap}
+.gl-tabs button .gl-ic{width:24px;height:24px}
+.gl-tabs button:hover{color:var(--gl-inkt)}
+.gl-tabs button[aria-selected=true]{color:var(--gl-inkt);border-bottom-color:var(--gl-inkt)}
+.gl-nieuw{position:absolute;top:5px;left:calc(50% + 6px);font-style:normal;background:var(--gl-koraal);color:#fff;font-size:10px;font-weight:700;border-radius:9px;padding:1px 5px;line-height:1.4}
 .gl-nieuw:empty{display:none}
-.gl-ik{display:flex;align-items:center;gap:8px;font-size:14px;padding:6px 0}
-.gl-ik button{background:none;border:0;font:inherit;color:#b9383a;text-decoration:underline;cursor:pointer}
-.gl-av{flex:none;width:46px;height:46px;border-radius:50%;background:#0B0B0B;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;overflow:hidden}
-.gl-av.klein{width:30px;height:30px;font-size:12px}
+
+/* raster: links profiel, midden tijdlijn, rechts zijkolom */
+.gl-raster{display:grid;grid-template-columns:225px minmax(0,560px) 300px;gap:22px;justify-content:center;align-items:start;padding:0 16px}
+.gl-raster.breed{grid-template-columns:225px minmax(0,882px)}
+.gl-raster.breed .gl-rechts{display:none}
+.gl-links,.gl-rechts{position:sticky;top:calc(var(--nav-h, 56px) + 86px)}
+
+/* avatars */
+.gl-av{flex:none;width:48px;height:48px;border-radius:50%;background:var(--gl-inkt);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;overflow:hidden}
+.gl-av.klein{width:32px;height:32px;font-size:12px}
+.gl-av.groot{width:76px;height:76px;font-size:26px;border:3px solid #fff}
 .gl-av img{width:100%;height:100%;object-fit:cover}
-.gl-uitleg{color:#444;margin:0 0 18px;max-width:680px}
-.gl-laden,.gl-leeg-k{color:#666}
-.gl-schrijf{background:#f6f3ef;border-left:4px solid #DA4749;padding:16px;margin:0 0 26px;display:grid;gap:10px}
-.gl-rij{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+
+/* profielkaart links en kaarten bij Wie gaat er mee */
+.gl-ikkaart,.gl-kaart{padding:0 0 16px;text-align:center;overflow:hidden}
+.gl-banner{height:64px;background:var(--gl-inkt) center/cover;position:relative}
+.gl-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(218,71,73,.55),rgba(11,11,11,.25))}
+.gl-ikkaart .gl-av.groot,.gl-kaart .gl-av.groot{margin:-38px auto 6px;position:relative;z-index:1;display:flex}
+.gl-ikkaart h3,.gl-kaart h3{font-size:17px;margin:4px 14px 2px}
+.gl-sub{color:var(--gl-zacht);font-size:13px;margin:0 14px 8px;line-height:1.4}
+.gl-chip{display:inline-block;background:var(--gl-koraal-l);color:var(--gl-koraal-d);font-weight:700;font-size:12px;border-radius:14px;padding:3px 10px;margin:2px 4px 8px}
+.gl-chip b{background:var(--gl-koraal);color:#fff;border-radius:8px;padding:0 6px;margin-left:4px}
+.gl-ikvraag{text-align:left;margin:6px 14px 4px;font-size:13px;line-height:1.45;border-top:1px solid var(--gl-lijn);padding-top:10px}
+.gl-ikvraag span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gl-zacht);font-weight:700;margin-bottom:2px}
+.gl-ikknoppen{display:flex;justify-content:center;gap:16px;border-top:1px solid var(--gl-lijn);margin:10px 0 0;padding:12px 10px 0}
+.gl-link{background:none;border:0;padding:0;font:inherit;font-size:13px;font-weight:700;color:var(--gl-koraal-d);cursor:pointer}
+.gl-link:hover{text-decoration:underline}
+.gl-snel a{display:block;padding:7px 0;font-size:14px;font-weight:500;text-decoration:none;color:var(--gl-inkt)!important;border-top:1px solid var(--gl-lijn)}
+.gl-snel a:hover{color:var(--gl-koraal-d)!important}
+.gl-over{text-align:left;font-size:13px;color:#333;margin:6px 14px 0;line-height:1.5}
+
+/* rechterkolom */
+.gl-aftel{text-align:center}
+.gl-aftel b{display:block;font-size:52px;line-height:1;font-weight:900;color:var(--gl-koraal)}
+.gl-aftel span{display:block;font-weight:700;margin:4px 0}
+.gl-aftel small{color:var(--gl-zacht)}
+.gl-prog div{border-top:1px solid var(--gl-lijn);padding:8px 0}
+.gl-prog b{font-size:14px}.gl-prog small{color:var(--gl-zacht);margin-left:6px;font-size:12px}
+.gl-prog span{display:block;font-size:13px;color:#333;line-height:1.45;margin-top:2px}
+.gl-mini{display:flex;gap:10px;align-items:center;padding:6px 0}
+.gl-mini b{display:block;font-size:14px}.gl-mini small{color:var(--gl-zacht);font-size:12px}
+.gl-nieuwe .gl-link{margin-top:8px}
+
+/* schrijven */
+.gl-schrijf{padding:14px 16px}
+.gl-schrijf-rij{display:flex;gap:12px;align-items:flex-start}
+#gilde .gl-schrijf textarea{flex:1;border:1px solid #c9c4be;border-radius:24px;padding:12px 16px;font:inherit;font-size:15px;resize:none;min-height:48px;background:#fff;outline:none}
+#gilde .gl-schrijf.open textarea{border-radius:10px;min-height:96px}
+#gilde .gl-schrijf textarea:focus{border-color:var(--gl-inkt)}
+.gl-schrijf-uit{display:none;margin:10px 0 0 60px}
+.gl-schrijf.open .gl-schrijf-uit{display:block}
+.gl-voorbeeld{display:block;max-width:100%;max-height:220px;border-radius:8px;margin:0 0 10px}
+.gl-rij{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .gl-rij .gl-knop{margin-left:auto}
-#gilde label.gl-foto-knop{display:inline-block;font-weight:700;font-size:14px;border:2px solid #0B0B0B;border-radius:6px;padding:8px 12px;cursor:pointer;background:#fff}
-#gilde label.gl-foto-knop:hover{background:#0B0B0B;color:#fff}
-#gilde .gl-rij label:not(.gl-foto-knop){display:flex;align-items:center;gap:8px;font-weight:400}
-.gl-bestand,.gl-mail{font-size:13px;color:#555}
-.gl-bericht{border-top:1px solid #ddd;padding:18px 0}
-.gl-bericht>header{display:flex;gap:12px;align-items:center;margin-bottom:8px}
-.gl-bericht>header>div{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline;flex:1}
-.gl-bericht small{color:#666;font-size:13px}
-small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
-.gl-tekst{line-height:1.55;overflow-wrap:anywhere}
-.gl-foto{display:block;margin:12px 0 0;max-width:620px}
-.gl-foto img{width:100%;max-height:520px;object-fit:cover;border-radius:4px;display:block}
-.gl-weg{margin-left:auto;background:none;border:0;font-size:22px;line-height:1;color:#999;cursor:pointer;padding:2px 6px}
-.gl-weg:hover{color:#b9383a}
-.gl-weg.klein{font-size:17px;margin:0}
-.gl-reacties{margin:12px 0 0 58px;display:grid;gap:10px}
-.gl-reactie{display:flex;gap:10px;font-size:15px}
-.gl-reactie small{color:#666}
-.gl-reageer{display:flex;gap:8px}
-#gilde .gl-reageer input{padding:8px 11px;font-size:15px;border-width:1px;border-color:#bbb}
-.gl-wie{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.gl-kaart{display:flex;gap:14px;border:1px solid #ddd;border-top:4px solid #DA4749;padding:16px;background:#fff}
-.gl-kaart .gl-av{width:64px;height:64px;font-size:20px}
-.gl-kaart h3{margin:0 0 2px;font-size:18px}
-.gl-kaart p{margin:4px 0;font-size:15px;line-height:1.45}
-.gl-sub{color:#555}
-.gl-vraag{background:#f6f3ef;padding:6px 9px}
+.gl-actie{display:inline-flex;align-items:center;gap:7px;background:none;border:0;border-radius:6px;padding:9px 12px;font:inherit;font-size:14px;font-weight:700;color:var(--gl-zacht);cursor:pointer}
+.gl-actie:hover{background:#f1efec;color:var(--gl-inkt)}
+.gl-actie.aan{color:var(--gl-koraal)}
+.gl-actie.aan .gl-ic{fill:var(--gl-koraal-l)}
+
+/* knoppen en velden */
+.gl-knop{font:inherit;font-weight:700;font-size:14px;padding:10px 20px;border:0;border-radius:22px;background:var(--gl-koraal);color:#fff;cursor:pointer;display:inline-block;text-align:center}
+.gl-knop:hover{background:var(--gl-koraal-d)}
+.gl-knop:disabled{opacity:.55;cursor:wait}
+.gl-knop.klein{padding:7px 14px;font-size:13px}
+.gl-knop.breed{width:100%;padding:13px 20px;font-size:15px}
+.gl-knop.rand{background:#fff;color:var(--gl-koraal-d);box-shadow:inset 0 0 0 2px var(--gl-koraal)}
+.gl-knop.rand:hover{background:var(--gl-koraal-l)}
+#gilde label{display:grid;gap:6px;font-weight:700;font-size:14px}
+#gilde label small{font-weight:400;color:var(--gl-zacht)}
+#gilde label.gl-knop{display:inline-block}
+#gilde input:not([type=checkbox]):not([type=file]),#gilde select,#gilde .gl-profiel textarea,#gilde .gl-beheer-nieuw textarea{font:inherit;font-size:15px;font-weight:400;padding:11px 13px;border:1px solid #b9b3ad;border-radius:8px;background:#fff;color:var(--gl-inkt);width:100%}
+#gilde input:focus,#gilde select:focus,#gilde textarea:focus{outline:2px solid var(--gl-inkt);outline-offset:0;border-color:var(--gl-inkt)}
+.gl-melding{min-height:1.2em;margin:0;color:var(--gl-koraal-d);font-weight:700;font-size:14px}
+.gl-melding.goed{color:var(--gl-zacht);font-weight:500}
+.gl-mail{font-size:13px;color:var(--gl-zacht)}
+
+/* bericht */
+.gl-bericht{padding:14px 0 0}
+.gl-bericht.med{border-top:4px solid var(--gl-koraal)}
+.gl-bericht>header{display:flex;gap:10px;align-items:flex-start;padding:0 16px;margin-bottom:10px}
+.gl-wie-r{flex:1;min-width:0;line-height:1.3}
+.gl-wie-r b{display:block;font-size:15px}
+.gl-wie-r small{display:block;color:var(--gl-zacht);font-size:12px}
+.gl-tijd em{font-style:normal;color:var(--gl-koraal-d);font-weight:700}
+.gl-tekst{line-height:1.55;overflow-wrap:anywhere;font-size:15px}
+.gl-bericht>.gl-tekst{padding:0 16px 10px}
+.gl-foto{display:block;background:#000}
+.gl-foto img{width:100%;max-height:560px;object-fit:contain;display:block}
+.gl-tellers{display:flex;justify-content:space-between;gap:10px;padding:8px 16px;font-size:13px;color:var(--gl-zacht)}
+.gl-tellers span{display:inline-flex;align-items:center;gap:4px}
+.gl-tellers .gl-ic{width:15px;height:15px;color:#fff;background:var(--gl-koraal);border-radius:50%;padding:2px;stroke-width:2.2}
+.gl-acties{display:flex;border-top:1px solid var(--gl-lijn);margin:0 12px;padding:2px 0}
+.gl-acties .gl-actie{flex:1;justify-content:center}
+.gl-weg{background:none;border:0;font-size:22px;line-height:1;color:#aaa;cursor:pointer;padding:0 4px}
+.gl-weg:hover{color:var(--gl-koraal-d)}
+.gl-weg.klein{font-size:16px;margin-left:auto}
+.gl-reacties{padding:6px 16px 14px;display:grid;gap:10px}
+.gl-reactie{display:flex;gap:8px}
+.gl-bel{flex:1;background:#f2f0ed;border-radius:0 10px 10px 10px;padding:8px 12px}
+.gl-bel-kop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.gl-bel-kop b{font-size:13px}.gl-bel-kop small{font-size:12px;color:var(--gl-zacht)}
+.gl-bel .gl-tekst{font-size:14px;margin-top:2px}
+.gl-reageer{display:flex;gap:8px;align-items:center}
+#gilde .gl-reageer input{border-radius:20px;padding:9px 14px;font-size:14px}
+
+/* wie gaat er mee */
+.gl-meestertel{margin:0 0 14px}
+.gl-wie{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gl-kaart{border:1px solid var(--gl-lijn);border-radius:10px;background:#fff}
+
+/* profiel */
+.gl-profielraster{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:18px;align-items:start}
+.gl-profiel{display:grid;gap:14px}
+.gl-twee{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .gl-foto-veld{display:flex;align-items:center;gap:16px}
-.gl-foto-veld .gl-av{width:84px;height:84px;font-size:26px}
-.gl-welkom{background:#0B0B0B;color:#fff;padding:12px 14px;margin:0}
-.gl-profiel{max-width:620px}
-.gl-beheer-nieuw{display:grid;gap:10px;margin:0 0 22px;max-width:620px}
+.gl-foto-veld .gl-av.groot{border:0}
+.gl-welkom{background:var(--gl-inkt);color:#fff;padding:12px 14px;border-radius:8px;margin:0}
+.gl-voorbeeldkaart{position:sticky;top:calc(var(--nav-h, 56px) + 86px)}
+
+/* voorbereiden */
+#gilde .mg-sec{margin:0 0 22px;padding:0}
+#gilde h3.gl-kop{font-size:18px;margin:0 0 12px}
+#gilde .mg-tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px}
+
+/* beheer */
+.gl-beheer-nieuw{display:grid;gap:10px;margin:0 0 20px}
 .gl-tabel{width:100%;border-collapse:collapse;font-size:14px}
-.gl-tabel th,.gl-tabel td{text-align:left;padding:7px 8px;border-bottom:1px solid #ddd;overflow-wrap:anywhere}
-@media (max-width:700px){.gl-wie{grid-template-columns:1fr}.gl-reacties{margin-left:0}.gl-tabs button{padding:10px 9px 8px;font-size:14px}#gilde h2{font-size:25px}}
-#gilde .mg-sec{margin:0 0 28px;padding:0}
-#gilde h3.gl-kop{font-size:22px;margin:0 0 14px}
-#gilde .mg-tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px}
-@media (max-width:700px){#gilde .mg-tiles{grid-template-columns:1fr!important}}
-</style><main id="gilde" aria-live="polite"><p class="gl-laden">Even laden…</p></main><section class="sponsors" aria-label="Mede mogelijk gemaakt door"><p class="mg-k">Mede mogelijk gemaakt door</p><ul><li><img src="img/sponsor-omict.png" alt="OMICT" loading="lazy"></li><li><img src="img/sponsor-dieter.png" alt="Dieter.nl" loading="lazy"></li><li><img src="img/sponsor-digitalefitheid.png" alt="Digitale Fitheid" loading="lazy"></li><li><img src="img/sponsor-drife.png" alt="Drife" loading="lazy"></li><li><img src="img/sponsor-benq.svg" alt="BenQ" loading="lazy"></li><li><img src="img/sponsor-xtorm.svg" alt="Xtorm" loading="lazy"></li><li><img src="img/sponsor-pqr.svg" alt="PQR" loading="lazy"></li><li><img src="img/sponsor-simulise.svg" alt="Simulise" loading="lazy"></li><li><img src="img/sponsor-eduwinkel.svg" alt="Eduwinkel" loading="lazy"></li></ul></section><footer class="sitefoot"><div class="wrap"><p>De Nieuwe Hollandse Meesters · Naar BETT 2027: de leraar voorop · bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){var Z='zacht-naar';function glij(d){var s=scrollY,t=d.getBoundingClientRect().top+scrollY-70,b=performance.now(),n=Math.min(1100,400+Math.abs(t-s)/3);document.documentElement.style.scrollBehavior='auto';(function f(k){var p=Math.min(1,(k-b)/n),q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;scrollTo(0,s+(t-s)*q);if(p<1)requestAnimationFrame(f);else history.replaceState(null,'','#'+d.id);})(b);}function pad(u){return u.pathname.replace(/index\.html$/,'');}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||a.target==='_blank'||e.ctrlKey||e.metaKey||e.shiftKey)return;var u=new URL(a.href,location.href),id=decodeURIComponent(u.hash.slice(1));if(!id||id==='eind'||u.origin!==location.origin)return;if(pad(u)===pad(location)){var d=document.getElementById(id);if(!d)return;e.preventDefault();glij(d);return;}e.preventDefault();try{sessionStorage.setItem(Z,id);}catch(x){location.href=a.href;return;}location.href=u.pathname+u.search;});var id=null;try{id=sessionStorage.getItem(Z);sessionStorage.removeItem(Z);}catch(x){}if(id){var d=document.getElementById(id);if(d){scrollTo(0,0);addEventListener('load',function(){setTimeout(function(){glij(d);},250);});}}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.min.js"></script><script>window.GILDE={"url":"https://umrlulhwbkgjxxmvhbbg.supabase.co","anon":"sb_publishable_XwY4DpxrYGAQch-hs-bz6g_1T-7pwkh","meesters":[{"type":"De Kenner","naam":"Rembrandt"},{"type":"De Precieze","naam":"Vermeer"},{"type":"De Verteller","naam":"Jan Steen"},{"type":"De Eigenwijze","naam":"Judith Leyster"},{"type":"De Volhouder","naam":"Rachel Ruysch"},{"type":"De Onderzoeker","naam":"Maria Sibylla Merian"},{"type":"De Puzzelaar","naam":"M.C. Escher"}],"voorbereiden":"\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Voorbereiden op Bett\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca class=\"mg-tile\" href=\"./magazine-1.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/tulp.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 40%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 1\u003c/b>november 2026\u003c/p>\u003ch3>De leraar voorop\u003c/h3>\u003cp>Een uitnodiging voor de studiereis naar Bett in Londen, 20 tot 22 januari 2027\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./nummer-2.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/abacus.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 2\u003c/b>november 2026\u003c/p>\u003ch3>Wat is technologie eigenlijk?\u003c/h3>\u003cp>Van Plato's papyrus tot de AI-assistent: een kritische bril voor de reis naar BETT\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./meesters.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/rembrandt.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 25%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Meesterspiegel\u003c/b>Zeven profielen\u003c/p>\u003ch3>Welke meester ben jij?\u003c/h3>\u003cp>Doe de meesterspiegel: je hoofdmeester, je tweede meester en je tegenpool.\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./kaartje.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/bett-zaal.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Printbaar\u003c/b>Mijn Bett-kaartje\u003c/p>\u003ch3>Wat zoek je op Bett?\u003c/h3>\u003cp>Leg vóór vertrek vast welke vraag uit je eigen klas je meeneemt naar de beurs.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Bij het boek\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca target=\"_blank\" rel=\"noopener\" class=\"mg-tile\" href=\"./docs/De-meesterproef-voor-vijf-tools.pdf\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/meesterproef-p1.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 85%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Pdf\u003c/b>Bij hoofdstuk 14 · 24 pagina's\u003c/p>\u003ch3>De meesterproef voor vijf tools\u003c/h3>\u003cp>Zo keur je een tool: LessonUp, Kahoot!, Snappet, ChatGPT en Padlet langs het MEESTER-model, als voorbeeld voor je eigen meesterproef.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>"};</script><script>// Het gilde: client voor gilde.html (wordt door maak.ts inline in de pagina gezet, met window.GILDE = {url, anon, meesters}).
+.gl-tabel th,.gl-tabel td{text-align:left;padding:8px;border-bottom:1px solid var(--gl-lijn);overflow-wrap:anywhere}
+#gilde .gl-rij label:not(.gl-actie){display:flex;align-items:center;gap:8px;font-weight:400}
+
+/* inloggen */
+.gl-inlog{display:grid;grid-template-columns:1.1fr 1fr;max-width:940px;margin:30px auto 0;background:#fff;border:1px solid var(--gl-lijn);border-radius:14px;overflow:hidden}
+.gl-inlog-beeld{position:relative;min-height:440px;background:var(--gl-inkt) center/cover;display:flex;align-items:flex-end;color:#fff}
+.gl-inlog-beeld::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,11,11,.88) 10%,rgba(218,71,73,.35))}
+.gl-inlog-beeld>div{position:relative;padding:28px}
+.gl-inlog-beeld h2{font-size:40px;margin:0 0 10px;line-height:1}
+.gl-inlog-beeld .gl-k{color:#F0898B}
+.gl-inlog-beeld p{line-height:1.5;margin:0}
+.gl-inlog-form{padding:34px 34px 28px}
+.gl-inlog-form h2{font-size:26px;margin:0 0 8px}
+.gl-inlog-form>p{color:var(--gl-zacht);line-height:1.5;margin:0 0 18px}
+.gl-inlog-form form{display:grid;gap:14px}
+.gl-wissel{margin-top:16px;text-align:center}
+.gl-wissel>button:not(.gl-knop){background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--gl-koraal-d);cursor:pointer}
+.gl-wissel hr{border:0;border-top:1px solid var(--gl-lijn);margin:18px 0 14px}
+.gl-wissel p{color:var(--gl-zacht);font-size:14px;margin:0 0 10px}
+.gl-los{max-width:560px;margin:40px auto;background:#fff;border:1px solid var(--gl-lijn);border-radius:12px;padding:28px}
+
+/* smaller scherm */
+@media (max-width:1180px){.gl-raster{grid-template-columns:225px minmax(0,1fr)}.gl-rechts{display:none}.gl-raster.breed{grid-template-columns:225px minmax(0,1fr)}}
+@media (max-width:820px){
+  .gl-raster,.gl-raster.breed{grid-template-columns:1fr;padding:0 10px;gap:0}
+  .gl-links{position:static}
+  .gl-links .gl-snel,.gl-links .gl-ikvraag{display:none}
+  .gl-ikkaart{display:grid;grid-template-columns:auto 1fr;text-align:left;padding:12px;gap:0 12px;align-items:center}
+  .gl-ikkaart .gl-banner{display:none}
+  .gl-ikkaart .gl-av.groot{margin:0;grid-row:span 3;width:56px;height:56px;font-size:20px;border:0}
+  .gl-ikkaart h3,.gl-ikkaart .gl-sub{margin:0}
+  .gl-ikkaart .gl-chip{justify-self:start;margin:4px 0 0}
+  .gl-ikknoppen{grid-column:1/-1;justify-content:flex-start;margin-top:10px;padding:10px 0 0}
+  .gl-tabs{justify-content:flex-start}
+  .gl-tabs button{min-width:74px;padding:8px 6px 6px;font-size:11px}
+  .gl-profielraster{grid-template-columns:1fr}
+  .gl-voorbeeldkaart{position:static}
+  .gl-twee{grid-template-columns:1fr}
+  #gilde .mg-tiles{grid-template-columns:1fr!important}
+  .gl-inlog{grid-template-columns:1fr;margin:14px 10px 0}
+  .gl-inlog-beeld{min-height:220px}
+  .gl-inlog-form{padding:24px 20px}
+  .gl-schrijf-uit{margin-left:0}
+}
+</style><main id="gilde" aria-live="polite"><p class="gl-laden">Even laden…</p></main><section class="sponsors" aria-label="Mede mogelijk gemaakt door"><p class="mg-k">Mede mogelijk gemaakt door</p><ul><li><img src="img/sponsor-omict.png" alt="OMICT" loading="lazy"></li><li><img src="img/sponsor-dieter.png" alt="Dieter.nl" loading="lazy"></li><li><img src="img/sponsor-digitalefitheid.png" alt="Digitale Fitheid" loading="lazy"></li><li><img src="img/sponsor-drife.png" alt="Drife" loading="lazy"></li><li><img src="img/sponsor-benq.svg" alt="BenQ" loading="lazy"></li><li><img src="img/sponsor-xtorm.svg" alt="Xtorm" loading="lazy"></li><li><img src="img/sponsor-pqr.svg" alt="PQR" loading="lazy"></li><li><img src="img/sponsor-simulise.svg" alt="Simulise" loading="lazy"></li><li><img src="img/sponsor-eduwinkel.svg" alt="Eduwinkel" loading="lazy"></li></ul></section><footer class="sitefoot"><div class="wrap"><p>De Nieuwe Hollandse Meesters · Naar BETT 2027: de leraar voorop · bij de BETT-reis van Dieter.nl</p><p><a href="./index.html">Naar de voorpagina</a></p></div></footer><script>(function(){var Z='zacht-naar';function glij(d){var s=scrollY,t=d.getBoundingClientRect().top+scrollY-70,b=performance.now(),n=Math.min(1100,400+Math.abs(t-s)/3);document.documentElement.style.scrollBehavior='auto';(function f(k){var p=Math.min(1,(k-b)/n),q=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;scrollTo(0,s+(t-s)*q);if(p<1)requestAnimationFrame(f);else history.replaceState(null,'','#'+d.id);})(b);}function pad(u){return u.pathname.replace(/index\.html$/,'');}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a||a.target==='_blank'||e.ctrlKey||e.metaKey||e.shiftKey)return;var u=new URL(a.href,location.href),id=decodeURIComponent(u.hash.slice(1));if(!id||id==='eind'||u.origin!==location.origin)return;if(pad(u)===pad(location)){var d=document.getElementById(id);if(!d)return;e.preventDefault();glij(d);return;}e.preventDefault();try{sessionStorage.setItem(Z,id);}catch(x){location.href=a.href;return;}location.href=u.pathname+u.search;});var id=null;try{id=sessionStorage.getItem(Z);sessionStorage.removeItem(Z);}catch(x){}if(id){var d=document.getElementById(id);if(d){scrollTo(0,0);addEventListener('load',function(){setTimeout(function(){glij(d);},250);});}}})();</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.115.0/dist/umd/supabase.min.js"></script><script>window.GILDE={"url":"https://umrlulhwbkgjxxmvhbbg.supabase.co","anon":"sb_publishable_XwY4DpxrYGAQch-hs-bz6g_1T-7pwkh","meesters":[{"type":"De Kenner","naam":"Rembrandt"},{"type":"De Precieze","naam":"Vermeer"},{"type":"De Verteller","naam":"Jan Steen"},{"type":"De Eigenwijze","naam":"Judith Leyster"},{"type":"De Volhouder","naam":"Rachel Ruysch"},{"type":"De Onderzoeker","naam":"Maria Sibylla Merian"},{"type":"De Puzzelaar","naam":"M.C. Escher"}],"voorbereiden":"\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Voorbereiden op Bett\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca class=\"mg-tile\" href=\"./magazine-1.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/tulp.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 40%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 1\u003c/b>november 2026\u003c/p>\u003ch3>De leraar voorop\u003c/h3>\u003cp>Een uitnodiging voor de studiereis naar Bett in Londen, 20 tot 22 januari 2027\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./nummer-2.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/abacus.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Magazine 2\u003c/b>november 2026\u003c/p>\u003ch3>Wat is technologie eigenlijk?\u003c/h3>\u003cp>Van Plato's papyrus tot de AI-assistent: een kritische bril voor de reis naar BETT\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./meesters.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/rembrandt.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 25%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Meesterspiegel\u003c/b>Zeven profielen\u003c/p>\u003ch3>Welke meester ben jij?\u003c/h3>\u003cp>Doe de meesterspiegel: je hoofdmeester, je tweede meester en je tegenpool.\u003c/p>\u003c/div>\u003c/a>\u003ca class=\"mg-tile\" href=\"./kaartje.html\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/bett-zaal.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 50%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Printbaar\u003c/b>Mijn Bett-kaartje\u003c/p>\u003ch3>Wat zoek je op Bett?\u003c/h3>\u003cp>Leg vóór vertrek vast welke vraag uit je eigen klas je meeneemt naar de beurs.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>\u003csection class=\"mg-sec\">\u003ch3 class=\"gl-kop\">Bij het boek\u003c/h3>\u003cdiv class=\"mg-tiles\" style=\"grid-template-columns:repeat(2,minmax(0,1fr))\">\u003ca target=\"_blank\" rel=\"noopener\" class=\"mg-tile\" href=\"./docs/De-meesterproef-voor-vijf-tools.pdf\" style=\"--mg:#DA4749\">\u003cdiv class=\"im\">\u003cimg src=\"img/meesterproef-p1.jpg\" alt=\"\" loading=\"lazy\" style=\"object-position:50% 85%\">\u003c/div>\u003cdiv class=\"tx\">\u003cp class=\"mg-k\">\u003cb>Pdf\u003c/b>Bij hoofdstuk 14 · 24 pagina's\u003c/p>\u003ch3>De meesterproef voor vijf tools\u003c/h3>\u003cp>Zo keur je een tool: LessonUp, Kahoot!, Snappet, ChatGPT en Padlet langs het MEESTER-model, als voorbeeld voor je eigen meesterproef.\u003c/p>\u003c/div>\u003c/a>\u003c/div>\u003c/section>","banner":"img/bett-zaal.jpg","dagen":[["Woensdag","20 januari",["Reisdag: met de trein van Rotterdam naar Londen St Pancras (17.28–19.57 uur)"]],["Donderdag","21 januari",["Ontbijt","Keynote","Londen in","Werksessie over authentiek onderwijs en technologie","Diner, daarna musical of pubquiz"]],["Vrijdag","22 januari",["Ontbijt op Bett","Bezoek aan Bett","Terugreis naar Rotterdam (18.04–22.32 uur)"]]],"snel":[["Magazine 1","./magazine-1.html"],["Magazine 2","./nummer-2.html"],["De meesterspiegel","./meesters.html"],["Mijn Bett-kaartje","./kaartje.html"],["De meesterproef voor vijf tools (pdf)","./docs/De-meesterproef-voor-vijf-tools.pdf"],["Alles over de reis","./reis.html"]]};</script><script>// Het Gilde: client voor gilde.html (door maak.ts inline gezet, met window.GILDE = {url, anon, meesters, voorbereiden, banner, dagen, snel}).
+// Opbouw als een sociale tijdlijn: links je profielkaart, midden de berichten, rechts aftelling, programma en nieuwe leden.
 (function () {
   var C = window.GILDE || {}, app = document.getElementById('gilde');
   if (!app) return;
-  if (!C.url || !C.anon || !window.supabase) { app.innerHTML = '<div class="gl-leeg"><h2>Het Gilde gaat binnenkort open</h2><p>Hier praten deelnemers aan de reis straks met elkaar: mededelingen, een prikbord, foto\'s delen en zien wie er meegaat. Je krijgt een mail zodra het open is.</p></div>'; return; }
+  if (!C.url || !C.anon || !window.supabase) { app.innerHTML = '<div class="gl-los"><h2>Het Gilde gaat binnenkort open</h2><p>Hier praten deelnemers aan de reis straks met elkaar.</p></div>'; return; }
   var sb = window.supabase.createClient(C.url, C.anon, { auth: { persistSession: true, storageKey: 'nhm-gilde' } });
   var ik = null, mijnProfiel = null, rol = null, tab = 'mededelingen', fotoUrl = {}, profielen = {};
-  var TABS = [['mededelingen', 'Mededelingen'], ['voorbereiden', 'Voorbereiden'], ['prikbord', 'Prikbord'], ['delen', 'Delen'], ['wie', 'Wie gaat er mee'], ['profiel', 'Mijn profiel']];
+  var TABS = [['mededelingen', 'Mededelingen', 'mega'], ['prikbord', 'Prikbord', 'praat'], ['delen', 'Delen', 'foto'], ['voorbereiden', 'Voorbereiden', 'boek'], ['wie', 'Wie gaat er mee', 'mensen'], ['profiel', 'Mijn profiel', 'ik']];
+  var BREED = { voorbereiden: 1, wie: 1, profiel: 1, beheer: 1 };
   var UITLEG = {
-    mededelingen: 'Nieuws van Dieter, Olaf en Jan-Wolter: programma, praktische zaken, wat je meeneemt. Je kunt reageren.',
-    prikbord: 'Vragen, ideeën en gesprekken met de andere deelnemers. Wat zoek jij op Bett? Wie wil samen een route lopen?',
-    delen: 'Foto\'s, je Bett-kaartje, wat je vond op de beurs en na de reis je meesterstuk en je retour.'
+    mededelingen: 'Nieuws van de reisleiding: programma, praktische zaken, wat je meeneemt.',
+    prikbord: 'Vragen, ideeën en gesprekken. Wat zoek jij op Bett? Wie wil samen een route lopen?',
+    delen: 'Foto\'s, je Bett-kaartje, wat je vond op de beurs en na de reis je meesterstuk.'
   };
+  var I = {
+    mega: '<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Zm13-3a5 5 0 0 1 0 8m2.5-10.5a8.5 8.5 0 0 1 0 13"/>',
+    praat: '<path d="M4 5h16v10H9l-5 4V5Z"/>',
+    foto: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 8"/>',
+    boek: '<path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4V4Zm16 0h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6V4Z"/>',
+    mensen: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/>',
+    ik: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    tandwiel: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M4.9 19.1 7 17m10-10 2.1-2.1"/>',
+    duim: '<path d="M7 11v9H4v-9h3Zm0 0 4-7a2 2 0 0 1 2 2v4h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7"/>',
+    reactie: '<path d="M4 5h16v10H9l-5 4V5Z"/>'
+  };
+  function ic(n) { return '<svg class="gl-ic" viewBox="0 0 24 24" aria-hidden="true">' + I[n] + '</svg>'; }
 
   // ---------- hulpjes ----------
   function E(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -643,8 +780,9 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
   var MAAND = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
   function wanneer(t) {
     var d = new Date(t), nu = new Date(), s = (nu - d) / 1000;
-    if (s < 60) return 'zojuist'; if (s < 3600) return Math.floor(s / 60) + ' min geleden'; if (s < 86400 && d.getDate() === nu.getDate()) return 'vandaag ' + d.toTimeString().slice(0, 5);
-    return d.getDate() + ' ' + MAAND[d.getMonth()] + (d.getFullYear() !== nu.getFullYear() ? ' ' + d.getFullYear() : '') + ', ' + d.toTimeString().slice(0, 5);
+    if (s < 60) return 'zojuist'; if (s < 3600) return Math.floor(s / 60) + ' min'; if (s < 86400) return Math.floor(s / 3600) + ' uur';
+    if (s < 7 * 86400) return Math.floor(s / 86400) + ' d';
+    return d.getDate() + ' ' + MAAND[d.getMonth()] + (d.getFullYear() !== nu.getFullYear() ? ' ' + d.getFullYear() : '');
   }
   function melding(el, t, goed) { el.textContent = t || ''; el.className = 'gl-melding' + (goed ? ' goed' : ''); }
   function foutTekst(e) {
@@ -659,13 +797,13 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     return 'Er ging iets mis: ' + m;
   }
   function initialen(n) { return (n || '?').split(/\s+/).filter(Boolean).map(function (w) { return w[0]; }).slice(0, 2).join('').toUpperCase(); }
-  function avatar(p, klein) {
+  function avatar(p, maat) {
     var u = p && p.foto && fotoUrl[p.foto];
-    return '<span class="gl-av' + (klein ? ' klein' : '') + '">' + (u ? '<img src="' + E(u) + '" alt="">' : E(initialen(p && p.naam))) + '</span>';
+    return '<span class="gl-av' + (maat ? ' ' + maat : '') + '">' + (u ? '<img src="' + E(u) + '" alt="">' : E(initialen(p && p.naam))) + '</span>';
   }
   function meesterVan(type) { for (var i = 0; i < C.meesters.length; i++) if (C.meesters[i].type === type) return C.meesters[i]; return null; }
+  function sub(p) { return [p.vak, p.school].filter(Boolean).join(' · '); }
 
-  // foto verkleinen in de browser vóór het uploaden (max 1600 px, jpeg)
   function verklein(bestand, max) {
     return new Promise(function (ok, nok) {
       var img = new Image(), u = URL.createObjectURL(bestand);
@@ -694,18 +832,19 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
   // ---------- inloggen ----------
   function inlogScherm(modus, bericht) {
     modus = modus || 'in';
-    var titel = { in: 'Log in bij Het Gilde', nieuw: 'Maak je account aan', vergeten: 'Wachtwoord vergeten', herstel: 'Kies een nieuw wachtwoord' }[modus];
+    var titel = { in: 'Log in bij Het Gilde', nieuw: 'Maak je account', vergeten: 'Wachtwoord vergeten', herstel: 'Kies een nieuw wachtwoord' }[modus];
     var uitleg = {
-      in: 'Het Gilde is de plek waar deelnemers aan de reis elkaar vóór, tijdens en na Bett spreken. Log in met het e-mailadres waarmee je je hebt aangemeld.',
+      in: 'Log in met het e-mailadres waarmee je je voor de reis hebt aangemeld.',
       nieuw: 'Het Gilde is alleen voor deelnemers aan de reis. Gebruik het e-mailadres waarmee je je hebt aangemeld en kies zelf een wachtwoord. Je krijgt daarna een mail om je adres te bevestigen. Nog niet aangemeld? <a href="./reis.html">Lees alles over de reis</a>.',
       vergeten: 'Vul je e-mailadres in. Je krijgt een mail met een link om een nieuw wachtwoord te kiezen.',
       herstel: 'Kies een nieuw wachtwoord van minstens 8 tekens.'
     }[modus];
-    app.innerHTML = '<div class="gl-in"><p class="mg-k">Het Gilde · alleen voor deelnemers</p><h2>' + titel + '</h2><p>' + uitleg + '</p><form>' +
+    app.innerHTML = '<div class="gl-inlog"><div class="gl-inlog-beeld"' + (C.banner ? ' style="background-image:url(' + E(C.banner) + ')"' : '') + '><div><p class="gl-k">Alleen voor deelnemers</p><h2>Het Gilde</h2><p>Mededelingen van de reisleiding, gesprekken met de andere deelnemers, foto\'s delen en zien wie er meegaat. Vóór, tijdens en na Bett.</p></div></div>' +
+      '<div class="gl-inlog-form"><h2>' + titel + '</h2><p>' + uitleg + '</p><form>' +
       (modus !== 'herstel' ? '<label>E-mailadres<input type="email" name="email" autocomplete="email" required></label>' : '') +
       (modus === 'in' || modus === 'nieuw' || modus === 'herstel' ? '<label>' + (modus === 'in' ? 'Wachtwoord' : 'Nieuw wachtwoord') + '<input type="password" name="ww" minlength="' + (modus === 'in' ? 1 : 8) + '" autocomplete="' + (modus === 'in' ? 'current-password' : 'new-password') + '" required></label>' : '') +
-      '<button>' + { in: 'Log in', nieuw: 'Maak account', vergeten: 'Stuur de link', herstel: 'Bewaar wachtwoord' }[modus] + '</button><p class="gl-melding" role="alert"></p></form><p class="gl-wissel">' +
-      (modus === 'in' ? '<button type="button" data-m="nieuw">Aangemeld voor de reis? Maak hier je account</button><button type="button" data-m="vergeten">Wachtwoord vergeten?</button>' : '<button type="button" data-m="in">Terug naar inloggen</button>') + '</p></div>';
+      '<button class="gl-knop breed">' + { in: 'Log in', nieuw: 'Maak account', vergeten: 'Stuur de link', herstel: 'Bewaar wachtwoord' }[modus] + '</button><p class="gl-melding" role="alert"></p></form><div class="gl-wissel">' +
+      (modus === 'in' ? '<button type="button" data-m="vergeten">Wachtwoord vergeten?</button><hr><p>Aangemeld voor de reis, maar nog geen account?</p><button type="button" class="gl-knop rand breed" data-m="nieuw">Maak hier je account</button>' : '<button type="button" data-m="in">Terug naar inloggen</button>') + '</div></div></div>';
     var f = $('form'), m = $('.gl-melding');
     if (bericht) melding(m, bericht, true);
     $$('[data-m]').forEach(function (b) { b.onclick = function () { inlogScherm(b.getAttribute('data-m')); }; });
@@ -713,12 +852,13 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
       ev.preventDefault(); melding(m, ''); var knop = f.querySelector('button'); knop.disabled = true;
       var email = f.email ? f.email.value.trim().toLowerCase() : '', ww = f.ww ? f.ww.value : '', terug = location.origin + location.pathname;
       try {
-        if (modus === 'in') { var r = await sb.auth.signInWithPassword({ email: email, password: ww }); if (r.error) throw r.error; }
+        if (modus === 'in') { var r = await sb.auth.signInWithPassword({ email: email, password: ww }); if (r.error) throw r.error; start(); return; }
         else if (modus === 'nieuw') {
           var r2 = await sb.auth.signUp({ email: email, password: ww, options: { emailRedirectTo: terug } }); if (r2.error) throw r2.error;
-          if (!r2.data.session) { if (r2.data.user && r2.data.user.identities && !r2.data.user.identities.length) throw new Error('already registered'); inlogScherm('in', 'Bijna klaar: we hebben je een mail gestuurd. Klik op de link daarin om je e-mailadres te bevestigen, en log dan hier in.'); }
+          if (!r2.data.session) { if (r2.data.user && r2.data.user.identities && !r2.data.user.identities.length) throw new Error('already registered'); inlogScherm('in', 'Bijna klaar: we hebben je een mail gestuurd. Klik op de link daarin om je e-mailadres te bevestigen, en log dan hier in.'); return; }
+          start(); return;
         } else if (modus === 'vergeten') { var r3 = await sb.auth.resetPasswordForEmail(email, { redirectTo: terug }); if (r3.error) throw r3.error; melding(m, 'Als dit adres bij ons bekend is, staat er nu een mail voor je klaar.', true); }
-        else if (modus === 'herstel') { var r4 = await sb.auth.updateUser({ password: ww }); if (r4.error) throw r4.error; history.replaceState(null, '', location.pathname); start(); }
+        else if (modus === 'herstel') { var r4 = await sb.auth.updateUser({ password: ww }); if (r4.error) throw r4.error; history.replaceState(null, '', location.pathname); start(); return; }
       } catch (e) { melding(m, foutTekst(e)); }
       knop.disabled = false;
     };
@@ -732,9 +872,8 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     var s = (await sb.auth.getSession()).data.session;
     if (!s) { inlogScherm('in'); return; }
     ik = s.user;
-    var lid = await sb.rpc('mijn_rol');
-    rol = lid.data;
-    if (!rol) { app.innerHTML = '<div class="gl-in"><h2>Je staat (nog) niet op de deelnemerslijst</h2><p>Je bent ingelogd als ' + E(ik.email) + ', maar dit adres hoort niet (meer) bij de reis. Klopt dat niet? Mail ons even.</p><p><button class="gl-knop" id="gl-uit">Log uit</button></p></div>'; $('#gl-uit').onclick = uitloggen; return; }
+    rol = (await sb.rpc('mijn_rol')).data;
+    if (!rol) { app.innerHTML = '<div class="gl-los"><h2>Je staat (nog) niet op de deelnemerslijst</h2><p>Je bent ingelogd als ' + E(ik.email) + ', maar dit adres hoort niet (meer) bij de reis. Klopt dat niet? Mail ons even.</p><p><button class="gl-knop" id="gl-uit">Log uit</button></p></div>'; $('#gl-uit').onclick = uitloggen; return; }
     // de sleutel van de deelnemerspagina's meenemen, zodat de magazines en de meesterspiegel zonder code opengaan
     sb.from('instellingen').select('waarde').eq('naam', 'sleutel').maybeSingle().then(function (r) { if (r.data && r.data.waarde) { try { localStorage.setItem('nhm-sleutel', r.data.waarde); document.documentElement.classList.add('deeln'); } catch (x) {} } });
     var h = location.hash.slice(1); if (h && (TABS.some(function (t) { return t[0] === h; }) || h === 'beheer')) tab = h;
@@ -749,13 +888,43 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     profielen = {}; (r.data || []).forEach(function (p) { profielen[p.id] = p; });
     await tekenUrls((r.data || []).map(function (p) { return p.foto; }));
   }
+  function leden() { return Object.keys(profielen).map(function (k) { return profielen[k]; }).filter(function (p) { return p.naam; }); }
+  function dagenTot() { return Math.ceil((new Date(2027, 0, 20) - new Date()) / 864e5); }
+
+  function zijLinks() {
+    var p = mijnProfiel, ms = meesterVan(p.meester);
+    return '<div class="gl-blok gl-ikkaart"><div class="gl-banner"' + (C.banner ? ' style="background-image:url(' + E(C.banner) + ')"' : '') + '></div>' + avatar(p, 'groot') +
+      '<h3>' + E(p.naam || 'Welkom!') + '</h3><p class="gl-sub">' + E(sub(p) || 'Vul je profiel in') + '</p>' +
+      (ms ? '<p class="gl-chip">' + E(ms.type) + '</p>' : '') +
+      (p.bettvraag ? '<p class="gl-ikvraag"><span>Op Bett zoek ik</span>' + E(p.bettvraag) + '</p>' : '') +
+      '<div class="gl-ikknoppen"><button type="button" class="gl-link" data-ga="profiel">Profiel bewerken</button><button type="button" class="gl-link" id="gl-uit">Log uit</button></div></div>' +
+      (C.snel && C.snel.length ? '<div class="gl-blok gl-snel"><p class="gl-k">Snel naar</p>' + C.snel.map(function (s) { return '<a href="' + E(s[1]) + '"' + (/\.pdf$/.test(s[1]) ? ' target="_blank" rel="noopener"' : '') + '>' + E(s[0]) + '</a>'; }).join('') + '</div>' : '');
+  }
+  function zijRechts() {
+    var n = dagenTot(), nieuw = leden().sort(function (a, b) { return (b.bijgewerkt || '') > (a.bijgewerkt || '') ? 1 : -1; }).slice(0, 5);
+    return '<div class="gl-blok gl-aftel"><p class="gl-k">Naar Bett 2027</p><b>' + Math.max(n, 0) + '</b><span>' + (n > 0 ? 'dagen tot vertrek' : 'we zijn onderweg') + '</span><small>20–22 januari · Londen</small></div>' +
+      (C.dagen && C.dagen.length ? '<div class="gl-blok gl-prog"><p class="gl-k">Programma</p>' + C.dagen.map(function (d) { return '<div><b>' + E(d[0]) + '</b><small>' + E(d[1]) + '</small><span>' + E(d[2].slice(0, 3).join(' · ')) + '</span></div>'; }).join('') + '</div>' : '') +
+      '<div class="gl-blok gl-nieuwe"><p class="gl-k">In Het Gilde</p>' + nieuw.map(function (p) { var ms = meesterVan(p.meester); return '<div class="gl-mini">' + avatar(p, 'klein') + '<div><b>' + E(p.naam) + '</b><small>' + E(ms ? ms.type : sub(p)) + '</small></div></div>'; }).join('') +
+      '<button type="button" class="gl-link" data-ga="wie">Bekijk iedereen (' + leden().length + ')</button></div>';
+  }
   function kader() {
-    var tabs = TABS.concat(rol === 'beheer' ? [['beheer', 'Beheer']] : []);
-    app.innerHTML = '<div class="gl-balk"><div class="gl-tabs" role="tablist">' + tabs.map(function (t) { return '<button role="tab" data-t="' + t[0] + '"' + (t[0] === tab ? ' aria-selected="true"' : '') + '>' + t[1] + '<i class="gl-nieuw" data-n="' + t[0] + '"></i></button>'; }).join('') +
-      '</div><div class="gl-ik">' + avatar(mijnProfiel, true) + '<span class="gl-naam">' + E(mijnProfiel.naam || ik.email) + '</span><button type="button" id="gl-uit">Log uit</button></div></div><div id="gl-inhoud"></div>';
-    $$('[data-t]').forEach(function (b) { b.onclick = function () { tab = b.getAttribute('data-t'); history.replaceState(null, '', '#' + tab); $$('[data-t]').forEach(function (x) { x.removeAttribute('aria-selected'); }); b.setAttribute('aria-selected', 'true'); toon(); }; });
-    $('#gl-uit').onclick = uitloggen;
+    var tabs = TABS.concat(rol === 'beheer' ? [['beheer', 'Beheer', 'tandwiel']] : []);
+    app.innerHTML = '<nav class="gl-tabs" role="tablist" aria-label="Het Gilde">' + tabs.map(function (t) { return '<button role="tab" data-t="' + t[0] + '"' + (t[0] === tab ? ' aria-selected="true"' : '') + '>' + ic(t[2]) + '<span>' + t[1] + '</span><i class="gl-nieuw" data-n="' + t[0] + '"></i></button>'; }).join('') + '</nav>' +
+      '<div class="gl-raster"><aside class="gl-links">' + zijLinks() + '</aside><div id="gl-inhoud"></div><aside class="gl-rechts">' + zijRechts() + '</aside></div>';
+    $$('[data-t]').forEach(function (b) { b.onclick = function () { ga(b.getAttribute('data-t')); }; });
+    koppelZij();
     toon(); nieuwTellen();
+  }
+  function koppelZij() {
+    $$('[data-ga]').forEach(function (b) { b.onclick = function () { ga(b.getAttribute('data-ga')); }; });
+    var u = $('#gl-uit'); if (u) u.onclick = uitloggen;
+  }
+  function verversZij() { $('.gl-links').innerHTML = zijLinks(); $('.gl-rechts').innerHTML = zijRechts(); koppelZij(); }
+  function ga(t) {
+    tab = t; history.replaceState(null, '', '#' + tab);
+    $$('[data-t]').forEach(function (x) { if (x.getAttribute('data-t') === t) x.setAttribute('aria-selected', 'true'); else x.removeAttribute('aria-selected'); });
+    toon(); var kop = document.querySelector('.sitenav'), doel = app.getBoundingClientRect().top + scrollY - (kop ? kop.offsetHeight : 0);
+    if (scrollY > doel) scrollTo({ top: doel, behavior: 'smooth' });
   }
   async function nieuwTellen() {
     ['mededelingen', 'prikbord', 'delen'].forEach(async function (k) {
@@ -767,33 +936,37 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     });
   }
   function toon() {
-    var d = $('#gl-inhoud'); d.innerHTML = '<p class="gl-laden">Even laden…</p>';
+    var d = $('#gl-inhoud'); d.innerHTML = '<div class="gl-blok gl-laden">Even laden…</div>';
+    $('.gl-raster').classList.toggle('breed', !!BREED[tab]);
     var n = $('[data-n="' + tab + '"]'); if (n) n.textContent = '';
-    if (tab === 'voorbereiden') { d.innerHTML = '<p class="gl-uitleg">Alles om je op de reis voor te bereiden. Deze pagina\'s zijn alleen voor deelnemers en gaan open omdat je bent ingelogd.</p>' + (C.voorbereiden || ''); return; }
+    if (tab === 'voorbereiden') { d.innerHTML = '<div class="gl-blok"><h2 class="gl-titel">Voorbereiden op Bett</h2><p class="gl-uitleg">Alles om je op de reis voor te bereiden. Deze pagina\'s gaan open omdat je bent ingelogd.</p>' + (C.voorbereiden || '') + '</div>'; return; }
     if (tab === 'wie') return toonWie(d);
     if (tab === 'profiel') return toonProfiel(d);
     if (tab === 'beheer') return toonBeheer(d);
     return toonKanaal(d, tab);
   }
 
-  // ---------- kanalen ----------
+  // ---------- tijdlijn ----------
   async function toonKanaal(d, k) {
-    var r = await sb.from('berichten').select('*').eq('kanaal', k).order('gemaakt', { ascending: false }).limit(300);
-    if (r.error) { d.innerHTML = '<p class="gl-melding">' + E(foutTekst(r.error)) + '</p>'; return; }
-    var alle = r.data || [], hoofd = alle.filter(function (b) { return !b.ouder; }), reacties = {};
-    // reacties op oudere berichten ophalen
-    var ids = hoofd.map(function (b) { return b.id; });
-    if (ids.length) { var rr = await sb.from('berichten').select('*').in('ouder', ids).order('gemaakt'); (rr.data || []).forEach(function (b) { (reacties[b.ouder] = reacties[b.ouder] || []).push(b); }); }
-    await tekenUrls(alle.map(function (b) { return b.foto; }).concat(Object.keys(reacties).reduce(function (a, k2) { return a.concat(reacties[k2].map(function (b) { return b.foto; })); }, [])));
+    var r = await sb.from('berichten').select('*').eq('kanaal', k).is('ouder', null).order('gemaakt', { ascending: false }).limit(100);
+    if (r.error) { d.innerHTML = '<div class="gl-blok gl-melding">' + E(foutTekst(r.error)) + '</div>'; return; }
+    var hoofd = r.data || [], reacties = {}, duimen = {}, ids = hoofd.map(function (b) { return b.id; });
+    if (ids.length) {
+      var rr = await sb.from('berichten').select('*').in('ouder', ids).order('gemaakt'); (rr.data || []).forEach(function (b) { (reacties[b.ouder] = reacties[b.ouder] || []).push(b); });
+      var rw = await sb.from('waarderingen').select('bericht,lid').in('bericht', ids); (rw.data || []).forEach(function (w) { (duimen[w.bericht] = duimen[w.bericht] || []).push(w.lid); });
+    }
+    await tekenUrls(hoofd.map(function (b) { return b.foto; }));
     var magPlaatsen = k !== 'mededelingen' || rol === 'beheer';
-    d.innerHTML = '<p class="gl-uitleg">' + UITLEG[k] + '</p>' +
-      (magPlaatsen ? '<form class="gl-schrijf"><textarea name="t" rows="' + (k === 'delen' ? 2 : 3) + '" maxlength="4000" placeholder="' + { mededelingen: 'Schrijf een mededeling voor alle deelnemers…', prikbord: 'Stel een vraag of begin een gesprek…', delen: 'Vertel wat je deelt…' }[k] + '" required></textarea>' +
-        '<div class="gl-rij"><label class="gl-foto-knop">Foto toevoegen<input type="file" accept="image/*" name="f" hidden></label><span class="gl-bestand"></span><button class="gl-knop">Plaats</button></div><p class="gl-melding" role="alert"></p></form>' : '') +
-      (hoofd.length ? hoofd.map(function (b) { return bericht(b, reacties[b.id] || []); }).join('') : '<p class="gl-leeg-k">Hier staat nog niets.' + (magPlaatsen ? ' Begin jij?' : '') + '</p>');
+    d.innerHTML = (magPlaatsen ? '<form class="gl-blok gl-schrijf"><div class="gl-schrijf-rij">' + avatar(mijnProfiel) + '<textarea name="t" rows="1" maxlength="4000" placeholder="' + { mededelingen: 'Schrijf een mededeling…', prikbord: 'Begin een gesprek…', delen: 'Wat wil je delen?' }[k] + '" required></textarea></div>' +
+        '<div class="gl-schrijf-uit"><img class="gl-voorbeeld" alt="" hidden><div class="gl-rij"><label class="gl-actie">' + ic('foto') + '<span>Foto</span><input type="file" accept="image/*" name="f" hidden></label><span class="gl-melding" role="alert"></span><button class="gl-knop">Plaats</button></div></div></form>'
+      : '<div class="gl-blok gl-uitleg-blok">' + UITLEG[k] + '</div>') +
+      (hoofd.length ? hoofd.map(function (b) { return bericht(b, reacties[b.id] || [], duimen[b.id] || []); }).join('') : '<div class="gl-blok gl-leeg-k"><b>' + { mededelingen: 'Nog geen mededelingen', prikbord: 'Het prikbord is nog leeg', delen: 'Nog niets gedeeld' }[k] + '</b><span>' + (magPlaatsen ? UITLEG[k] + ' Begin jij?' : 'Zodra de reisleiding iets plaatst, zie je het hier.') + '</span></div>');
     markeer(k);
     var f = $('.gl-schrijf', d);
     if (f) {
-      f.f.onchange = function () { $('.gl-bestand', f).textContent = f.f.files[0] ? f.f.files[0].name : ''; };
+      f.t.onfocus = function () { f.classList.add('open'); };
+      f.t.oninput = function () { f.t.style.height = 'auto'; f.t.style.height = Math.min(f.t.scrollHeight, 320) + 'px'; };
+      f.f.onchange = function () { var v = $('.gl-voorbeeld', f), b = f.f.files[0]; f.classList.add('open'); if (b) { v.src = URL.createObjectURL(b); v.hidden = false; } else v.hidden = true; };
       f.onsubmit = async function (ev) {
         ev.preventDefault(); var m = $('.gl-melding', f), knop = $('.gl-knop', f); knop.disabled = true; melding(m, f.f.files[0] ? 'Foto uploaden…' : '', true);
         try {
@@ -805,17 +978,20 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
     }
     koppelBerichten(d, k);
   }
-  function bericht(b, reacties) {
-    var p = profielen[b.auteur] || {}, ms = meesterVan(p.meester);
-    var weg = b.auteur === ik.id || rol === 'beheer';
-    return '<article class="gl-bericht" data-id="' + b.id + '"><header>' + avatar(p) + '<div><b>' + E(p.naam || 'Deelnemer') + '</b>' + (ms ? '<small class="gl-mt">' + E(ms.type) + '</small>' : '') + '<small>' + wanneer(b.gemaakt) + (b.bewerkt ? ' · bewerkt' : '') + '</small></div>' +
+  function bericht(b, reacties, duimen) {
+    var p = profielen[b.auteur] || {}, ms = meesterVan(p.meester), weg = b.auteur === ik.id || rol === 'beheer', mijn = duimen.indexOf(ik.id) >= 0;
+    var tel = (duimen.length ? '<span>' + ic('duim') + duimen.length + '</span>' : '<span></span>') + (reacties.length ? '<span>' + reacties.length + ' reactie' + (reacties.length === 1 ? '' : 's') + '</span>' : '');
+    return '<article class="gl-blok gl-bericht' + (b.kanaal === 'mededelingen' ? ' med' : '') + '" data-id="' + b.id + '">' +
+      '<header>' + avatar(p) + '<div class="gl-wie-r"><b>' + E(p.naam || 'Deelnemer') + '</b><small>' + E(ms ? ms.type : sub(p)) + '</small><small class="gl-tijd">' + (b.kanaal === 'mededelingen' ? '<em>Mededeling</em> · ' : '') + wanneer(b.gemaakt) + (b.bewerkt ? ' · bewerkt' : '') + '</small></div>' +
       (weg ? '<button type="button" class="gl-weg" data-weg="' + b.id + '" aria-label="Verwijder bericht" title="Verwijder">×</button>' : '') + '</header>' +
       '<div class="gl-tekst">' + tekst(b.tekst) + '</div>' + (b.foto && fotoUrl[b.foto] ? '<a class="gl-foto" href="' + E(fotoUrl[b.foto]) + '" target="_blank" rel="noopener"><img src="' + E(fotoUrl[b.foto]) + '" alt="Foto van ' + E(p.naam || 'een deelnemer') + '" loading="lazy"></a>' : '') +
+      '<div class="gl-tellers">' + tel + '</div>' +
+      '<div class="gl-acties"><button type="button" class="gl-actie' + (mijn ? ' aan' : '') + '" data-duim="' + b.id + '" aria-pressed="' + mijn + '">' + ic('duim') + '<span>' + (mijn ? 'Gewaardeerd' : 'Waardeer') + '</span></button><button type="button" class="gl-actie" data-reageer="' + b.id + '">' + ic('reactie') + '<span>Reageer</span></button></div>' +
       '<div class="gl-reacties">' + reacties.map(function (x) {
-        var q = profielen[x.auteur] || {};
-        return '<div class="gl-reactie">' + avatar(q, true) + '<div><b>' + E(q.naam || 'Deelnemer') + '</b> <small>' + wanneer(x.gemaakt) + '</small>' + (x.auteur === ik.id || rol === 'beheer' ? ' <button type="button" class="gl-weg klein" data-weg="' + x.id + '" aria-label="Verwijder reactie" title="Verwijder">×</button>' : '') + '<div class="gl-tekst">' + tekst(x.tekst) + '</div></div></div>';
+        var q = profielen[x.auteur] || {}, qm = meesterVan(q.meester);
+        return '<div class="gl-reactie">' + avatar(q, 'klein') + '<div class="gl-bel"><div class="gl-bel-kop"><b>' + E(q.naam || 'Deelnemer') + '</b><small>' + E(qm ? qm.type : '') + '</small><small class="gl-tijd">' + wanneer(x.gemaakt) + '</small>' + (x.auteur === ik.id || rol === 'beheer' ? '<button type="button" class="gl-weg klein" data-weg="' + x.id + '" aria-label="Verwijder reactie" title="Verwijder">×</button>' : '') + '</div><div class="gl-tekst">' + tekst(x.tekst) + '</div></div></div>';
       }).join('') +
-      '<form class="gl-reageer"><input name="t" maxlength="2000" placeholder="Reageer…" aria-label="Reageer" required><button class="gl-knop klein">Stuur</button></form></div></article>';
+      '<form class="gl-reageer">' + avatar(mijnProfiel, 'klein') + '<input name="t" maxlength="2000" placeholder="Schrijf een reactie…" aria-label="Schrijf een reactie" required><button class="gl-knop klein">Stuur</button></form></div></article>';
   }
   function koppelBerichten(d, k) {
     $$('.gl-reageer', d).forEach(function (f) {
@@ -823,6 +999,15 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
         ev.preventDefault(); var id = +f.closest('.gl-bericht').getAttribute('data-id'); f.querySelector('button').disabled = true;
         var r = await sb.from('berichten').insert({ kanaal: k, ouder: id, tekst: f.t.value.trim() });
         if (r.error) { alert(foutTekst(r.error)); f.querySelector('button').disabled = false; return; }
+        toon();
+      };
+    });
+    $$('[data-reageer]', d).forEach(function (b) { b.onclick = function () { b.closest('.gl-bericht').querySelector('.gl-reageer input').focus(); }; });
+    $$('[data-duim]', d).forEach(function (b) {
+      b.onclick = async function () {
+        var id = +b.getAttribute('data-duim'), aan = b.getAttribute('aria-pressed') === 'true'; b.disabled = true;
+        var r = aan ? await sb.from('waarderingen').delete().eq('bericht', id).eq('lid', ik.id) : await sb.from('waarderingen').insert({ bericht: id });
+        if (r.error) { alert(foutTekst(r.error)); b.disabled = false; return; }
         toon();
       };
     });
@@ -838,33 +1023,40 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
   }
 
   // ---------- wie gaat er mee ----------
+  function profielKaart(p) {
+    var ms = meesterVan(p.meester);
+    return '<div class="gl-kaart"><div class="gl-banner klein"' + (C.banner ? ' style="background-image:url(' + E(C.banner) + ')"' : '') + '></div>' + avatar(p, 'groot') +
+      '<h3>' + E(p.naam || 'Je naam') + '</h3><p class="gl-sub">' + E(sub(p)) + '</p>' + (ms ? '<p class="gl-chip">' + E(ms.type) + ' · ' + E(ms.naam) + '</p>' : '') +
+      (p.bettvraag ? '<p class="gl-ikvraag"><span>Op Bett zoek ik</span>' + E(p.bettvraag) + '</p>' : '') + (p.over ? '<p class="gl-over">' + tekst(p.over) + '</p>' : '') + '</div>';
+  }
   async function toonWie(d) {
     await laadProfielen();
-    var lijst = Object.keys(profielen).map(function (k) { return profielen[k]; }).filter(function (p) { return p.naam; });
-    d.innerHTML = '<p class="gl-uitleg">' + lijst.length + ' deelnemer' + (lijst.length === 1 ? '' : 's') + ' met een profiel. Zo weet je vóór vertrek met wie je reist, en met wie je op Bett een route kunt lopen.</p><div class="gl-wie">' +
-      lijst.map(function (p) {
-        var ms = meesterVan(p.meester);
-        return '<div class="gl-kaart">' + avatar(p) + '<div><h3>' + E(p.naam) + '</h3><p class="gl-sub">' + E([p.vak, p.school].filter(Boolean).join(' · ')) + '</p>' +
-          (ms ? '<p class="gl-mt">' + E(ms.type) + ' <small>' + E(ms.naam) + '</small></p>' : '') +
-          (p.bettvraag ? '<p class="gl-vraag"><b>Op Bett zoek ik:</b> ' + E(p.bettvraag) + '</p>' : '') + (p.over ? '<p>' + tekst(p.over) + '</p>' : '') + '</div></div>';
-      }).join('') + '</div>';
+    var lijst = leden(), meest = {};
+    lijst.forEach(function (p) { if (p.meester) meest[p.meester] = (meest[p.meester] || 0) + 1; });
+    d.innerHTML = '<div class="gl-blok"><h2 class="gl-titel">Wie gaat er mee</h2><p class="gl-uitleg">' + lijst.length + ' deelnemer' + (lijst.length === 1 ? '' : 's') + ' met een profiel. Zo weet je vóór vertrek met wie je reist, en met wie je op Bett een route kunt lopen.</p>' +
+      (Object.keys(meest).length ? '<div class="gl-meestertel">' + C.meesters.filter(function (m) { return meest[m.type]; }).map(function (m) { return '<span class="gl-chip licht">' + E(m.type) + ' <b>' + meest[m.type] + '</b></span>'; }).join('') + '</div>' : '') +
+      '<div class="gl-wie">' + lijst.map(profielKaart).join('') + '</div></div>';
   }
 
   // ---------- mijn profiel ----------
   function toonProfiel(d) {
     var p = mijnProfiel, spiegel = null; try { spiegel = JSON.parse(localStorage.getItem('meesterproef') || 'null'); } catch (x) {}
     var voorstel = !p.meester && spiegel && spiegel.h ? (C.meesters.filter(function (m) { return spiegel.h.indexOf(m.type) >= 0 || spiegel.h.indexOf(m.naam) >= 0; })[0] || null) : null;
-    d.innerHTML = '<form class="gl-profiel"><div class="gl-foto-veld">' + avatar(p) + '<label class="gl-foto-knop">Kies een foto<input type="file" accept="image/*" name="f" hidden></label></div>' +
+    d.innerHTML = '<div class="gl-profielraster"><form class="gl-blok gl-profiel"><h2 class="gl-titel">Mijn profiel</h2>' +
       (!p.naam ? '<p class="gl-welkom">Welkom in Het Gilde! Vul eerst je naam in, dan weten de anderen wie je bent.</p>' : '') +
+      '<div class="gl-foto-veld">' + avatar(p, 'groot') + '<label class="gl-knop rand">Kies een foto<input type="file" accept="image/*" name="f" hidden></label></div>' +
       '<label>Naam<input name="naam" maxlength="80" required value="' + E(p.naam) + '"></label>' +
-      '<label>School<input name="school" maxlength="120" value="' + E(p.school) + '"></label>' +
-      '<label>Vak of functie<input name="vak" maxlength="120" placeholder="bijv. leraar geschiedenis, schoolleider" value="' + E(p.vak) + '"></label>' +
+      '<div class="gl-twee"><label>Vak of functie<input name="vak" maxlength="120" placeholder="bijv. leraar geschiedenis" value="' + E(p.vak) + '"></label>' +
+      '<label>School<input name="school" maxlength="120" value="' + E(p.school) + '"></label></div>' +
       '<label>Mijn meester<select name="meester"><option value="">Nog niet bekend</option>' + C.meesters.map(function (m) { var k = p.meester === m.type || (voorstel && voorstel.type === m.type); return '<option value="' + E(m.type) + '"' + (k ? ' selected' : '') + '>' + E(m.type) + ' (' + E(m.naam) + ')</option>'; }).join('') + '</select>' +
       '<small>' + (voorstel ? 'Ingevuld vanuit je meesterspiegel.' : 'Nog niet gedaan? <a href="./meesters.html">Doe de meesterspiegel</a>.') + '</small></label>' +
       '<label>Wat zoek je op Bett?<input name="bettvraag" maxlength="300" placeholder="De vraag uit je eigen klas die je meeneemt" value="' + E(p.bettvraag) + '"></label>' +
       '<label>Over mij<textarea name="over" rows="4" maxlength="600">' + E(p.over) + '</textarea></label>' +
-      '<div class="gl-rij"><button class="gl-knop">Bewaar</button><span class="gl-mail">Ingelogd als ' + E(ik.email) + '</span></div><p class="gl-melding" role="alert"></p></form>';
+      '<div class="gl-rij"><button class="gl-knop">Bewaar</button><span class="gl-mail">Ingelogd als ' + E(ik.email) + '</span></div><p class="gl-melding" role="alert"></p></form>' +
+      '<aside class="gl-voorbeeldkaart"><p class="gl-k">Zo zien de anderen je</p><div id="gl-pv">' + profielKaart(p) + '</div></aside></div>';
     var f = $('.gl-profiel', d), m = $('.gl-melding', f);
+    function pv() { $('#gl-pv').innerHTML = profielKaart(Object.assign({}, p, { naam: f.naam.value, school: f.school.value, vak: f.vak.value, meester: f.meester.value, bettvraag: f.bettvraag.value, over: f.over.value })); }
+    f.oninput = pv; f.onchange = function (e) { if (e.target !== f.f) pv(); }; pv();
     f.f.onchange = async function () {
       if (!f.f.files[0]) return; melding(m, 'Foto uploaden…', true);
       try {
@@ -872,31 +1064,30 @@ small.gl-mt,p.gl-mt{color:#b9383a;font-weight:700}
         var r = await sb.from('profielen').update({ foto: pad, bijgewerkt: new Date().toISOString() }).eq('id', ik.id); if (r.error) throw r.error;
         if (oud) sb.storage.from('gilde').remove([oud]);
         p.foto = pad; await tekenUrls([pad]); profielen[ik.id] = p; melding(m, 'Foto bewaard.', true);
-        $('.gl-foto-veld .gl-av', f).outerHTML = avatar(p); $('.gl-ik .gl-av').outerHTML = avatar(p, true);
+        $('.gl-foto-veld .gl-av', f).outerHTML = avatar(p, 'groot'); pv(); verversZij();
       } catch (e) { melding(m, foutTekst(e)); }
     };
     f.onsubmit = async function (ev) {
-      ev.preventDefault(); var knop = $('.gl-knop', f); knop.disabled = true;
+      ev.preventDefault(); var knop = $('.gl-knop:not(.rand)', f); knop.disabled = true;
       var w = { naam: f.naam.value.trim(), school: f.school.value.trim(), vak: f.vak.value.trim(), meester: f.meester.value, bettvraag: f.bettvraag.value.trim(), over: f.over.value.trim(), bijgewerkt: new Date().toISOString() };
       var r = await sb.from('profielen').upsert(Object.assign({ id: ik.id }, w));
       knop.disabled = false;
       if (r.error) { melding(m, foutTekst(r.error)); return; }
       var eerste = !p.naam; Object.assign(p, w); profielen[ik.id] = p; mijnProfiel = p;
-      $('.gl-naam').textContent = p.naam; melding(m, 'Bewaard.', true);
-      if (eerste) { tab = 'prikbord'; kader(); }
+      melding(m, 'Bewaard.', true); verversZij();
+      if (eerste) ga('prikbord');
     };
   }
 
   // ---------- beheer ----------
   async function toonBeheer(d) {
     var r = await sb.from('deelnemers').select('*').order('rol').order('naam');
-    var accounts = {}; Object.keys(profielen).forEach(function (k) { accounts[k] = true; });
     var lijst = r.data || [];
-    d.innerHTML = '<p class="gl-uitleg">Alleen adressen op deze lijst kunnen een account maken. Voeg nieuwe deelnemers toe met het e-mailadres waarmee ze zich hebben aangemeld, en stuur ze daarna de link naar deze pagina. ' + lijst.length + ' op de lijst.</p>' +
+    d.innerHTML = '<div class="gl-blok"><h2 class="gl-titel">Beheer</h2><p class="gl-uitleg">Alleen adressen op deze lijst kunnen een account maken. Voeg nieuwe deelnemers toe met het e-mailadres waarmee ze zich hebben aangemeld, en stuur ze daarna de link naar deze pagina. ' + lijst.length + ' op de lijst.</p>' +
       '<form class="gl-beheer-nieuw"><textarea name="t" rows="4" placeholder="Eén deelnemer per regel: e-mailadres, naam&#10;bijv. piet@school.nl, Piet de Vries" required></textarea><div class="gl-rij"><label><input type="checkbox" name="b"> als beheerder</label><button class="gl-knop">Voeg toe</button></div><p class="gl-melding" role="alert"></p></form>' +
       '<table class="gl-tabel"><thead><tr><th>Naam</th><th>E-mail</th><th>Rol</th><th></th></tr></thead><tbody>' + lijst.map(function (x) {
         return '<tr><td>' + E(x.naam) + '</td><td>' + E(x.email) + '</td><td>' + (x.rol === 'beheer' ? 'beheer' : 'deelnemer') + '</td><td>' + (x.email !== ik.email.toLowerCase() ? '<button type="button" class="gl-weg klein" data-mail="' + E(x.email) + '" title="Haal van de lijst">×</button>' : '') + '</td></tr>';
-      }).join('') + '</tbody></table><p class="gl-uitleg" style="margin-top:14px">Van de lijst halen sluit iemand meteen buiten: hun account blijft bestaan, maar ze zien niets meer.</p>';
+      }).join('') + '</tbody></table><p class="gl-uitleg" style="margin-top:14px">Van de lijst halen sluit iemand meteen buiten: hun account blijft bestaan, maar ze zien niets meer.</p></div>';
     var f = $('.gl-beheer-nieuw', d), m = $('.gl-melding', f);
     f.onsubmit = async function (ev) {
       ev.preventDefault();
