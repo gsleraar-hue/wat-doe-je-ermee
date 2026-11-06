@@ -507,6 +507,8 @@
   .mees-uitkomst { background: #0B0B0B; color: #fff; padding: 22px 24px; margin-top: 20px; }
   .mees-uitkomst h3 { font: 900 clamp(28px, 3vw, 40px)/1.05 Roboto, sans-serif; margin: 4px 0 6px; }
   .mees-uitkomst a { color: #fff; }
+  .spiegel-waarom { clear: both; border-top: 1px solid rgba(255,255,255,.25); padding-top: 12px; margin-top: 14px; }
+  .spiegel-waarom .klein { display: block; margin-top: 6px; opacity: .8; font-size: .9em; }
   .mees-prof { display: grid; grid-template-columns: minmax(200px, 320px) 1fr; gap: 28px; padding: 34px 0; border-top: 1px solid #ccc; scroll-margin-top: 90px; }
   .mees-prof .ft small { display: block; font: 400 12px/1.4 Roboto, sans-serif; color: #55524C; margin-top: 6px; }
   .mees-prof h2 { font: 900 clamp(28px, 3.2vw, 44px)/1.05 Roboto, sans-serif; margin: 4px 0 6px; }
@@ -585,18 +587,30 @@ try{var bl=await (await fetch(src)).blob(),file=new File([bl],'meester-'+d.s+f+'
 if(f){var a=document.createElement('a');a.href=src;a.download='meester-'+d.s+'-story.jpg';document.body.appendChild(a);a.click();a.remove();tip.textContent='Je story-afbeelding staat in je downloads. Open Instagram en plaats hem als story of bericht, met de link nieuwehollandsemeesters.nl/meesters.html.';}
 else if(navigator.share){navigator.share({text:d.tx,url:d.url}).catch(function(){});}};});
 var kp=u.querySelector('[data-kopie]');if(kp)kp.onclick=function(){var t=d.tx+' '+d.url;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){kp.textContent='Gekopieerd';setTimeout(function(){kp.textContent='Kopieer tekst';},2000);},function(){prompt('Kopieer deze tekst:',t);});};}
-f.addEventListener('submit',function(e){e.preventDefault();var p=M.map(function(){return 0;}),n=0;
-for(var q=0;q<8;q++){var c=f.querySelector('input[name=q'+q+']:checked');if(c){p[+c.value]++;n++;}}
+f.addEventListener('submit',function(e){e.preventDefault();var p=M.map(function(){return 0;}),W=M.map(function(){return [];}),n=0;
+for(var q=0;q<8;q++){var c=f.querySelector('input[name=q'+q+']:checked');if(c){p[+c.value]++;W[+c.value].push(q+1);n++;}}
 u.hidden=false;
 if(n<8){u.innerHTML='<p>Beantwoord eerst alle acht de vragen.</p>';return;}
 var o=p.map(function(v,i){return [v,i];}).sort(function(a,b){return b[0]-a[0]||a[1]-b[1];});
-var h=o[0][1],t=o[1][0]>0?o[1][1]:-1;
-// tegenpool: de laagste score; staan er meer gelijk onderaan, dan telt eerst de tegenpool uit het boekhoofdstuk van je meester
-var T=[[6],[2],[1,5],[4],[3],[2],[0]],L=o[o.length-1][0],c=o.filter(function(x){return x[0]===L&&x[1]!==h&&x[1]!==t;}).map(function(x){return x[1];});
-// mengvorm (boek h16): staan er bovenaan twee letters gelijk, dan tellen de boekparen van allebei
-var mv=t>=0&&o[1][0]===o[0][0],b=T[h].concat(mv?T[t]:[]).filter(function(i){return c.indexOf(i)>=0;}),G=b.length?[b[0]]:c;
-try{localStorage.setItem('meesterproef',JSON.stringify({h:M[h].t+' ('+M[h].n+')',t:t>=0?M[t].t+' ('+M[t].n+')':'',g:G.map(function(i){return M[i].t+' ('+M[i].n+')';}).join(' of ')}));}catch(x){}
-u.innerHTML=(M[h].i?'<img src="'+M[h].i+'" alt="" style="float:right;width:120px;aspect-ratio:4/5;object-fit:cover;margin:0 0 12px 18px">':'')+(mv?'<p class="mg-k" style="color:#fff">Jouw meesters: een mengvorm</p><h3>'+M[h].t+' en '+M[t].t+'</h3><p>'+M[h].m+' '+M[t].m+'</p><p>Je scoort op '+k(h)+' en '+k(t)+' even hoog. Dat is heel gewoon.</p>':'<p class="mg-k" style="color:#fff">Jouw meester</p><h3>'+M[h].t+' · '+M[h].n+'</h3><p>'+M[h].m+'</p>'+(t>=0?'<p><b>Daarnaast:</b> '+k(t)+'</p>':''))+'<p><b>Je tegenpool:</b> '+G.map(k).join(G.length>2?', ':' of ').replace(/, ([^,]*)$/,' of $1')+(G.length>1?'. Die scoorden even laag: kies de meester die je het minst in jezelf herkent':'')+'. Bezoek op Bett ook één stand die bij die meester past. Daar leer je het meest.</p>'+(SPIEGEL_DEEL?deel(h):'')+"<div class=\"spiegel-cta\"><p class=\"mg-k\">En nu?</p><h3>Wat doet jouw meester met alle technologie op Bett?</h3><p>Op 20 tot 22 januari 2027 gaan we met leraren en schoolleiders naar Bett in Londen, de grootste onderwijsbeurs van Europa. Niet om alles te proberen, maar om vanuit je eigen manier van lesgeven te kiezen wat je klas sterker maakt. Je krijgt het boek en de kaartenset vooraf.</p><p class=\"knoppen\"><a class=\"reis-btn\" href=\"./inschrijven.html\">Ik ga mee naar Bett</a> <a class=\"reis-btn zw\" href=\"./reis.html\">Meer over de reis</a> <a class=\"reis-btn zw\" href=\"./boek.html\">Het boek</a></p></div>";
+var S0=o[0][0],H=o.filter(function(x){return x[0]===S0;}).map(function(x){return x[1];}),h=H[0],mv=H.length>1;
+// tweede meester (boek h16: het op één na hoogste totaal); staan er daar meer gelijk, dan zijn ze allemaal je tweede meester (geen voorkeur voor de volgorde van de lijst)
+var R=o.filter(function(x){return x[0]<S0&&x[0]>0;}),S2=R.length?R[0][0]:0,D=R.filter(function(x){return x[0]===S2;}).map(function(x){return x[1];});
+// staan alle overige meesters gelijk, dan is er geen duidelijke tweede meester (anders zou dezelfde meester ook je tegenpool zijn)
+var VL=D.length>0&&o[o.length-1][0]===S2&&D.length===o.length-H.length;if(VL)D=[];
+// tegenpool: de laagste score buiten je meester(s) en tweede meester(s); bij gelijke stand eerst de boekparen (hoofdstuk 4-10) van je meester(s)
+var T=[[6],[2],[1,5],[4],[3],[2],[0]],L=o[o.length-1][0],c=o.filter(function(x){return x[0]===L&&H.indexOf(x[1])<0&&D.indexOf(x[1])<0;}).map(function(x){return x[1];});
+if(!c.length)c=o.filter(function(x){return x[0]===L&&H.indexOf(x[1])<0;}).map(function(x){return x[1];});
+var b=[];H.forEach(function(i){b=b.concat(T[i]);});b=b.filter(function(i){return c.indexOf(i)>=0;});var G=b.length?[b[0]]:c;
+function en(a){return a.length>1?a.slice(0,-1).join(', ')+' en '+a[a.length-1]:a.join('');}
+function kr(v){return v===1?'1 keer':v+' keer';}
+function vr(i){return W[i].length?' (vraag '+en(W[i])+')':'';}
+function nm(a){return a.map(function(i){return M[i].t+' ('+M[i].n+')';}).join(' en ');}
+var tw=D.length===1?'<p><b>Je tweede meester:</b> '+k(D[0])+'</p>':D.length>1?'<p><b>Je tweede meesters:</b> '+en(D.map(k))+'. Die koos je even vaak.</p>':VL?'<p><b>Geen duidelijke tweede meester:</b> de andere meesters koos je allemaal even vaak.</p>':'<p><b>Geen tweede meester:</b> je koos elke keer dezelfde meester.</p>';
+function bv(i){return k(i)+' '+(W[i].length===n?'bij alle '+n+' vragen':'bij vraag '+en(W[i]));}
+function lijst(a){return a.map(bv).join(', ');}
+var wa='<p class="spiegel-waarom"><b>Waarom?</b> '+(mv?'Je koos '+lijst(H)+': elk '+kr(S0)+', dus even vaak. ':'Je koos '+bv(h)+': '+S0+' van de '+n+' keer. ')+(VL?'De andere meesters koos je allemaal '+kr(S2)+', dus geen van hen staat op de tweede plek. ':'')+(D.length?(D.length>1?'Daarna koos je '+lijst(D)+': elk '+kr(S2)+', het op één na hoogste aantal. Daarom zijn ze '+(D.length===2?'allebei':'alle '+D.length)+' je tweede meester. ':'Daarna koos je '+bv(D[0])+': '+kr(S2)+', het op één na hoogste aantal. Daarom is dat je tweede meester. '):'')+'Je tegenpool koos je '+(L?'maar '+kr(L):'geen enkele keer')+': die blik mis je het makkelijkst.<br><span class="klein">Jouw telling: '+o.map(function(x){return M[x[1]].t.replace('De ','')+' '+x[0];}).join(' · ')+'</span></p>';
+try{localStorage.setItem('meesterproef',JSON.stringify({h:nm(mv?H:[h]),t:nm(D),g:G.map(function(i){return M[i].t+' ('+M[i].n+')';}).join(' of ')}));}catch(x){}
+u.innerHTML=(M[h].i?'<img src="'+M[h].i+'" alt="" style="float:right;width:120px;aspect-ratio:4/5;object-fit:cover;margin:0 0 12px 18px">':'')+(mv?'<p class="mg-k" style="color:#fff">Jouw meesters: een mengvorm</p><h3>'+en(H.map(function(i){return M[i].t;}))+'</h3><p>'+H.map(function(i){return M[i].m;}).join(' ')+'</p><p>Je scoort op '+en(H.map(k))+' even hoog. Dat is heel gewoon.</p>':'<p class="mg-k" style="color:#fff">Jouw meester</p><h3>'+M[h].t+' · '+M[h].n+'</h3><p>'+M[h].m+'</p>')+tw+'<p><b>Je tegenpool:</b> '+G.map(k).join(G.length>2?', ':' of ').replace(/, ([^,]*)$/,' of $1')+(G.length>1?'. Die scoorden even laag: kies de meester die je het minst in jezelf herkent':'')+'. Bezoek op Bett ook één stand die bij die meester past. Daar leer je het meest.</p>'+wa+(SPIEGEL_DEEL?deel(h):'')+"<div class=\"spiegel-cta\"><p class=\"mg-k\">En nu?</p><h3>Wat doet jouw meester met alle technologie op Bett?</h3><p>Op 20 tot 22 januari 2027 gaan we met leraren en schoolleiders naar Bett in Londen, de grootste onderwijsbeurs van Europa. Niet om alles te proberen, maar om vanuit je eigen manier van lesgeven te kiezen wat je klas sterker maakt. Je krijgt het boek en de kaartenset vooraf.</p><p class=\"knoppen\"><a class=\"reis-btn\" href=\"./inschrijven.html\">Ik ga mee naar Bett</a> <a class=\"reis-btn zw\" href=\"./reis.html\">Meer over de reis</a> <a class=\"reis-btn zw\" href=\"./boek.html\">Het boek</a></p></div>";
 if(SPIEGEL_DEEL)deelKnoppen(h);u.scrollIntoView({behavior:'smooth',block:'nearest'});});})();</script><script>(function(){
 var rust=matchMedia('(prefers-reduced-motion: reduce)').matches;
 var els=[].slice.call(document.querySelectorAll('.mg-body > figure, .mg-body > blockquote, .mg-frag, .mg-tile, .mg-next a'));
